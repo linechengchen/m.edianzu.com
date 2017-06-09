@@ -1,0 +1,167 @@
+﻿.ico-kehu{
+	height:30px;
+	background:url(../images/vip.png) no-repeat;
+	background-size:80% auto;
+}
+.ico-hot{
+	height:30px;
+	background:url(../images/index_titico2.png) no-repeat;
+	background-size:80% auto;
+}
+.ico-1{
+	height:30px;
+	background:url(../images/index_titico3.png) no-repeat;
+	background-size:80% auto;
+}
+.ico-2{
+	height:30px;
+	background:url(../images/index_titico4.png) no-repeat;
+	background-size:80% auto;
+}
+.ico-3{
+	height:30px;
+	background:url(../images/index_titico5.png) no-repeat;
+	background-size:80% auto;
+}
+.ico-4{
+	height:30px;
+	background:url(../images/index_titico6.png) no-repeat;
+	background-size:80% auto;
+}
+.ico-5{
+	height:30px;
+	background:url(../images/index_titico7.png) no-repeat;
+	background-size:80% auto;
+}
+.index-yj {
+	padding: 10px 0 10px;
+}
+.yj-ul li {
+	display: inline-block;
+	width: 20%;
+	margin: 0 2%;
+}
+.yj-ul li img {
+	display: block;
+	width: 54%;
+	margin: 0 auto;
+	height: auto;
+}
+.yj-ul li p {
+	margin-top: 5px;
+	font-size: 1em;
+	color: #999;
+	text-align: center;
+}
+.customer img{
+	display:block;
+	width:100%;
+}
+.customer li span {
+	text-align: center;
+	display: block;
+}
+.customer li span strong {
+	font-weight: 600;
+	font-size: 0.85em;
+	color: #e45050;
+}
+.customer li h3 {
+	height: 20px;
+	text-align: center;
+	margin-top: -10px;
+	font-size: 1em;
+	font-weight: normal;
+	color: #424242;
+	overflow: hidden;
+	position:relative;
+	z-index:66;
+}
+.customer a{
+	display:block;
+	width:100px;
+	height:auto;
+}
+.cost{
+	position:relative;
+	height:145px;
+	padding:0 20px;
+	overflow:hidden;
+}
+.customer{
+	position:absolute;;
+	left:0;
+	top:0;
+	width:auto;
+	clear:both;
+}
+.customer li{
+	float:left;
+	list-style:none;
+	box-sizing: border-box;
+	width:100px;
+	margin:0 22px;
+	height:140px;
+}
+.new-header {
+	padding:5px 0;
+	background: #f2f2f2;
+}
+
+.new-tit {
+	position: relative;
+	width: 98%;
+	margin: 0 auto;
+	padding: 6px 0;
+	font-size: 1.4em;
+	color: #333;
+}
+.new-tit span {
+	display: inline-block;
+	width: 10%;
+	vertical-align: -6px;
+}
+.index-ul {
+	width: 100%;
+	overflow: hidden;
+}
+.index-ul li {
+	width: 33%;
+	box-sizing: border-box;
+	padding:10px 2px;
+	border-right:1px solid #f2f2f2;
+	border-bottom:1px solid #f2f2f2;
+	background: #fff;
+	float: left;
+	display: block;
+	overflow: hidden;
+}
+.index-ul li a {
+	display: block;
+}
+.index-ul li img {
+	display: block;
+	width: auto;
+	height: 55px;
+	margin: 0 auto;
+}
+.index-ul li h3 {
+	height: 20px;
+	text-align: center;
+	margin-top: 15px;
+	font-size: 1em;
+	font-weight: normal;
+	color: #424242;
+	overflow: hidden;
+	position:relative;
+	z-index:666;
+}
+.index-ul li span {
+	text-align: center;
+	display: block;
+}
+.index-ul li span strong {
+	font-weight: 600;
+	font-size: 0.85em;
+	color: #e45050;
+}

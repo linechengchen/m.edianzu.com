@@ -1,0 +1,29 @@
+﻿{
+	"开始1地址":"/customer/getCustomerAddress?id=26057&timestamp=1495201945924=引用自=https://m.edianzu.com/order",
+	"头文件":"Accept=application/json, text/javascript, */*; q=0.01 & Origin=https://m.edianzu.com & X-Requested-With=XMLHttpRequest & Referer=https://m.edianzu.com/order & Accept-Language=zh-CN,zh;q=0.8 & Cookie=gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495201718; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1 & ",
+	"新cookie":"{
+		{
+			gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495201718; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1
+		}
+	}",
+	"结束":"结束1",
+	"code":0,
+	"message":null,
+	"data":{
+		"id":26057,
+		"customerId":10004803,
+		"name":"123",
+		"address":"12321313231",
+		"phone":"18324254558",
+		"provinceId":2,
+		"bcityId":17,
+		"scityId":2588,
+		"isDefault":"有效",
+		"status":"有效",
+		"cdate":null,
+		"mdate":null,
+		"provinceName":"北京",
+		"bcityName":"北京市",
+		"scityName":"延庆县"
+	}
+}

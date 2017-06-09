@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B67DC77-ABA6-4BF9-AB30-CDD245743EF7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgileFrame.Orm.PersistenceLayer.Model</RootNamespace>
+    <AssemblyName>shuatiORM</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AgileFrame.Common">
+      <HintPath>bin\AgileFrame.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="AgileFrame.Core, Version=3.1.2014.405, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AgileFrame.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AgileFrame.Core.WebSystem">
+      <HintPath>bin\AgileFrame.Core.WebSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="AgileFrame.Core.WinForm">
+      <HintPath>bin\AgileFrame.Core.WinForm.dll</HintPath>
+    </Reference>
+    <Reference Include="AgileFrame.NamedPipes.Server">
+      <HintPath>bin\AgileFrame.NamedPipes.Server.exe</HintPath>
+    </Reference>
+    <Reference Include="AgileFrame.Orm.PersistenceLayer, Version=3.1.2014.401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AgileFrame.Orm.PersistenceLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Commons, Version=0.4.2.8580, Culture=neutral, PublicKeyToken=44382d1b57473eda">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="Dos.Common, Version=1.0.8.8, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Dos.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Dos.WeChat, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Dos.WeChat.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>bin\LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Memcached.ClientLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42c0400964dcc297, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Memcached.ClientLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>bin\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Compact, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.Compact.dll</HintPath>
+    </Reference>
+    <Reference Include="RedisService.vshost">
+      <HintPath>bin\RedisService.vshost.exe</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>bin\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.4321.41956, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=3.0.0.41978, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=3.0.1.41944, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="shuatiORM">
+      <HintPath>bin\shuatiORM.dll</HintPath>
+    </Reference>
+    <Reference Include="shuatiORM.vshost">
+      <HintPath>bin\shuatiORM.vshost.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Json, Version=1.0.2821.20109, Culture=neutral, PublicKeyToken=e0b9c68a59fc9efd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Net.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>bin\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="缓存运行监控与调度.vshost">
+      <HintPath>bin\缓存运行监控与调度.vshost.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasePageShuati.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HttpHandler\MyModule.cs" />
+    <Compile Include="JavaScriptSerializer.cs" />
+    <Compile Include="JiaMi\AESHelper.cs" />
+    <Compile Include="BaseJsonPage.cs" />
+    <Compile Include="BLL\BLL1.cs" />
+    <Compile Include="BLL\BLL233.cs" />
+    <Compile Include="BLL\BLL3.cs" />
+    <Compile Include="JiaMi\Base64.cs" />
+    <Compile Include="JiaMi\DESHelper.cs" />
+    <Compile Include="JiaMi\KaiSha.cs" />
+    <Compile Include="Json\JsonObjectTest.cs" />
+    <Compile Include="Json\JsonResult.cs" />
+    <Compile Include="Json\JsonUtil.cs" />
+    <Compile Include="BLL\pinyin.cs" />
+    <Compile Include="BLL\QuestionInfo.cs" />
+    <Compile Include="Json\JsonService.cs" />
+    <Compile Include="Json\Myrequest.cs" />
+    <Compile Include="Json\RootObject-Data.cs" />
+    <Compile Include="Json\RootObject.cs" />
+    <Compile Include="Longitude.cs" />
+    <Compile Include="Memcached\CacheService.cs" />
+    <Compile Include="Model\Cart11.cs" />
+    <Compile Include="Model\del1_VTimuDaXue.cs" />
+    <Compile Include="Model\del_VTimuDaXue.cs" />
+    <Compile Include="Model\del_VTimuDaXueErrorInfo.cs" />
+    <Compile Include="Model\Jsj_entry.cs" />
+    <Compile Include="Model\Jsj_form.cs" />
+    <Compile Include="Model\Jsj_x_field_weixin_province_city.cs" />
+    <Compile Include="Model\Jz_areas.cs" />
+    <Compile Include="Model\Jz_byFilter.cs" />
+    <Compile Include="Model\Jz_childrenPartJobClassifications.cs" />
+    <Compile Include="Model\Jz_company.cs" />
+    <Compile Include="Model\Jz_evaluationStar.cs" />
+    <Compile Include="Model\Jz_jobPhoto.cs" />
+    <Compile Include="Model\Jz_partJobEvaluations.cs" />
+    <Compile Include="Model\Jz_partJobs.cs" />
+    <Compile Include="Model\Jz_resume.cs" />
+    <Compile Include="Model\Jz_shareContentClassifys.cs" />
+    <Compile Include="Model\Jz_town.cs" />
+    <Compile Include="Model\Jz_userApplyManages.cs" />
+    <Compile Include="Model\Jz_userEducation.cs" />
+    <Compile Include="Model\Jz_userImages.cs" />
+    <Compile Include="Model\Jz_userTagVOs.cs" />
+    <Compile Include="Model\St_kemuInfo.cs" />
+    <Compile Include="Model\St_kemuInfo_q_sum.cs" />
+    <Compile Include="Model\St_kemuInfo_zs.cs" />
+    <Compile Include="Model\St_Paper233.cs" />
+    <Compile Include="Model\St_TArticleComments.cs" />
+    <Compile Include="Model\St_TiMu233.cs" />
+    <Compile Include="Model\St_TiMuJiaoKao.cs" />
+    <Compile Include="Model\St_TkemuInfoSc.cs" />
+    <Compile Include="Model\St_TPaper.cs" />
+    <Compile Include="Model\St_TQuestionJiuCuo.cs" />
+    <Compile Include="Model\St_TTimuDaXue.cs" />
+    <Compile Include="Model\St_TTimuDaXue2.cs" />
+    <Compile Include="Model\St_TTimuDaXueErrorInfo.cs" />
+    <Compile Include="Model\St_TTimuDaXueErrorInfoHistory.cs" />
+    <Compile Include="Model\St_TUserZsInfo.cs" />
+    <Compile Include="Model\St_TUserZsInfo2.cs" />
+    <Compile Include="Model\St_TzsInfo.cs" />
+    <Compile Include="Model\St_TzsTypeInfo.cs" />
+    <Compile Include="Model\TagType.cs" />
+    <Compile Include="Model\Tapply.cs" />
+    <Compile Include="Model\TCity.cs" />
+    <Compile Include="Model\TClientInfo.cs" />
+    <Compile Include="Model\TComUser.cs" />
+    <Compile Include="Model\TDepartment.cs" />
+    <Compile Include="Model\TErrQestionPhoto.cs" />
+    <Compile Include="Model\TggInfo.cs" />
+    <Compile Include="Model\THighSchool.cs" />
+    <Compile Include="Model\Tid.cs" />
+    <Compile Include="Model\TKemuType.cs" />
+    <Compile Include="Model\TSchool.cs" />
+    <Compile Include="Model\TscWxInfo.cs" />
+    <Compile Include="Model\TSearchKeyword.cs" />
+    <Compile Include="Model\TUserInfo.cs" />
+    <Compile Include="Model\TUserPay.cs" />
+    <Compile Include="Model\TUserRecharge.cs" />
+    <Compile Include="Model\TWechatUserInfo.cs" />
+    <Compile Include="Model\UnionAuth.cs" />
+    <Compile Include="Model\Vkemu.cs" />
+    <Compile Include="Model\VSchool.cs" />
+    <Compile Include="Model\VUserInfo.cs" />
+    <Compile Include="Model\VzsInfo.cs" />
+    <Compile Include="Model\V_index.cs" />
+    <Compile Include="Model\v_Jz_childrenPartJobClassifications.cs" />
+    <Compile Include="Model\v_jz_userApplyManages.cs" />
+    <Compile Include="Model\v_xt_course.cs" />
+    <Compile Include="Model\v_xt_courseTask.cs" />
+    <Compile Include="Model\v_xt_courseVideo.cs" />
+    <Compile Include="Model\v_xt_student_task.cs" />
+    <Compile Include="Model\Wx_pay.cs" />
+    <Compile Include="Model\WX_USER_INFO.cs" />
+    <Compile Include="Model\Xb_byFilter.cs" />
+    <Compile Include="Model\Xb_comment_item.cs" />
+    <Compile Include="Model\Xb_course.cs" />
+    <Compile Include="Model\Xb_course_detail.cs" />
+    <Compile Include="Model\Xb_course_yuyue.cs" />
+    <Compile Include="Model\Xb_index_buttons.cs" />
+    <Compile Include="Model\Xb_index_tips.cs" />
+    <Compile Include="Model\Xb_index_video.cs" />
+    <Compile Include="Model\Xb_lession_appointInfo.cs" />
+    <Compile Include="Model\Xb_lessonsRecord.cs" />
+    <Compile Include="Model\Xb_order_course_comments.cs" />
+    <Compile Include="Model\Xb_ParentYaoQiu.cs" />
+    <Compile Include="Model\Xb_phrase.cs" />
+    <Compile Include="Model\Xb_product.cs" />
+    <Compile Include="Model\Xb_product_adPay.cs" />
+    <Compile Include="Model\Xb_product_type.cs" />
+    <Compile Include="Model\Xb_product_type_feature.cs" />
+    <Compile Include="Model\Xb_renwu.cs" />
+    <Compile Include="Model\Xb_response.cs" />
+    <Compile Include="Model\Xb_resume.cs" />
+    <Compile Include="Model\Xb_student.cs" />
+    <Compile Include="Model\Xb_student_info.cs" />
+    <Compile Include="Model\Xb_TeacherResume2.cs" />
+    <Compile Include="Model\Xb_teacherTagVOs.cs" />
+    <Compile Include="Model\Xb_teacher_course_time.cs" />
+    <Compile Include="Model\Xb_teacher_resume.cs" />
+    <Compile Include="Model\Xb_teacher_schedule.cs" />
+    <Compile Include="Model\Xb_teacher_score.cs" />
+    <Compile Include="Model\Xb_teacher_student_fav.cs" />
+    <Compile Include="Model\Xb_teacher_student_comment.cs" />
+    <Compile Include="Model\Xb_teacher_student_score.cs" />
+    <Compile Include="Model\Xb_videoInfo.cs" />
+    <Compile Include="Model\Xc_coach.cs" />
+    <Compile Include="Model\Xc_coach_comment.cs" />
+    <Compile Include="Model\Xs_book.cs" />
+    <Compile Include="Model\Xs_bookCategory.cs" />
+    <Compile Include="Model\Xs_bookCategoryRelation.cs" />
+    <Compile Include="Model\Xs_bookSc.cs" />
+    <Compile Include="Model\Xs_TCoupon.cs" />
+    <Compile Include="Model\Xs_Twish.cs" />
+    <Compile Include="Model\Xt_Article.cs" />
+    <Compile Include="Model\Xt_category.cs" />
+    <Compile Include="Model\xt_classIndex.cs" />
+    <Compile Include="Model\Xt_college.cs" />
+    <Compile Include="Model\Xt_course.cs" />
+    <Compile Include="Model\Xt_course_article.cs" />
+    <Compile Include="Model\Xt_course_group.cs" />
+    <Compile Include="Model\xt_course_list.cs" />
+    <Compile Include="Model\Xt_course_task.cs" />
+    <Compile Include="Model\Xt_course_test.cs" />
+    <Compile Include="Model\Xt_course_video.cs" />
+    <Compile Include="Model\Xt_discuss.cs" />
+    <Compile Include="Model\Xt_discuss_comment.cs" />
+    <Compile Include="Model\Xt_historySignList.cs" />
+    <Compile Include="Model\Xt_kemuClassifications.cs" />
+    <Compile Include="Model\Xt_knowledge.cs" />
+    <Compile Include="Model\Xt_note.cs" />
+    <Compile Include="Model\Xt_notice.cs" />
+    <Compile Include="Model\Xt_sign.cs" />
+    <Compile Include="Model\Xt_student.cs" />
+    <Compile Include="Model\Xt_student_course.cs" />
+    <Compile Include="Model\Xt_student_note.cs" />
+    <Compile Include="Model\Xt_student_sign.cs" />
+    <Compile Include="Model\Xt_student_task.cs" />
+    <Compile Include="Model\Xt_student_task_result.cs" />
+    <Compile Include="Model\Xt_student_test.cs" />
+    <Compile Include="Model\Xt_student_test_result.cs" />
+    <Compile Include="Model\Xt_subject_photo.cs" />
+    <Compile Include="Model\Xt_task.cs" />
+    <Compile Include="Model\Xt_teacher.cs" />
+    <Compile Include="Model\Xt_test.cs" />
+    <Compile Include="Model\Xt_TimuDaXue.cs" />
+    <Compile Include="Model\Xt_video.cs" />
+    <Compile Include="Model\Zy_book.cs" />
+    <Compile Include="Model\Zy_bookKeywordTips.cs" />
+    <Compile Include="Model\Zy_bookSc.cs" />
+    <Compile Include="Model\Zy_bookType.cs" />
+    <Compile Include="Model\Zy_chapter.cs" />
+    <Compile Include="Page\BasePageCookie.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScHelper.cs" />
+    <Compile Include="WebGet.cs" />
+    <Compile Include="WebHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="wxCommon\CommandInfo.cs" />
+    <Compile Include="wxCommon\Common.cs" />
+    <Compile Include="wxCommon\Cryptography.cs" />
+    <Compile Include="wxCommon\DbHelperSQL.cs" />
+    <Compile Include="wxCommon\DESEncrypt.cs" />
+    <Compile Include="wxCommon\JsonHelper.cs" />
+    <Compile Include="wxCommon\PubConstant.cs" />
+    <Compile Include="wxCommon\Sample.cs" />
+    <Compile Include="wxCommon\WXBizMsgCrypt.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="微信支付接口\WxPayApi.cs" />
+    <Compile Include="微信支付接口\WxPayConfig.cs" />
+    <Compile Include="微信支付接口\WxPayData.cs" />
+    <Compile Include="微信支付接口\ITenPayApi.cs" />
+    <Compile Include="微信支付接口\WxPayOrderData.cs" />
+    <Compile Include="用户模块\UserHelper.cs" />
+    <Compile Include="短信\Sms.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonService\AgileFrame.Core.ShuatiCommon.csproj">
+      <Project>{414dd2e4-29cf-4a74-bd0c-53b7d7396a70}</Project>
+      <Name>AgileFrame.Core.ShuatiCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Memcached\config.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="微信支付接口\登录\" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="MyApplication.app, Version=1.0.0.0">
+      <Name>缓存运行监控与调度.vshost.exe.manifest</Name>
+      <HintPath>bin\缓存运行监控与调度.vshost.exe.manifest</HintPath>
+    </NativeReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

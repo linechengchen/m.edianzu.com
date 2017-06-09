@@ -1,0 +1,814 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AgileFrame.Core.WebSystem</name>
+    </assembly>
+    <members>
+        <member name="T:AgileFrame.Core.WebSystem.SysConfig">
+            <summary>
+            SysConfig 的摘要说明
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.WebSystem.SysConfig.PAGESIZE">
+            <summary>
+            页数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.WebSystem.SysConfig.UrlRewriter">
+            <summary>
+            是否使用url重写
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.WebSystem.SysConfig.PagingImgPath">
+            <summary>
+            分页图片所在目录
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.WebSystem.SysConfig.AdminPath">
+            <summary>
+            管理目录
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.WebSystem.SysConfig.mSiteDirName">
+            <summary>
+            网站目录
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Core.WebSystem.SysConfig.AdminDirName">
+            <summary>
+            管理目录
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Core.WebSystem.SysConfig.ApplicationPath">
+            <summary>
+            获取程序根目录
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Core.WebSystem.ClipboardService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Core.WebSystem.DateTimePicker">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:System.Web.UI.FormHelper">
+            <summary>
+            界面处理业务类，主要处理各种状态数据与界面之间的转换；实现识别自增长控件，下拉框控件等。
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Factory(System.String)">
+            <summary>
+            输入数据源连接关键字 connectStr 可以是 web.config/app.config 的节点，可以直接是连接字符串；两者的区别以 是否包含 "="符号 来判断
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetOptionHtml(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,AgileFrame.Core.BaseCtrlType,System.Web.UI.WebControls.ListItem[],System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetListItem(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,System.Collections.Generic.List{AgileFrame.Orm.PersistenceLayer.Model.AttributeItem},System.Object,AgileFrame.Orm.PersistenceLayer.Model.ITableImplement)">
+            <summary>
+            带条件 初始化网页多选项，输出html
+            </summary>
+            <returns></returns> 
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetListItem(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem)">
+            <summary>
+            枚举列表，输出ListItem
+            </summary>
+            <param name="BindAttributeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetListItem(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,System.Object)">
+            <summary>
+            枚举列表，输出ListItem
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetListItem(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem)">
+            <summary>
+            外键关联，输出ListItem
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetListItem(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,System.Object)">
+            <summary>
+            外键关联，输出html
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetListItem(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,System.Object,AgileFrame.Orm.PersistenceLayer.Model.ITableImplement)">
+            <summary>
+            外键关联，输出html
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Bind(System.Web.UI.Page,System.Collections.Generic.Dictionary{AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,System.Collections.Generic.List{System.Object}})">
+            <summary>
+            绑定列表顶部的下拉数据项
+            </summary>
+            <param name="page"></param>
+            <param name="dic"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Bind(System.Web.UI.WebControls.DropDownList,System.Collections.Generic.List{System.Object})">
+            <summary>
+            把列数据项绑定到制定的DROPDOWNLIST
+            </summary>
+            <param name="ddl"></param>
+            <param name="lst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.ToDictionary(System.Web.UI.WebControls.ListItem[])">
+            <summary>
+            将ListItem加入Dictionary中
+            </summary>
+            <param name="tmpListItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetText(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,System.Object)">
+            <summary>
+            按值来取，按0取男，按1取女
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetValue(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,System.Object)">
+            <summary>
+            按含义来取值，按男取0，按女取1
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.NoCache">
+            <summary>
+            让js在调试期不被缓存。发布之后可以被缓存
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.UrlEncode(System.Object)">
+            <summary>
+            脚本处理Encode
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Escape(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.UnEscape(System.String)">
+            <summary>
+            脚本处理Escape
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetString``1(``0)">
+            <summary>
+            获得html页中的值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.ToJson``1(``0)">
+            <summary>
+            实体对象转换为Json字符串
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.ToJson(System.Object)">
+            <summary>
+            实体对象转换为Json字符串
+            </summary>
+            <param name="jsonObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.FromJson``1(System.String)">
+            <summary>
+            转换Json对象(字符串)为实体对象
+            </summary>
+            <param name="jsonObject">Json对象(字符串)</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.FromJsonDetail(System.String)">
+            <summary>
+            返回 ITableImplement
+            </summary>
+            <param name="jsonObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.FromJson(System.String)">
+            <summary>
+            转换Json对象(字符串)为实体对象
+            </summary>
+            <param name="jsonObject">Json对象(字符串)</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetUrlExtension(System.Object)">
+            <summary>
+            url解析：从http://.../a/j/dm3/main.jsp?sid=1获得 sid=1
+            </summary>
+            <param name="fullurl1"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetUrlPath(System.Object)">
+            <summary>
+            url解析：http://.../a/j/dm3/main.jsp?sid=1获得 http://.../a/j/dm3/
+            </summary>
+            <param name="fullurl1"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetUrlWithoutExtension(System.Object)">
+            <summary>
+            url解析：http://.../a/j/dm3/main.jsp?sid=1获得 http://.../a/j/dm3/main.jsp
+            </summary>
+            <param name="fullurl1"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.GetUrlExtensionWithoutAction(System.Object)">
+            <summary>
+            url解析
+            </summary>
+            <param name="fullurl1"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.#ctor(AgileFrame.Orm.PersistenceLayer.Model.ITableImplement)">
+            <summary>
+            
+            </summary>
+            <param name="ib"></param>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.#ctor(System.Web.UI.Page)">
+            <summary>
+            
+            </summary>
+            <param name="page"></param>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Bind``1(System.Web.UI.HtmlControls.HtmlContainerControl,System.Collections.Generic.List{``0})">
+            <summary>
+            绑定轻量级html模板容器
+            </summary>
+            <typeparam name="MyTable"></typeparam>
+            <param name="control"></param>
+            <param name="list"></param>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Bind(System.Web.UI.HtmlControls.HtmlContainerControl,System.Collections.Generic.List{AgileFrame.Orm.PersistenceLayer.Model.ITableImplement})">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <param name="list"></param>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Bind(System.Web.UI.HtmlControls.HtmlContainerControl,System.Collections.Generic.List{System.Collections.Generic.List{AgileFrame.Orm.PersistenceLayer.Model.ITableImplement}},System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <param name="valueListList"></param>
+            <param name="IsZhColumnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Get(System.String,System.Collections.Generic.List{System.Collections.Generic.List{AgileFrame.Orm.PersistenceLayer.Model.ITableImplement}},System.Boolean)">
+            <summary>
+            模板解析
+            </summary>
+            <param name="templateStr"></param>
+            <param name="valueListList"></param>
+            <param name="IsZhColumnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Get``1(System.String,System.Collections.Generic.List{``0})">
+            <summary>
+            模板解析
+            </summary>
+            <param name="templateStr"></param>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Get(System.String,System.Collections.Generic.List{AgileFrame.Orm.PersistenceLayer.Model.ITableImplement})">
+            <summary>
+            模板解析
+            </summary>
+            <param name="templateStr"></param>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Get(System.String,AgileFrame.Orm.PersistenceLayer.Model.ITableImplement,System.Collections.Generic.List{AgileFrame.Orm.PersistenceLayer.Model.AttributeItem})">
+            <summary>
+            模板解析
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.InitComboxValue(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,System.Object)">
+            <summary>
+            初始化网页多选项，输出html
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.InitComboxValue(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,System.Object,AgileFrame.Orm.PersistenceLayer.BLL.Base.Form_Type)">
+            <summary>
+            初始化网页多选项，输出html
+            </summary>
+            <param name="BindAttributeName"></param>
+            <param name="value"></param>
+            <param name="mForm_Type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.InitComboxValue(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,System.Object,AgileFrame.Orm.PersistenceLayer.BLL.Base.Form_Type)">
+            <summary>
+            
+            </summary>
+            <param name="BindAttributeName"></param>
+            <param name="value"></param>
+            <param name="mForm_Type"></param>
+            <param name="DisplayAttributeName">显示数据源</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.InitComboxValue(AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,System.Collections.Generic.List{AgileFrame.Orm.PersistenceLayer.Model.AttributeItem},System.Object,AgileFrame.Orm.PersistenceLayer.BLL.Base.Form_Type,AgileFrame.Orm.PersistenceLayer.Model.ITableImplement)">
+            <summary>
+            带条件 初始化网页多选项，输出html
+            </summary>
+            <returns></returns> 
+        </member>
+        <member name="M:System.Web.UI.FormHelper.SetTableValue(AgileFrame.Orm.PersistenceLayer.Model.ITableImplement,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,AgileFrame.Orm.PersistenceLayer.BLL.Base.Form_Type)">
+            <summary>
+            从http.Request中读取属性到实体对象中
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.SetTableValue(AgileFrame.Orm.PersistenceLayer.Model.ITableImplement,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem)">
+            <summary>
+            从http.Request中读取属性到实体对象中
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.SaveListItem(System.Web.UI.Page,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem,AgileFrame.Orm.PersistenceLayer.Model.AttributeItem)">
+            <summary>
+            每个读取页里面调用一次这个函数，每页就读取一次。
+            </summary>
+            <param name="BindAttributeName">被绑定的目标属性</param>
+            <param name="ValueAttributeName">值属性</param>
+            <param name="DisplayAttributeName">显示属性</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.ResponseScript(System.Web.UI.Page,System.String,System.Boolean)">
+            <summary>
+            输出自定义脚本信息
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="script">输出脚本</param>
+            <param name="isDefer">是否等页面加载完再弹出信息</param>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.Alert(System.Web.UI.Page,System.String)">
+            <summary>
+            弹出提示框
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.CloseMe(System.Web.UI.Page)">
+            <summary>
+            关闭窗口
+            </summary>
+            <param name="page"></param>
+        </member>
+        <member name="M:System.Web.UI.FormHelper.AlertAndGo(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            弹出提示框
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+            <param name="url">转向的页路径</param>
+        </member>
+        <member name="T:AgileFrame.Core.WebSystem.ScriptHelper2">
+            <summary>
+            脚本服务
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Core.ScriptHelper">
+            <summary>
+            脚本服务
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.ScriptHelper.ResponseScript(System.Web.UI.Page,System.String,System.Boolean)">
+            <summary>
+            输出自定义脚本信息 RegisterClientScriptBlock
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="script">输出脚本</param>
+            <param name="isDefer">是否等页面加载完再弹出信息</param>
+        </member>
+        <member name="M:AgileFrame.Core.ScriptHelper.Alert(System.Web.UI.Page,System.String)">
+            <summary>
+            弹出提示框
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:AgileFrame.Core.ScriptHelper.CloseMe(System.Web.UI.Page)">
+            <summary>
+            关闭窗口
+            </summary>
+            <param name="page"></param>
+        </member>
+        <member name="M:AgileFrame.Core.ScriptHelper.AlertAndGo(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            弹出提示框
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+            <param name="url">转向的页路径</param>
+        </member>
+        <member name="M:AgileFrame.Core.ScriptHelper.ResponseScriptToEnd(System.Web.UI.Page,System.String,System.Boolean)">
+            <summary>
+            输出自定义脚本信息 RegisterStartupScript
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="script">输出脚本</param>
+            <param name="isDefer">是否等页面加载完再弹出信息</param>
+        </member>
+        <member name="M:AgileFrame.Core.ScriptHelper.CloseTopWin(System.Web.UI.Page)">
+            <summary>
+            不提示关闭整个外部框架页
+            </summary>
+            <param name="page"></param>
+        </member>
+        <member name="M:AgileFrame.Core.ScriptHelper.WarnAndGo(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            弹出提示并且确定是否转到对应的页面
+            </summary>
+            <param name="page"></param>
+            <param name="msg">提示信息</param>
+            <param name="url">转向的页路径</param>
+        </member>
+        <member name="M:AgileFrame.Core.ScriptHelper.WarnAndGo(System.Web.UI.Page,System.String,System.String,System.String)">
+            <summary>
+            弹出提示并且确定是否转到对应的页面
+            </summary>
+            <param name="page"></param>
+            <param name="msg">提示信息</param>
+            <param name="url">转向的页路径</param>
+            <param name="noUrl">选择取消时转向的页路径</param>
+        </member>
+        <member name="T:AgileFrame.Core.WebSystem.JsonService">
+            <summary>
+            Json服务
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.JsonService.ToJson(System.Object)">
+            <summary>
+            为url写的缩略型json串
+            </summary>
+            <param name="jsonObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.JsonService.ObjectToJson(System.Object)">
+            <summary>
+            从一个对象信息生成Json串 利用JavaScriptConvert
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.JsonService.JsonToObject(System.String,System.Object)">
+            <summary>
+            利用 JavaScriptConvert  从一个Json串生成对象信息
+            </summary>
+            <param name="jsonString"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.JsonService.FromJson(System.String)">
+            <summary>
+            为url写的缩略型json串 js转换为对象
+            </summary>
+            <param name="jsonStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Core.WebSystem.MessageBox">
+            <summary>
+            MessageBox 的摘要说明
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowLoginWithReturnUrl(System.String)">
+            <summary>
+            显示登录信息失效信息
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowLogin">
+            <summary>
+            显示登录信息失效信息
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowLogin(System.String)">
+            <summary>
+            显示登录信息失效信息
+            </summary>
+            <param name="messageStr">显示信息</param>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowLogin(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="messageStr"></param>
+            <param name="returnUrl"></param>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.Show(System.String)">
+            <summary>
+            显示错误信息
+            </summary>
+            <param name="messageStr">错误信息</param>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ParentShowError(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="messageStr"></param>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ParentShowSuccess(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="messageStr"></param>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowError(System.String)">
+            <summary>
+            显示错误信息
+            </summary>
+            <param name="messageStr">错误信息</param>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowError(System.String,System.String)">
+            <summary>
+            显示错误信息
+            </summary>
+            <param name="messageStr">错误信息</param>
+            <param name="url">返回地址</param>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowSuccess(System.String)">
+            <summary>
+            显示成功信息
+            </summary>
+            <param name="messageStr">成功信息</param>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowSuccess(System.String,System.String)">
+            <summary>
+            显示成功信息
+            </summary>
+            <param name="messageStr">成功信息</param>
+            <param name="url">返回地址</param>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowInsert(System.String)">
+            <summary>
+            显示插入信息
+            </summary>
+            <param name="messageStr">信息</param>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowInsert">
+            <summary>
+            显示插入信息,默认文字为插入成功！
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowUpdate``1(``0,System.String)">
+            <summary>
+            显示插入信息
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowAdvanceSearch``1(``0,System.String)">
+            <summary>
+            显示插入信息
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.ShowUpdate">
+            <summary>
+            显示插入信息,默认文字为插入成功！
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.Js(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="js"></param>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MessageBox.InnerJs(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="js"></param>
+        </member>
+        <member name="P:AgileFrame.Core.WebSystem.MessageBox.InsertUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Core.WebSystem.MessageBox.EditUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Core.WebSystem.MessageBox.ManageUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Core.WebSystem.HtmlHelper">
+             <summary>
+            HtmlHelper 的摘要说明
+             </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.HtmlHelper.GetSubString(System.String,System.Int32)">
+            <summary>
+            截取文本字符串
+            </summary>
+            <param name="str"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.HtmlHelper.GetSummary(System.Object)">
+            <summary>
+            截取包含HTML的字符串，默认200长度
+            </summary>
+            <param name="content">源内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.HtmlHelper.GetSummary(System.Object,System.Int32)">
+            <summary>
+            截取包含HTML的字符串
+            </summary>
+            <param name="content">源内容</param>
+            <param name="length">提取长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.HtmlHelper.GetContentSummary(System.Object,System.Int32)">
+            <summary>
+            截取包含HTML的字符串
+            </summary>
+            <param name="content">源内容</param>
+            <param name="length">提取长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.HtmlHelper.GetContentSummary(System.Object,System.Int32,System.Boolean)">
+            <summary>
+            提取摘要，是否清除HTML代码
+            </summary>
+            <param name="content">源内容</param>
+            <param name="length">提取长度</param>
+            <param name="StripHTML">是否清除 HTML</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.HtmlHelper.GetSubContent(System.String)">
+            <summary>        
+            截取部分Html内容        
+            </summary>       
+            <param name="strHtml"></param>        
+            <returns></returns>        
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.HtmlHelper.subStringHTML(System.String,System.Int32,System.String)">
+            ==================最近开发一个项目，其中用到截取带html标记得字符串得功能，
+            于是就参考一些文档写了这样一个方法来截取字符串，希望对大家的项目开发有帮助，全部代码如下：
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.HtmlHelper.AddVideoHtml(System.String,System.String,System.String)">
+            <summary>
+            插入视频播放HTML
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Core.WebSystem.WebHelper">
+             <summary>
+            PageHelper 的摘要说明
+             </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.GetAppPath">
+            <summary>
+            获取站点虚拟目录字符串，"/"或"/虚拟目录名/"
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.GetAppUrl">
+            <summary>
+            获取站点地址前缀，包含/,，如：http://192.168.2.0:88/虚拟目录名/或http://192.168.2.0:88/
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.GetPageUrl">
+            <summary>
+            获取除了页面前缀"http://192.168.2.0:88/虚拟目录名/或http://192.168.2.0:88/"之后的页面地址,包含参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.GetPagePath">
+            <summary>
+            获取除了页面前缀"http://192.168.2.0:88/虚拟目录名/或http://192.168.2.0:88/"之后的页面目录,不包含参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.GetPreUrl">
+            <summary>
+            获取站点地址前缀，包含/,，如：http://192.168.2.0:88/site/或http://192.168.2.0:88/
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.GetDirPath">
+            <summary>
+            获取除了页面前缀"http://192.168.2.0:88/site/或http://192.168.2.0:88/"之后的页面目录地址,包含参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.GetPathAndQuery">
+            <summary>
+            获取除了主机前缀的页面绝对路径，如"/Site/Admin/ArtBase/Manage.aspx?LChnlID=02或/Admin/ArtBase/Manage.aspx?LChnlID=02"
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.GetPageDir">
+            <summary>
+            获取页面除了前缀的目录地址，如"/Site/Admin/ArtBase/或/Admin/ArtBase/"
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.GenerateCheckCode">
+            <summary>
+            生成随机数,为验证码服务
+            </summary>
+            <returns>生成的随机字符串</returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.CreateCheckCodeImage">
+            <summary>
+            生成验证码图片
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.getSpells(System.String)">
+            <summary>
+            获取一个或多个汉字的第一个拼音组合
+            </summary>
+            <param name="input">一个或多个汉字</param>
+            <returns>多个汉字第一个拼音大写字母组合</returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.WebHelper.getSpell(System.String)">
+            <summary>
+            获取一个汉字第一个拼音
+            </summary>
+            <param name="cn">一个汉字</param>
+            <returns>一个汉字第一个拼音大写字母</returns>
+        </member>
+        <member name="T:AgileFrame.Core.WebSystem.Base.Web_DataGridView">
+            <summary>
+            功能比较ＢＴ，就是根据设置来让DataGridView的列动态显示，
+            我知道在Windows Forms下的DataGridView里的DataColumn里有个DisplayIndex的属性，可是在Web里却怎么也找不到。
+            不过后来还是搞定了，把代码记下来，以免以后用到。
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Core.WebSystem.MyJsonTool">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MyJsonTool.GetObjectProperty(AgileFrame.Orm.PersistenceLayer.Model.ITable)">
+                      * 对象的全部属性和属性值。用于填写json的{}内数据
+                      * 生成后的格式类似
+                      * "属性1":"属性值"
+                     * 将这些属性名和属性值写入字符串列表返回
+                      * 
+        </member>
+        <!-- 对于成员“M:AgileFrame.Core.WebSystem.MyJsonTool.Handle(System.Object)”忽略有格式错误的 XML 注释 -->
+        <member name="M:AgileFrame.Core.WebSystem.MyJsonTool.OneObjectToJSON(AgileFrame.Orm.PersistenceLayer.Model.ITable)">
+             将一个对象的所有属性和属性值按json的格式要求输入为一个封装后的结果。
+            
+             返回值类似{"属性1":"属性1值","属性2":"属性2值","属性3":"属性3值"}
+             
+             
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MyJsonTool.ToJSON``1(System.Collections.Generic.List{``0})">
+            把对象列表转换成json串
+            
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MyJsonTool.ToJSON``1(System.Collections.Generic.List{``0},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="objlist"></param>
+            <param name="classname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MyJsonTool.GetObjectProperty(System.Object)">
+                      * 对象的全部属性和属性值。用于填写json的{}内数据
+                      * 生成后的格式类似
+                      * "属性1":"属性值"
+                     * 将这些属性名和属性值写入字符串列表返回
+                      * 
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MyJsonTool.OneObjectToJSON(System.Object)">
+             将一个对象的所有属性和属性值按json的格式要求输入为一个封装后的结果。
+            
+             返回值类似{"属性1":"属性1值","属性2":"属性2值","属性3":"属性3值"}
+             
+             
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MyJsonTool.ToJSON(System.Collections.Generic.List{System.Object})">
+            把对象列表转换成json串
+            
+        </member>
+        <member name="M:AgileFrame.Core.WebSystem.MyJsonTool.ToJSON(System.Collections.Generic.List{System.Object},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="objlist"></param>
+            <param name="classname"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

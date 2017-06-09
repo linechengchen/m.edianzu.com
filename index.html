@@ -1,0 +1,801 @@
+﻿<!--开始1
+"头文件":"Upgrade-Insecure-Requests=1 & Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8 & Referer=https://m.edianzu.com/toRegisterImprove & Accept-Language=zh-CN,zh;q=0.8 & Cookie=gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495201526; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1 & ",
+"新cookie":"{{gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495201526; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1}}",结束1-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="/css/public.css?version=2017_05_18_18_39_44" />
+		<link rel="stylesheet" type="text/css" href="/css/style.css?version=2017_05_18_18_39_44" />
+		<link rel="stylesheet" type="text/css" href="/css/wap-new.css?version=2017_05_18_18_39_44" />
+
+		<script type="text/javascript" src="plugin/jquery/jquery.js"></script>
+		<script type="text/javascript" src="/js/util/utils.js?version=2017_05_18_18_39_44"></script>
+		<script type="text/javascript" src="/js/util/common.js?version=2017_05_18_18_39_44"></script>
+		<script type="text/javascript" src="/js/vue.js"></script>
+		<style type="text/css">
+			` header.header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				padding: 2px 6px;
+				background: url(images/header_bg.png) repeat-x;
+				border-bottom: 0;
+				z-index: 999;
+				height: auto;
+				box-sizing: border-box;
+				-webkit-appearance: none;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="header">
+
+			<script>
+				$(document).ready(function() {
+                 var url="/index.ashx";
+                 	var data = {};
+					Utils.doRequestAjax(url, data, 'json', false, function(result) {
+                           if(result.code=200)
+                           {
+                           	data=result;
+                           }
+						
+					}, function(response, XMLHttpRequest, textStatus, errorThrown) {
+						//alert("head获取数据出错。");
+					});
+					console.log(data);
+				
+
+					
+
+					var app = new Vue({
+						el: '.index-ul',
+						data: {
+							data: data.data.index
+						}
+					})
+				});
+
+				$(".search_ico").on("click", function() {
+					window.location.href = '' + "/toProductList?title=" + encodeURI(encodeURI($("#searchValue").val()));
+				});
+				checkLoginCount();
+
+				function checkLoginCount() {
+					var data = {};
+					var url = '' + "/customer/getCustomerInfoByToken";
+					Utils.doRequestAjax(url, data, 'json', false, function(result) {
+
+						if(typeof(result.mobile) != "undefined") {
+							$("#login_").attr("style", "display:none");
+							$("#search_").addClass("header_seachA");
+						}
+
+					}, function(response, XMLHttpRequest, textStatus, errorThrown) {
+						//alert("head获取数据出错。");
+					});
+				}
+			</script>
+			<p class="header_phone" style="padding-right:2%;padding-bottom:6px;text-align:right;color:#fff">
+				果子销售：
+				<a href="tel:4008869528"> 15868746206</15868746206>
+				</a>
+				果子客服：
+				<a href="tel:4008869528">939843661</a>
+			</p>
+			<dl class="clearfix">
+				<dt class="fl">
+                <h1>
+                    <a href="index.html">
+                        <img src="images/logo.png?version=2017_05_18_18_39_44" />
+                    </a>
+                </h1>
+            </dt>
+				<dd class="header_seach  fl" id="search_">
+					<input type="text" class="search_text" id="searchValue" name="q" value="" />
+					<button class="search_ico">
+                    <img src="images/search_ico.png" />
+                </button>
+				</dd>
+				<dd class="header_login fr" id="login_">
+					<a href="/index.html">
+						登录
+					</a>
+				</dd>
+			</dl>
+
+		</header>
+		<!-- 轮播图 -->
+		<section>
+			<div id="focus" class="focus">
+				<div class="hd">
+					<ul></ul>
+				</div>
+				<div class="bd">
+					<ul id="loop_logo">
+
+						<li>
+							<a href="/queryProductDetail?id=100245">
+								<img src="https://edzimg.edianzu.com/homepage/bac9413b95d47931ff31c5d772d20853.jpg" />
+							</a>
+						</li>
+
+						<li>
+							<a href="/queryProductDetail?id=110855">
+								<img src="https://edzimg.edianzu.com/homepage/1d90a2c76ee86eea4ff6cfd0aa8864f1.jpg" />
+							</a>
+						</li>
+
+						<li>
+							<a href="/queryProductDetail?id=100273">
+								<img src="https://edzimg.edianzu.com/homepage/dd074f18b5b5d72c71ef9bcd69fa96e7.jpg" />
+							</a>
+						</li>
+
+						<li>
+							<a href="/queryProductDetail?id=110730">
+								<img src="https://edzimg.edianzu.com/homepage/e27f612fd9dd15a51db00158fe0d42d9.png" />
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="index_yj content clearfix">
+				<ul class="yj_ul clearfix">
+					<li>
+						<img src="images/yj_pic1.jpg" />
+						<p>免押金</p>
+					</li>
+					<li>
+						<img src="images/yj_pic2.jpg" />
+						<p>随租随还</p>
+					</li>
+					<li>
+						<img src="images/yj_pic3.jpg" />
+						<p>按月支付</p>
+					</li>
+					<li>
+						<img src="images/yj_pic4.jpg" />
+						<p>技能租赁</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- 客户专区 -->
+		<!-- 热销机型 -->
+
+		<!--1楼-->
+
+		<section>
+			<div class="index_xp">
+				<div class="new-header">
+					<h2 class="new-tit">
+                        <span class="ico-hot">  </span>
+                 热销商品
+                    </h2>
+				</div>
+			</div>
+			
+			<ul class="index-ul" >		
+				<li v-for="item in data">
+				<a v-bind:href="'/queryProductDetail?id=' + item.uuid" >
+						<img src="https://edzimg.edianzu.com/homepage/00463ad9b40888d44335c6ca836f5d9d.jpg" />
+						<!--<h3>ThinkPad T420极速版</h3>-->
+						<h3>{{item.goods_Name}}</h3>
+						<span>
+                            <strong>  购{{item.price}}元  租{{item.jin_e}}每月</strong>
+                        </span>
+					</a>
+				</li>
+
+				
+
+			</ul>
+		</section>
+
+		<!-- 楼层 -->
+
+		<section>
+			<div class="index_xp">
+				<div class="new-header">
+					<h2 class="new-tit">
+                    <span class="ico-1"> </span>
+                    行政办公
+                </h2>
+				</div>
+			</div>
+			<ul class="index-ul">
+
+				<li>
+					<a href="/queryProductDetail?id=100245">
+						<img src="https://edzimg.edianzu.com/homepage/82d7369eb0e10937c5d967541e6156f2.jpg" />
+						<h3>ThinkPad T420极速版</h3>
+						<span>
+                        <strong>￥95/月</strong>
+                    </span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/queryProductDetail?id=110439">
+						<img src="https://edzimg.edianzu.com/homepage/956404f2eb8d205363790050f80a1812.jpg" />
+						<h3>ThinkPad E450</h3>
+						<span>
+                        <strong>￥105/月</strong>
+                    </span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/queryProductDetail?id=100249">
+						<img src="https://edzimg.edianzu.com/homepage/d2451993bc9416a9f5d2f4a964a54e37.jpg" />
+						<h3>ThinkPad X220极速版</h3>
+						<span>
+                        <strong>￥85/月</strong>
+                    </span>
+					</a>
+				</li>
+
+			</ul>
+		</section>
+
+		<section>
+			<div class="index_xp">
+				<div class="new-header">
+					<h2 class="new-tit">
+                    <span class="ico-2"> </span>
+                    技术开发
+                </h2>
+				</div>
+			</div>
+			<ul class="index-ul">
+
+				<li>
+					<a href="/queryProductDetail?id=110322">
+						<img src="https://edzimg.edianzu.com/homepage/98fc5be354b2798fca4db71e73e54af5.jpg" />
+						<h3>ThinkPad T430极速版</h3>
+						<span>
+                        <strong>￥130/月</strong>
+                    </span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/queryProductDetail?id=111171">
+						<img src="https://edzimg.edianzu.com/homepage/39488af55e24197df709aafccaeff79e.jpg" />
+						<h3>全新惠普400 G4 SFF</h3>
+						<span>
+                        <strong>￥218/月</strong>
+                    </span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/queryProductDetail?id=110818">
+						<img src="https://edzimg.edianzu.com/homepage/a231306c259916a14f994b202cde4fcd.jpg" />
+						<h3>全新 ThinkPad T460</h3>
+						<span>
+                        <strong>￥338/月</strong>
+                    </span>
+					</a>
+				</li>
+
+			</ul>
+		</section>
+
+		<section>
+			<div class="index_xp">
+				<div class="new-header">
+					<h2 class="new-tit">
+                    <span class="ico-3"> </span>
+                    商务便携
+                </h2>
+				</div>
+			</div>
+			<ul class="index-ul">
+
+				<li>
+					<a href="/queryProductDetail?id=100143">
+						<img src="https://edzimg.edianzu.com/homepage/7e90ac488fc86021a64621ebe9916020.jpg" />
+						<h3>Thinkpad X1C</h3>
+						<span>
+                        <strong>￥238/月</strong>
+                    </span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/queryProductDetail?id=100273">
+						<img src="https://edzimg.edianzu.com/homepage/2014f31570c9f221a4e1d948654be051.jpg" />
+						<h3>全新苹果 Air MMGF2</h3>
+						<span>
+                        <strong>￥238/月</strong>
+                    </span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/queryProductDetail?id=110334">
+						<img src="https://edzimg.edianzu.com/homepage/8196af9e47d24bac7ffb203bd3780dd5.jpg" />
+						<h3>全新ThinkPad X260</h3>
+						<span>
+                        <strong>￥348/月</strong>
+                    </span>
+					</a>
+				</li>
+
+			</ul>
+		</section>
+
+		<section>
+			<div class="index_xp">
+				<div class="new-header">
+					<h2 class="new-tit">
+                    <span class="ico-4"> </span>
+                    图形处理
+                </h2>
+				</div>
+			</div>
+			<ul class="index-ul">
+
+				<li>
+					<a href="/queryProductDetail?id=111187">
+						<img src="https://edzimg.edianzu.com/homepage/32bc9ffbf567cc943e53d6505ddfefe3.jpg" />
+						<h3>全新戴尔 E5480H</h3>
+						<span>
+                        <strong>￥338/月</strong>
+                    </span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/queryProductDetail?id=111173">
+						<img src="https://edzimg.edianzu.com/homepage/b39b07abab979c788cf169f543a5d892.jpg" />
+						<h3>全新惠普 400G4 SFF</h3>
+						<span>
+                        <strong>￥278/月</strong>
+                    </span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/queryProductDetail?id=100139">
+						<img src="https://edzimg.edianzu.com/homepage/6a89efbbbec421628b35056d0c7c4f7c.jpg" />
+						<h3>ThinkPad W530图形工作站</h3>
+						<span>
+                        <strong>￥260/月</strong>
+                    </span>
+					</a>
+				</li>
+
+			</ul>
+		</section>
+
+		<section>
+			<div class="index_xp">
+				<div class="new-header">
+					<h2 class="new-tit">
+                    <span class="ico-5"> </span>
+                    外设配件
+                </h2>
+				</div>
+			</div>
+			<ul class="index-ul">
+
+				<li>
+					<a href="/queryProductDetail?id=110701">
+						<img src="https://edzimg.edianzu.com/homepage/f0883855c89487838034045c750be286.jpg" />
+						<h3>iPhone7 128G亮黑</h3>
+						<span>
+                        <strong>￥639/月</strong>
+                    </span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/queryProductDetail?id=110385">
+						<img src="https://edzimg.edianzu.com/homepage/40f2c81f7ce195fbdcf3b00249c04ea2.jpg" />
+						<h3>全新戴尔 P2317H</h3>
+						<span>
+                        <strong>￥52/月</strong>
+                    </span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/queryProductDetail?id=100081">
+						<img src="https://edzimg.edianzu.com/homepage/a73c8483052c9ee895bc2ac36d936d5b.jpg" />
+						<h3>全新明基 MS3081</h3>
+						<span>
+                        <strong>￥218/月</strong>
+                    </span>
+					</a>
+				</li>
+
+			</ul>
+		</section>
+
+		<!-- 轻松租机 -->
+		<section>
+			<div class="index_xp">
+				<div class="tejia_header">
+					<h2 class="new_tjtit">3分钟轻松租机</h2>
+				</div>
+			</div>
+			<div class="index_step">
+				<span>
+                <img src="images/img_step.png">
+            </span>
+				<ul>
+					<li>
+						1分钟
+						<br> 选择机型
+					</li>
+					<li>
+						1分钟
+						<br> 获得免押金额度
+					</li>
+					<li>
+						1分钟
+						<br> 提交订单
+					</li>
+				</ul>
+			</div>
+			<div class="want_input">
+				<input type="text" placeholder="输入您的手机号" class="want_tex" id="want_tex" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d.]/g,'')" />
+				<a class="want_btn" onclick="too()">我想租赁</a>
+			</div>
+		</section>
+		<!-- 客户说 -->
+		<section>
+			<div class="index_xp">
+				<div class="tejia_header">
+					<h2 class="new_tjtit">客户说</h2>
+				</div>
+			</div>
+			<div class="par_index_con">
+				<a href="javascript:;">
+					<div class="par_index_img fl">
+						<img src="images/kh_pic1.jpg" />
+					</div>
+					<div class="par_index_text fr">
+						<p>客户说：我们公司有很多员工，人员也会经常调整。易点租的产品给我们提供了非常大的便利，价格低，随租随还，轻资产，重价值极大的降低了我们的IT成本。</p>
+					</div>
+				</a>
+			</div>
+			<div class="par_index_con">
+				<a href="javascript:;">
+					<div class="par_index_img fl">
+						<img src="images/kh_pic2.jpg" />
+					</div>
+					<div class="par_index_text fr">
+						<p>客户说：易点租模式非常新颖，非常切合我们的设备需求。公司线下配备的电脑都由易点租提供。我们将节约的每一分钱都用在了市场推广上，将创造更大的价值。</p>
+					</div>
+				</a>
+			</div>
+		</section>
+		<!-- 媒体报道 -->
+		<section>
+			<div class="index_xp">
+				<div class="tejia_header">
+					<h2 class="new_tjtit">媒体报道</h2>
+				</div>
+			</div>
+			<div class="par_index_con">
+				<a href="http://36kr.com/p/532341.html" target="_blank">
+					<div class="par_index_img fl">
+						<img src="images/img_media1.png">
+					</div>
+					<div class="media_index_text fr">
+						<p>从免押金的笔记本租赁服务入手，"易点租"希望从互联网角度切入，帮中小企业实现轻资产化...</p>
+					</div>
+				</a>
+			</div>
+			<div class="par_index_con">
+				<a href="http://business.sohu.com/20150811/n418572866.shtml" target="_blank">
+					<div class="par_index_img fl">
+						<img src="images/img_media4.png">
+					</div>
+					<div class="media_index_text fr">
+						<p>"轻资产重价值"的易点租是面向中小企业的IT办公租赁平台，提供免押金、随借随还同时还实惠的硬件租赁…</p>
+					</div>
+				</a>
+			</div>
+		</section>
+		<!-- 合作伙伴 -->
+		<section>
+			<div class="index_xp">
+				<div class="tejia_header">
+					<h2 class="new_tjtit">合作伙伴</h2>
+				</div>
+			</div>
+			<ul class="partner_ul">
+				<li>
+					<img src="https://img.edianzu.com/resources/images/partner_intel.png">
+				</li>
+				<li>
+					<a href="http://o2o.58.com/?utm_source=edianzu" target="_blank">
+						<img src="https://img.edianzu.com/resources/images/partner_58.png">
+					</a>
+				</li>
+				<li>
+					<a href="http://www.tusstar.com/?utm_source=edianzu" target="_blank">
+						<img src="https://img.edianzu.com/resources/images/index/partner01.png">
+					</a>
+				</li>
+				<li>
+					<a href="http://www.nash.work/?utm_source=edianzu" target="_blank">
+						<img src="https://img.edianzu.com/resources/images/index/partner11.png">
+					</a>
+				</li>
+				<li>
+					<a href="http://zc.open.qq.com/service/detail?cs_id=10045" target="_blank">
+						<img src="https://img.edianzu.com/resources/images/partner_qq.png">
+					</a>
+				</li>
+				<li>
+					<a href="http://www.techuangyi.com/?utm_source=edianzu" target="_blank">
+						<img src="https://img.edianzu.com/resources/images/partner_techuangyi.png">
+					</a>
+				</li>
+				<li>
+					<a href="http://www.hirfc.com/?utm_source=edianzu" target="_blank">
+						<img src="https://img.edianzu.com/resources/images/partner_rfc.png">
+					</a>
+				</li>
+				<li>
+					<a href="http://www.qiaoqian8.com/?cid=1681" target="_blank">
+						<img src="https://img.edianzu.com/resources/images/partner_qqzx.png">
+					</a>
+				</li>
+				<li>
+					<img src="https://img.edianzu.com/resources/images/partner_haoniude.png">
+				</li>
+				<li>
+					<a href="http://www.neigou.com" target="_blank">
+						<img src="images/cooperation-purchasing.jpg">
+					</a>
+				</li>
+			</ul>
+		</section>
+		<!-- 页脚 -->
+		<div class="bg_back"></div>
+		<footer class="footer">
+			<ul class="clearfix">
+				<li class="footer_show">
+					<a href="index.html">
+						<span class="footer_ico1">
+                        <img src="images/footerIndex_ico1.png" />
+                    </span>
+						<span class="footer_ico1A">
+                        <img src="images/footerIndex_ico1H.png" />
+                    </span> 首页
+					</a>
+				</li>
+				<li>
+					<a href="toProductList.html">
+						<span class="footer_ico2">
+                        <img src="images/footerIndex_ico2.png" />
+                    </span>
+						<span class="footer_ico2A">
+                        <img src="images/footerIndex_ico2H.png" />
+                    </span> 分类
+					</a>
+				</li>
+				<li>
+					<a href="carts.html">
+						<span class="footer_ico3">
+                        <img src="images/footerIndex_ico3.png" />
+                    </span>
+						<span class="footer_ico3A">
+                        <img src="images/footerIndex_ico3H.png" />
+                    </span> 购物车
+						<label id="carts_amount">0</label>
+					</a>
+				</li>
+				<li>
+					<a href="personal.html">
+						<span class="footer_ico4">
+                        <img src="images/footerIndex_ico4.png" />
+                    </span>
+						<span class="footer_ico4A">
+                        <img src="images/footerIndex_ico4H.png" />
+                    </span> 我的
+					</a>
+				</li>
+			</ul>
+		</footer>
+
+		<script type="text/javascript" charset="utf-8" async src="https://lxbjs.baidu.com/lxb.js?sid=7329252"></script>
+		<script type="text/javascript" src="plugin/jquery/jquery.cookie.js"></script>
+
+		<div style="display:none">
+			<script>
+				var _hmt = _hmt || [];
+				(function() {
+					var hm = document.createElement("script");
+					hm.src = "//hm.baidu.com/hm.js?28b59fb244144f8f5bf51e5e53367b81";
+					var s = document.getElementsByTagName("script")[0];
+					s.parentNode.insertBefore(hm, s);
+				})();
+
+				var consultation = {
+					setSource: function(from_ad_source) {
+						if(null != from_ad_source && "" != from_ad_source) {
+							if(from_ad_source != $.cookie("from_ad_source")) {
+								$.cookie("from_ad_source", from_ad_source, {
+									expires: 365,
+									path: "/"
+								});
+							}
+						}
+					}
+				}
+
+				$(document).ready(function() {
+
+					(function($) {
+						$.getUrlParam = function(name) {
+							var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+							var r = window.location.search.substr(1).match(reg);
+							if(r != null) return unescape(r[2]);
+							return null;
+						}
+					})(jQuery);
+
+					/* var source = $.getUrlParam('from_ad_source');
+					consultation.setSource(source); */
+
+				});
+			</script>
+			<script type="text/javascript">
+				var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F28b59fb244144f8f5bf51e5e53367b81' type='text/javascript'%3E%3C/script%3E"))
+			</script>
+
+			<script type='text/javascript'>
+				var _vds = _vds || [];
+				window._vds = _vds;
+				(function() {
+					_vds.push(['setAccountId', '89ad25a0174a3fb5']);
+					(function() {
+						var vds = document.createElement('script');
+						vds.type = 'text/javascript';
+						vds.async = true;
+						vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+						var s = document.getElementsByTagName('script')[0];
+						s.parentNode.insertBefore(vds, s);
+					})();
+				})();
+			</script>
+
+			<script type="text/javascript" src="js/zepto.min.js?version=2017_05_18_18_39_44"></script>
+			<script type="text/javascript" src="js/slick.js?version=2017_05_18_18_39_44"></script>
+			<script type="text/javascript">
+				var box = $(".customer").width();
+				var li = $(".customer").find("li").width() + 44;
+				var li_num = $(".customer").find("li").length;
+				var box_width = $(".cost").width();
+				$(".customer").css({
+					"width": li * li_num + "px"
+				});
+				$(".customer").on("touchstart", function(e) {
+					e.preventDefault();
+					startX = e.originalEvent.changedTouches[0].pageX,
+						startY = e.originalEvent.changedTouches[0].pageY;
+				});
+				var kg = true;
+				$(".customer").on("touchmove", function(e) {
+					e.preventDefault();
+					if(!kg) {
+						return;
+					}
+					moveEndX = e.originalEvent.changedTouches[0].pageX,
+						moveEndY = e.originalEvent.changedTouches[0].pageY,
+						X = moveEndX - startX,
+						Y = moveEndY - startY;
+					if(Math.abs(X) > Math.abs(Y) && X > 0) {
+						var li_left = $(".customer").css("left");
+						li_left = parseInt(li_left.substring(0, li_left.length - 2));
+						if(li_left < 0) {
+							kg = false;
+							$(".customer").animate({
+								"left": "+=" + li + "px"
+							}, 500, function() {
+								kg = true;
+							});
+						} else if(Math.abs(X) < 10) {
+							return;
+						}
+					} else if(Math.abs(X) > Math.abs(Y) && X < 0) {
+						var li_left = $(".customer").css("left");
+						li_left = parseInt(li_left.substring(1, li_left.length - 2));
+						if(li * li_num - li_left <= box_width) {
+							return;
+						} else if(Math.abs(X) < 10) {
+							return;
+						} else {
+							kg = false;
+							$(".customer").animate({
+								"left": "-=" + li + "px"
+							}, 500, function() {
+								kg = true;
+							});
+						}
+					}
+				});
+				$(".customer").on("touchend", function(e) {
+					e.preventDefault();
+					EndX = e.originalEvent.changedTouches[0].pageX;
+					space = Math.abs(EndX - startX);
+					if(space < 10) {
+						if(e.target.nodeName.toLowerCase() == 'img') {
+							var link = $(e.target).parent().attr('href');
+							location.href = link;
+						}
+					}
+				});
+				TouchSlide({
+					slideCell: "#focus",
+					titCell: ".hd ul",
+					mainCell: ".bd ul",
+					effect: "left",
+					autoPlay: true,
+					autoPage: true,
+					switchLoad: "_src"
+				});
+				//查询用户购物车数量
+				var data2 = {};
+				var url2 = "" + "/order/carts/queryProductCount";
+				Utils.doRequestAjax(url2, data2, 'json', false, function(response) {
+					if(response.code == 0) {
+						if(response.data != null) {
+							$("#carts_amount").html(response.data);
+						} else {
+							$("#carts_amount").html("0");
+						}
+
+					}
+				}, function(response, XMLHttpRequest, textStatus, errorThrown) {
+					//alert('读取购物车数量出现系统异常。');
+				});
+
+				window.onscroll = function() {
+					var t = document.documentElement.scrollTop || document.body.scrollTop;
+					if(t != 0) {
+						$(".header").css("background", "#28a0ff");
+					};
+					if(t > 10) {
+						$(".header").css("background", "#28a0ff");
+					} else {
+						$(".header").css("background", "url(images/header_bg.png) repeat-x");
+					};
+				};
+
+				function too() {
+					var getval = document.getElementById("want_tex").value;
+					var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+					if(getval.length != 11) {
+						alert("手机号码为11位!");
+						return false;
+					}
+					if(!myreg.test(getval)) {
+						alert("手机号码格式不正确!");
+						return false;
+					}
+					document.location.href = "" + "/register?want_tex=" + getval;
+				}
+			</script>
+
+	</body>
+
+</html>

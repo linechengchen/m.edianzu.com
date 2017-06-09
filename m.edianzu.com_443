@@ -1,0 +1,28 @@
+Encrypted HTTPS traffic flows through this CONNECT tunnel. HTTPS Decryption is enabled in Fiddler, so decrypted sessions running in this tunnel will be shown in the Web Sessions list.
+
+Secure Protocol: Tls12
+Cipher: Aes128 128bits
+Hash Algorithm: Sha256 256bits
+Key Exchange: RsaKeyX 2048bits
+
+== Server Certificate ==========
+[Subject]
+  CN=*.edianzu.com, O=北京易点淘网络技术有限公司, OU=IT Dept., L=Beijing, S=Beijing, C=CN
+
+[Issuer]
+  CN=GlobalSign Organization Validation CA - SHA256 - G2, O=GlobalSign nv-sa, C=BE
+
+[Serial Number]
+  70DB8573854A982BFCE318D6
+
+[Not Before]
+  2017/4/10 20:50:15
+
+[Not After]
+  2018/4/11 20:50:15
+
+[Thumbprint]
+  041EEFD923C6393D812CFA364E97598DF42661E3
+
+[SubjectAltNames]
+*.edianzu.com, owa.edianzu.com, mail.edianzu.com, autodiscover.edianzu.com, www.edianzu.com, edianzu.com

@@ -1,0 +1,683 @@
+﻿<!--开始1
+"头文件":"Upgrade-Insecure-Requests=1 & Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8 & Referer=https://m.edianzu.com/toProductList & Accept-Language=zh-CN,zh;q=0.8 & Cookie=gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495201990; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1 & ",
+"新cookie":"{{gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495201990; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1}}",
+"新cookie":"{{gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495202001; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1}}",
+"新cookie":"{{gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495202010; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1}}",结束1--><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>列表页</title>
+<link rel="stylesheet" type="text/css" href="../css/public.css?version=2017_05_18_18_39_44" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?version=2017_05_18_18_39_44" />
+
+
+
+<script type="text/javascript" src="/plugin/jquery/jquery.js"></script>
+<script type="text/javascript" src="/js/util/utils.js?version=2017_05_18_18_39_44"></script>
+<script type="text/javascript" src="/js/util/common.js?version=2017_05_18_18_39_44"></script>
+
+<script language="JavaScript" src="/js/product/productList.js?version=2017_05_18_18_39_44"></script>
+</head>
+<body>
+	<header class="header">
+	
+
+<script>
+$(document).ready(function() {
+	$(".search_ico").on("click",function(){
+		window.location.href=''+"/toProductList?title="+encodeURI(encodeURI($("#searchValue").val()));
+	});
+	checkLoginCount();
+});
+function checkLoginCount(){
+	var data = {};
+	var url = ''+"/customer/getCustomerInfoByToken";
+	Utils.doRequestAjax(url, data, 'json', false, function(result) {
+
+		if (typeof(result.mobile)!="undefined") {
+			$("#login_").attr("style", "display:none");
+			$("#search_").addClass("header_seachA");
+		}
+
+	}, function(response, XMLHttpRequest, textStatus, errorThrown) {
+		//alert("head获取数据出错。");
+	});
+}
+</script>
+<p class="header_phone" style="padding-right:2%;padding-bottom:6px;text-align:right;color:#fff">
+	销售热线：<a href="tel:4008869528">400-810-9528</a>
+	客服热线：<a href="tel:4008869528">400-886-9528</a>
+</p>
+<dl class="clearfix">
+	<dt class="fl">
+		<h1><a href="index.html">
+			<img src="images/logo.png?version=2017_05_18_18_39_44" />
+		</a></h1>
+	</dt>
+	<dd class="header_seach  fl" id="search_">
+		<input type="text" class="search_text" id="searchValue" name="q" value="电脑"  />
+		<button class="search_ico">
+			<img src="images/search_ico.png" />
+		</button>
+	</dd>
+	<dd class="header_login fr" id="login_">
+		<a href="/login.html">
+			登录
+		</a>
+	</dd>
+</dl>
+
+
+
+	</header>
+	<section>
+	<div class="list_class clearfix">
+		<ul class="listClass_ul clearfix">
+			<li><a href="javascript:;" class="clearfix sort color"><label>默认排行</label></a></li>
+			<li class="list_sales"><a href="javascript:;" class="clearfix sort"> <label class="fl">销量</label> <label class="fl"> <span
+						class="list_ico1"> <img class="listIco1" src="/images/list_ico1.jpg" /> <img class="listIco2"
+							src="/images/list_ico1_show.jpg" id="xl_asc" />
+					</span> <span class="list_ico2"> <img class="listIco1" src="/images/list_ico2.jpg" /> <img class="listIco2"
+							src="/images/list_ico2_show.jpg" id="xl_desc" />
+					</span>
+				</label>
+			</a></li>
+			<li class="list_money"><a href="javascript:;" class="clearfix sort"> <label class="fl">租金</label> <label class="fl"> <span
+						class="list_ico1"> <img class="listIco1" src="/images/list_ico1.jpg" /> <img class="listIco2"
+							src="/images/list_ico1_show.jpg" id="zj_asc" />
+					</span> <span class="list_ico2"> <img class="listIco1" src="/images/list_ico2.jpg" /> <img class="listIco2"
+							src="/images/list_ico2_show.jpg" id="zj_desc" />
+					</span>
+				</label>
+			</a></li>
+			<li><a href="javascript:;" class="choice_word clearfix"> <label class="choise_click fl">筛选</label> <label
+					class="fl"> <span> <img class="listIco1" src="/images/list_ico3.jpg" />
+					</span>
+				</label>
+			</a></li>
+		</ul>
+	</div>
+	<div class="choise_main">
+		<div class="choise_list">
+			<div class="choise_header">
+				<a href="javascript:;" class="fh choise_sureA fl"></a>
+				<h6 class="choise_tit">筛选</h6>
+				<a href="javascript:;" class="choise_sure choise_sureA fr">确认</a>
+			</div>
+			<ul>
+				<li class="chosi_a"><a href="javascript:;" calss="chsi_lia"> 品牌
+						<div class="chiseA_main">
+							<div class="choise_listAA">
+								<div class="choise_header">
+									<a href="javascript:;" class="fh choise_sureB choise_sureBfs fl"></a>
+									<h6>品牌</h6>
+									<a href="javascript:;" class="choise_sure choise_sureB choise_sureBsure fr">确认</a>
+								</div>
+								<ul class="choise_ulFs">
+									<li><a href="javascript:;" class="brand" value="">不限</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="34">ThinkPad</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="29">苹果/APPLE</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="33">易点租</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="32">戴尔/DELL</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="38">微软/Microsoft</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="10">惠普/HP</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="37">联想/Lenovo</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="16">小米</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="31">明基/BenQ</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="35">英特尔/Intel</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="41">飞利浦/PHILIPS</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="44">Blueair</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="39">三星/SAMSUNG</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="9">爱普生</a></li>
+									
+										<li><a href="javascript:;" class="brand" value="46">乐视</a></li>
+									
+								</ul>
+							</div>
+						</div>
+				</a></li>
+
+				<li class="chosi_a"><a href="javascript:;" calss="chsi_lia"> 分类
+						<div class="chiseA_main">
+							<div class="choise_listAA">
+								<div class="choise_header">
+									<a href="javascript:;" class="fh choise_sureB choise_sureBfs fl"></a>
+									<h6>分类</h6>
+									<a href="javascript:;" class="choise_sure choise_sureB choise_sureBsure fr">确认</a>
+								</div>
+								<ul class="choise_ulFs">
+									<li><a href="javascript:;" class="category" value="">不限</a></li>
+									
+										<li><a href="javascript:;" class="category" value="137">库位</a></li>
+									
+										<li><a href="javascript:;" class="category" value="135">增值服务</a></li>
+									
+										<li><a href="javascript:;" class="category" value="131">电视</a></li>
+									
+										<li><a href="javascript:;" class="category" value="130">工作站</a></li>
+									
+										<li><a href="javascript:;" class="category" value="77">笔记本电脑</a></li>
+									
+										<li><a href="javascript:;" class="category" value="86">台式机</a></li>
+									
+										<li><a href="javascript:;" class="category" value="84">一体机电脑</a></li>
+									
+										<li><a href="javascript:;" class="category" value="82">投影仪</a></li>
+									
+										<li><a href="javascript:;" class="category" value="83">显示器</a></li>
+									
+										<li><a href="javascript:;" class="category" value="80">软件</a></li>
+									
+										<li><a href="javascript:;" class="category" value="87">网络服务</a></li>
+									
+										<li><a href="javascript:;" class="category" value="76">主机</a></li>
+									
+										<li><a href="javascript:;" class="category" value="81">服务器</a></li>
+									
+										<li><a href="javascript:;" class="category" value="129">空气净化器</a></li>
+									
+										<li><a href="javascript:;" class="category" value="52">平板电脑</a></li>
+									
+										<li><a href="javascript:;" class="category" value="49">手机</a></li>
+									
+										<li><a href="javascript:;" class="category" value="32">打印机</a></li>
+									
+								</ul>
+							</div>
+						</div>
+				</a></li>
+
+				<li class="chosi_a"><a href="javascript:;" calss="chsi_lia"> 租金范围
+						<div class="chiseA_main">
+							<div class="choise_listAA">
+								<div class="choise_header">
+									<a href="javascript:;" class="fh choise_sureB choise_sureBfs fl"></a>
+									<h6>租金范围</h6>
+									<a href="javascript:;" class="choise_sure choise_sureB choise_sureBsure fr">确认</a>
+								</div>
+								<ul class="choise_ulFs">
+									<li><a href="javascript:;" style="color: rgb(228, 80, 80);" class="zjfw" value="zjfw_0">不限</a></li>
+									<li><a href="javascript:;" class="zjfw" value="zjfw_1">0-90元</a></li>
+									<li><a href="javascript:;" class="zjfw" value="zjfw_2">90-150元</a></li>
+									<li><a href="javascript:;" class="zjfw" value="zjfw_3">150元以上</a></li>
+								</ul>
+							</div>
+						</div>
+				</a></li>
+				<li class="chosi_a"><a href="javascript:;" calss="chsi_lia"> 成色
+						<div class="chiseA_main">
+							<div class="choise_listAA">
+								<div class="choise_header">
+									<a href="javascript:;" class="fh choise_sureB choise_sureBfs fl"></a>
+									<h6>成色</h6>
+									<a href="javascript:;" class="choise_sure choise_sureB choise_sureBsure fr">确认</a>
+								</div>
+								<ul class="choise_ulFs">
+									<li><a href="javascript:;" style="color: rgb(228, 80, 80);" class="xjsx" value="0">不限</a></li>
+									<li><a href="javascript:;" class="xjsx" value="2">非全新设备</a></li>
+									<li><a href="javascript:;" class="xjsx" value="1">全新设备</a></li>
+								</ul>
+							</div>
+						</div>
+				</a></li>
+				<li class="chosi_a"><a href="javascript:;" calss="chsi_lia"> 随租随还
+						<div class="chiseA_main">
+							<div class="choise_listAA">
+								<div class="choise_header">
+									<a href="javascript:;" class="fh choise_sureB choise_sureBfs fl"></a>
+									<h6>随租随还</h6>
+									<a href="javascript:;" class="choise_sure choise_sureB choise_sureBsure fr">确认</a>
+								</div>
+								<ul class="choise_ulFs">
+									<li><a href="javascript:;" style="color: rgb(228, 80, 80);" name="zl" value="-1">不限</a></li>
+									<li><a href="javascript:;" name="zl" value="1">支持</a></li>
+									<li><a href="javascript:;" name="zl" value="0">不支持</a></li>
+								</ul>
+							</div>
+						</div>
+				</a></li>
+			</ul>
+		</div>
+		<!-- <a href="javascript:;" class="clear_list">清除选项</a> -->
+	</div>
+	<div class="list_main clearfix" id="contentDiv">
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=110334"> <img src="https://edzimg.edianzu.cn/product/2016/12/11ace810c36f2aa00833ef48b5359aed.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=110334">
+						<p>
+						<h3>全新 ThinkPad X260 极速版 (20F6A05FCD) 12.5英寸笔记本电脑(i5-6200U/8GB/256GB SSD/HD集显)</h3>
+						</p> <em class="list_jg"> ¥348.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx"> 
+			            			全新设备
+			            		  
+					</span> 
+					
+					   <span class="list_fx">随租随还</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=110890"> <img src="https://edzimg.edianzu.cn/product/2016/12/21121b4c91b6f469501c82b921f23d3a.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=110890">
+						<p>
+						<h3>短租-ThinkPad T420 极速版 14.0英寸笔记本电脑(i5/4GB/120GB SSD/集显)</h3>
+						</p> <em class="list_jg"> ¥185.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx">  
+			            			非全新设备
+			            		 
+					</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=110892"> <img src="https://edzimg.edianzu.cn/product/2016/12/c9254532078fca304edef4cc0f3cfa71.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=110892">
+						<p>
+						<h3>短租-ThinkPad T430 极速版 14.0英寸笔记本电脑(i5/4GB/120GB SSD/集显)</h3>
+						</p> <em class="list_jg"> ¥235.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx">  
+			            			非全新设备
+			            		 
+					</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=100151"> <img src="https://edzimg.edianzu.cn/product/2016/12/6b42c47cb7136da7fa08a0b05353b0bc.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=100151">
+						<p>
+						<h3>ThinkPad X220 极速版 12.5英寸便携笔记本电脑(i5/8GB/240GB SSD/HD3000集显)</h3>
+						</p> <em class="list_jg"> ¥121.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx">  
+			            			非全新设备
+			            		 
+					</span> 
+					
+					   <span class="list_fx">随租随还</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=110761"> <img src="https://edzimg.edianzu.cn/product/2016/12/2a843b239e93ed86cb5cf9a4561b6a4a.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=110761">
+						<p>
+						<h3>全新 苹果(Apple) Macbook Pro MLL42CH/A 太空灰13.3英寸笔记本电脑(i5/8GB/256GB SSD/Iris540/Retina屏)(非Multi-Touch Bar机型)	</h3>
+						</p> <em class="list_jg"> ¥438.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx"> 
+			            			全新设备
+			            		  
+					</span> 
+					
+					   <span class="list_fx">随租随还</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=100096"> <img src="https://edzimg.edianzu.cn/product/2017/04/947e3c68c30bf6e4532ba4ebd9531bb7.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=100096">
+						<p>
+						<h3>ThinkPad T410 14.1英寸商务办公笔记本电脑(i5/4GB/320GB/集显)</h3>
+						</p> <em class="list_jg"> ¥80.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx">  
+			            			非全新设备
+			            		 
+					</span> 
+					
+					   <span class="list_fx">随租随还</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=110759"> <img src="https://edzimg.edianzu.cn/product/2016/12/6787a0b0d2edb0fe08817fd93c4ddac2.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=110759">
+						<p>
+						<h3>全新2016 苹果(Apple) MacBook Air MMGG2CH/A 13.3英寸便携笔记本电脑(Core i5/8GB/256GB SSD/HD6000集显)</h3>
+						</p> <em class="list_jg"> ¥288.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx"> 
+			            			全新设备
+			            		  
+					</span> 
+					
+					   <span class="list_fx">随租随还</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=110458"> <img src="https://edzimg.edianzu.cn/product/2016/12/09893a4c66c58fed4f630b7a5f5a2b25.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=110458">
+						<p>
+						<h3>全新 戴尔(DELL) Latitude E5270 12.5英寸笔记本电脑(i5-6200U/8GB/500GB/集显/HD/Win10)</h3>
+						</p> <em class="list_jg"> ¥268.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx"> 
+			            			全新设备
+			            		  
+					</span> 
+					
+					   <span class="list_fx">随租随还</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=110569"> <img src="https://edzimg.edianzu.cn/product/2016/12/371ef61b35457e42331eb456e7cbfafb.png?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=110569">
+						<p>
+						<h3>ThinkPad T440p 14英寸笔记本电脑(i5/8GB/1TB+128GB SSD/独显)</h3>
+						</p> <em class="list_jg"> ¥278.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx">  
+			            			非全新设备
+			            		 
+					</span> 
+					
+					   <span class="list_fx">随租随还</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=100007"> <img src="https://edzimg.edianzu.cn/product/2016/12/31a0c243e404d607adaa281be18eddf0.png?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=100007">
+						<p>
+						<h3>全新 苹果(Apple) iMac MK482CH/A 27英寸一体电脑(Core i5 3.3G四核/8GB/2TB/2G独显)</h3>
+						</p> <em class="list_jg"> ¥708.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx"> 
+			            			全新设备
+			            		  
+					</span> 
+					
+					   <span class="list_fx">随租随还</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=100245"> <img src="https://edzimg.edianzu.cn/product/2016/12/3478f424913a70b26cefadf3f0d59cb4.png?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=100245">
+						<p>
+						<h3>ThinkPad T420 极速版 14.0英寸笔记本电脑(i5/4GB/120GB SSD/集显)</h3>
+						</p> <em class="list_jg"> ¥95.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx">  
+			            			非全新设备
+			            		 
+					</span> 
+					
+					   <span class="list_fx">随租随还</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+			<dl class="clearfix">
+				<dt class="fl">
+					<a href="queryProductDetail?id=111227"> <img src="https://edzimg.edianzu.cn/product/2017/03/0c03fc102ba839e39bb53678c32beff7.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" />
+					</a>
+				</dt>
+				<dd class="fr">
+					<a href="queryProductDetail?id=111227">
+						<p>
+						<h3>全新 联想(Lenovo) AIO 520s 23英寸一体电脑 (i3-6006u/4GB/256G SSD/2G独显/23英寸FHD显示器)</h3>
+						</p> <em class="list_jg"> ¥268.00
+							
+					
+			            			/月</span>
+						</a>
+						</li>
+					
+					</em> <span class="list_fx"> 
+			            			全新设备
+			            		  
+					</span> 
+					
+					   <span class="list_fx">随租随还</span> 
+					
+					</a>
+				</dd>
+			</dl>
+		
+	</div>
+	<div id="noData" style="width: 100%; display: none" align="center">
+		无更多数据
+	</div>
+	<div id="loading" style="width: 100%; height: 31px; display: none" align="center">
+		<img src="/images/loading.gif" style="width: 33px;" />
+	</div>
+	</section>
+	<div class="bg_back"></div>
+	<footer class="footer">
+	<ul class="clearfix">
+		<li><a href="index.html"> <span class="footer_ico1"> <img src="images/footerIndex_ico1.png" />
+			</span> <span class="footer_ico1A"> <img src="images/footerIndex_ico1H.png" />
+			</span> 首页
+		</a></li>
+		<li class="footer_show"><a href="toProductList.html"> <span class="footer_ico2"> <img
+					src="images/footerIndex_ico2.png" />
+			</span> <span class="footer_ico2A"> <img src="images/footerIndex_ico2H.png" />
+			</span> 分类
+		</a></li>
+		<li><a href="carts.html"> <span class="footer_ico3"> <img src="images/footerIndex_ico3.png" />
+			</span> <span class="footer_ico3A"> <img src="images/footerIndex_ico3H.png" />
+			</span> 购物车 <label id="carts_amount"></label>
+		</a></li>
+		<li><a href="personal.html"> <span class="footer_ico4"> <img src="images/footerIndex_ico4.png" />
+			</span> <span class="footer_ico4A"> <img src="images/footerIndex_ico4H.png" />
+			</span> 我的
+		</a></li>
+	</ul>
+	</footer>
+	
+
+
+
+<script type="text/javascript" charset="utf-8" async src="https://lxbjs.baidu.com/lxb.js?sid=7329252"></script>
+<script type="text/javascript" src="/plugin/jquery/jquery.cookie.js"></script>
+
+<div style="display:none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?28b59fb244144f8f5bf51e5e53367b81";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+var consultation = {
+		setSource:function(from_ad_source) {
+		if(null!=from_ad_source&&""!=from_ad_source){
+			if(from_ad_source!=$.cookie("from_ad_source")){
+				$.cookie("from_ad_source", from_ad_source, {
+					expires: 365,
+					path: "/"
+				}); 
+			}
+		}
+	}
+}
+
+$(document).ready(function() {
+	
+	(function ($) {
+	    $.getUrlParam = function (name) {
+	        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	        var r = window.location.search.substr(1).match(reg);
+	        if (r != null) return unescape(r[2]); return null;
+	    }
+	})(jQuery);
+
+	/* var source = $.getUrlParam('from_ad_source');
+	consultation.setSource(source); */
+	
+});
+</script>
+<script type="text/javascript"> 
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); 
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F28b59fb244144f8f5bf51e5e53367b81' type='text/javascript'%3E%3C/script%3E")) 
+</script>
+
+<script type='text/javascript'>
+	var _vds = _vds || [];
+	window._vds = _vds;
+	(function(){
+		_vds.push(['setAccountId', '89ad25a0174a3fb5']);
+		(function() {
+			var vds = document.createElement('script');
+			vds.type='text/javascript';
+			vds.async = true;
+			vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(vds, s);
+		})();
+	})();
+</script>
+ 
+	<script type="text/javascript" src="js/zepto.min.js?version=2017_05_18_18_39_44"></script>
+	<script type="text/javascript" src="js/style.js?version=2017_05_18_18_39_44"></script>
+</body>
+</html>

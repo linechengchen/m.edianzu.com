@@ -1,0 +1,319 @@
+﻿<!--开始1
+"头文件":"Upgrade-Insecure-Requests=1 & Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8 & Referer=https://m.edianzu.com/personal & Accept-Language=zh-CN,zh;q=0.8 & Cookie=gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495202015; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1 & ",
+"新cookie":"{{gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495202015; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1}}",
+"新cookie":"{{gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495202017; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1}}",
+"新cookie":"{{gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495202033; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1}}",
+"新cookie":"{{gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495202036; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1}}",
+"新cookie":"{{gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495202040; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1}}",结束1--><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>我的订单</title>
+	<link rel="stylesheet" type="text/css" href="css/public.css?version=2017_05_18_18_39_44" />
+	<link rel="stylesheet" type="text/css" href="css/style.css?version=2017_05_18_18_39_44" />
+	
+
+<script type="text/javascript" src="/plugin/jquery/jquery.js"></script>
+<script type="text/javascript" src="/js/util/utils.js?version=2017_05_18_18_39_44"></script>
+<script type="text/javascript" src="/js/util/common.js?version=2017_05_18_18_39_44"></script>
+
+</head>
+<body>
+	<header>
+		<a href="personal" class="fh fl"></a>
+		<h6>我的订单</h6>
+	</header>
+	<div class="main main_cont main_cont2" id="dataTable">
+		
+	</div>
+<script type="text/javascript">
+	
+	$(function(){
+		//加载数据
+		initData();
+		//取消订单
+		$(".cancelOrder").on("click",function(){
+			var id = $(this).attr("data_id");
+			var _c = $(this).attr("class");
+			var url="";
+			if(_c.indexOf("main_order")!=-1){
+				//主订单取消
+				url = Utils.setTimeStamp("orders/cancelOrder?mainOrderId="+id );
+			}else{
+				//子订单取消
+				url = Utils.setTimeStamp("orders/cancelOrder?orderId="+id );
+				
+			}
+			//取消订单
+			if(confirm("您确定取消该订单吗?")){
+				Utils.doRequestAjax(url,null,'json',false,function(response){
+					if( response.code == 0 ){
+						window.location.reload();
+	    	    		alert('操作成功');
+	    	    	}else{
+	    	    		alert(response.message);
+	    	    	}
+				},function(response,XMLHttpRequest, textStatus, errorThrown) {
+	    			alert("网络异常，请检查网络后重试！");
+	    		})
+			}
+		})
+	
+		function initData(){
+			var dataMap = {
+					'rentType' : ['未知', '随租随还', '经营租赁', '融资租赁','随租随还'],
+					'status' : ['已下单等待确认', '已确认等待配货', '已取消','开始配货','配货完成','已发货','租赁中','已完成'],
+					'paymentType' : ['未知','在线支付', '银行转账', '货到付款'],
+					'isExpire' : ['未逾期','逾期'],
+					'payStatus' : ['未支付','已支付']
+				};
+			var oper = 'pay';
+			var url='';
+			var data='';
+			if(oper == 'all'){
+				//查询所有订单
+				 url = "orders/queryMyOrderList";
+				 data = {'pageSize':10000};
+			}
+			if(oper == 'pay'){
+				//查询待支付订单
+				 url = "orders/queryMyOrderList";
+				 data = {'pageSize':10000,'payStatus':0};
+			}
+			if(oper == 'receive'){
+				//查询待收货订单
+				 url = "orders/queryMyOrderList";
+				 data = {'pageSize':10000,'status':5};
+			}
+			
+			Utils.doRequestAjax(url,data,'json',false,function(response){
+				var orders = response.hits.hits;
+				var dataHtml = '';
+				//处理订单数据
+				$(orders).each(function(index,data){
+					var childSize = data._source.order_ids.length;//获取该条记录下的子订单数量，如果大于1就要拆单
+					var _ds = data._source;
+					if(childSize<2){
+						//未拆单的情况
+						var _orderInfo = _ds.orders_detail[0];
+						dataHtml += "<div class=\"order_divding\"><p class=\"order_p\">";
+						dataHtml += "<a href=\"javascript:void(0);\" class=\"viewOrder\" data_id="+_ds.order_id+"><span>"+_ds.order_id+"</span></a>";
+						//检查是否显示 取消订单按钮
+						if( _orderInfo.status == 0 && (_orderInfo.sync_erp_status == 0 || _orderInfo.sync_erp_status == 2) ){
+							dataHtml += "<span class=\"sp_fr\"><i><a href=\"javascript:void(0);\" class=\"cancelOrder main_order\" data_id="+_ds.order_id+">取消订单<\/a></i></span>";
+						}
+						dataHtml += "</p><ul>"
+						dataHtml += "<li>";
+						//遍历商品数据
+						$(_orderInfo.product_info).each(function(index,_productInfo){
+							//处理商品图片
+							var imgStr = _productInfo.images;
+							dataHtml +=     "<img src="+imgStr+"  />";
+						})
+						dataHtml += "</li>";
+						dataHtml += "</ul>"
+						dataHtml += "<p class=\"order_payment\"><span class='order_spanfs'>";
+						
+						if( _orderInfo.rent_type == 0 ){
+					    	dataHtml += "订单售价："+_orderInfo.sale_amount+"</span>";
+					    }else{
+					    	dataHtml += "首付租金："+_ds.rent+"</span>";
+					    }
+						//订单状态显示 status
+						//获取当前订单状态
+						var statusText = dataMap['status'][parseInt(_orderInfo.status)];
+						if(_ds.pay_status == 0){
+							if(parseInt(_orderInfo.status) == 2){
+								//如果已取消状态，就不显示待支付
+								statusText = '已取消';
+							}else{
+								//支付状态为未支付且订单状态不是’已取消’时 订单状态显示 “待支付”,并且订单状态不是续租未生效
+								if(parseInt(_orderInfo.status) != -1 && _orderInfo.rent_type != 4){
+									statusText = '去付款';
+								}
+								
+							}
+							
+						}
+						// 支付状态为已支付时 订单状态照常显示
+						dataHtml += "<a href=\"javascript:void(0);\" class=\"viewOrder vieworder_fs\" data_id="+_ds.order_id+">"+statusText+"<\/a>";
+						dataHtml +="</div>";
+					}else{
+						//需要拆单
+						dataHtml += "<div class=\"order_all\">";
+						dataHtml += "<p>由于订单中各商品的起租日期、租赁方式等的不同，需分批次发货，故将订单拆分为以下几个订单：</p>";
+						dataHtml += "<dl class=\"order_cf clearfix\">";
+						dataHtml += "<dt class=\"fl\"><a href=\"javascript:void(0);\" class=\"viewOrder\" data_id="+_ds.order_id+">"+_ds.order_id+"</a></dt>";
+						dataHtml += "<dd class=\"fr\">";
+						if(_ds.pay_status == 0){
+							var flag = false;
+		                    $.each(_ds.orders_detail, function(i, v) {
+		                        if (v.status != 2 && v.status != -1 && v.rent_type != 4) {
+		                            flag = true;
+		                            return;
+		                        }
+		                    });
+		                    if(flag){
+								dataHtml += "<a href=\"javascript:void(0);\" class=\"viewOrder\" data_id="+_ds.order_id+">去付款<\/a>";
+		                    }
+						}else{
+							dataHtml += "<a href=\"javascript:void(0);\" class=\"viewOrder\" data_id="+_ds.order_id+">已支付<\/a>";
+						}
+						dataHtml += "</dd>";
+						dataHtml += "</dl>";
+						//遍历主订单下的子订单
+						$(_ds.orders_detail).each(function(index,_orderItem){
+							
+							dataHtml += "<div class=\"order_divding\">";
+							dataHtml += "<p class=\"order_p\"><span>"+_orderItem.order_id+"</span>";
+							//检查是否显示 取消订单按钮
+							if( _orderItem.status == 0 && (_orderItem.sync_erp_status == 0 || _orderItem.sync_erp_status == 2) ){
+								dataHtml += "<span class=\"sp_fr\"><i><a href=\"javascript:void(0);\" class=\"cancelOrder\" data_id="+_orderItem.order_id+">取消订单<\/a></i></span>";
+							}
+							dataHtml += "</p>";
+							dataHtml += "<ul>";
+							dataHtml += "<li>";
+							//遍历子订单中的商品
+							$(_orderItem.product_info).each(function(index,productItem){
+								var imgStr = productItem.images;
+								dataHtml += "<img src="+imgStr+"  />";
+							})
+							dataHtml += "</li>";
+							dataHtml += "</ul>";
+							dataHtml += "<p class=\"order_payment\"><span class='order_spanfs'>";
+							if( _orderItem.rent_type == 0 ){
+						    	dataHtml += "订单售价："+_orderItem.sale_amount+"</span>";
+						    }else{
+						    	dataHtml += "首付租金："+_orderItem.rent+"</span>";
+						    }
+							//获取当前订单状态
+							var statusText = dataMap['status'][parseInt(_orderItem.status)];
+												
+							dataHtml += "<a href=\"javascript:void(0);\" class=\"vieworder_fs\">"+statusText+"</a></p>";
+							dataHtml += "</div>";
+						})
+						dataHtml += "</div> ";
+					}
+				});
+				//填装数据
+				$("#dataTable").html(dataHtml);
+				
+			},function(response,XMLHttpRequest, textStatus, errorThrown) {
+				alert('网络异常，请检查！');
+			});
+			
+		}
+		//查看订单详情
+		$(document).on('click','.viewOrder',function(){
+			window.location.href = 'orderPay?orderId='+$(this).attr('data_id')+'&timestamp='+new Date().getTime();
+		});
+	
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>	
+
+
+
+
+<script type="text/javascript" charset="utf-8" async src="https://lxbjs.baidu.com/lxb.js?sid=7329252"></script>
+<script type="text/javascript" src="/plugin/jquery/jquery.cookie.js"></script>
+
+<div style="display:none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?28b59fb244144f8f5bf51e5e53367b81";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+var consultation = {
+		setSource:function(from_ad_source) {
+		if(null!=from_ad_source&&""!=from_ad_source){
+			if(from_ad_source!=$.cookie("from_ad_source")){
+				$.cookie("from_ad_source", from_ad_source, {
+					expires: 365,
+					path: "/"
+				}); 
+			}
+		}
+	}
+}
+
+$(document).ready(function() {
+	
+	(function ($) {
+	    $.getUrlParam = function (name) {
+	        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	        var r = window.location.search.substr(1).match(reg);
+	        if (r != null) return unescape(r[2]); return null;
+	    }
+	})(jQuery);
+
+	/* var source = $.getUrlParam('from_ad_source');
+	consultation.setSource(source); */
+	
+});
+</script>
+<script type="text/javascript"> 
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); 
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F28b59fb244144f8f5bf51e5e53367b81' type='text/javascript'%3E%3C/script%3E")) 
+</script>
+
+<script type='text/javascript'>
+	var _vds = _vds || [];
+	window._vds = _vds;
+	(function(){
+		_vds.push(['setAccountId', '89ad25a0174a3fb5']);
+		(function() {
+			var vds = document.createElement('script');
+			vds.type='text/javascript';
+			vds.async = true;
+			vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(vds, s);
+		})();
+	})();
+</script>
+ 
+</body>
+</html>

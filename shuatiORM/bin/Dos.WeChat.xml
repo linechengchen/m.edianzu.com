@@ -1,0 +1,1993 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dos.WeChat</name>
+    </assembly>
+    <members>
+        <member name="T:Dos.WeChat.ApiList">
+            <summary>
+            微信接口列表。
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.MessageCustomSendUrl">
+            <summary>
+            发送客服消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.MessageTemplateSendUrl">
+            <summary>
+            发送模板消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.GetTokenUrl">
+            <summary>
+            获取access_token的接口地址
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.GetticketUrl">
+            <summary>
+            获取jsapi_ticket的接口地址
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.MenuCreateUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.MenuGetUrl">
+            <summary>
+            查询菜单接口地址
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.MenuDeleteUrl">
+            <summary>
+            删除菜单接口地址
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.MediaUploadUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.MediaGet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.SnsUserInfo">
+            <summary>
+            网页授权获取用户信息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.GetUserInfo">
+            <summary>
+            获取用户信息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.QrcodeCreateUrl">
+            <summary>
+            需要 access_token
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.ShowQrcodeUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.DownloadBillUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.UnifiedOrderUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.GetOauth2AccessTokenUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.BatchgetMaterial">
+            <summary>
+            获取永久素材的列表。地址栏需要access_token参数。
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.ApiComponentToken">
+            <summary>
+            该API用于获取第三方平台令牌（component_access_token）
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.ApiCreatePreauthcode">
+            <summary>
+            该API用于获取预授权码。预授权码用于公众号授权时的第三方平台方安全验证。地址栏需要component_access_token参数。
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.ApiQueryAuth">
+            <summary>
+            使用授权码换取公众号的接口调用凭据和授权信息。地址栏需要component_access_token参数。
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.ApiAuthorizerToken">
+            <summary>
+            获取（刷新）授权公众号的接口调用凭据（令牌）。地址栏需要component_access_token参数。
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ApiList.ApiGetAuthorizerInfo">
+            <summary>
+            获取授权方的公众号帐号基本信息。该API用于获取授权方的公众号基本信息，包括头像、昵称、帐号类型、认证类型、微信号、原始ID和二维码图片URL。地址栏需要component_access_token参数。
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.OutputAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.MsgTypeAttribute">
+            <summary>
+            微信平台接受的消息类型名称
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.MsgTypeAttribute.ObtainMessageType(Dos.WeChat.MsgTypeAttribute)">
+            <summary>
+            获取指定消息类型的微信平台接受名称
+            </summary>
+            <param name="mtype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.MsgTypeAttribute.ObtainMessageType(Dos.WeChat.EnumHelper.MsgType)">
+            <summary>
+            获取消息枚举对应的微信平台接受的消息名称
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.ComponentTokenResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.WeChatResult">
+            <summary>
+            微信结果码
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.WeChatResult.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.WeChatResult.#ctor(System.Int32)">
+            <summary>
+             ErrCode传入0表示成功
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.WeChatResult.#ctor(System.Int32,System.String)">
+            <summary>
+            ErrCode传入0表示成功
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.WeChatResult._errCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.WeChatResult._errMsg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatResult.ErrCode">
+            <summary>
+            结果码
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatResult.ErrMsg">
+            <summary>
+            结果文本说明
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatResult.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.ComponentTokenResult.ExpiresIn">
+            <summary>
+            有效期
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.ComponentTokenResult.ComponentAccessToken">
+            <summary>
+            第三方平台access_token
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.MenuResult">
+            <summary>
+            菜单结构
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.MenuResult.Button">
+            <summary>
+            菜单按钮数组
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.Item">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.Item.Click">
+            <summary>
+            用户点击click类型按钮后，微信服务器会通过消息接口(event类型)推送点击事件给开发者，并且带上按钮中开发者填写的key值，开发者可以通过自定义的key值进行消息回复
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.Item.View">
+            <summary>
+            用户点击view类型按钮后，会直接跳转到开发者指定的url中
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Item.Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Item.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Item.Type">
+            <summary>
+            类型。从常量中获取
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Item.Url">
+            <summary>
+            view Button 的url地址
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Item.SubButton">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Item.text">
+            <summary>
+            用于bootstrap-treeview。不需要可以删除。
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Item.nodes">
+            <summary>
+            用于bootstrap-treeview。不需要可以删除。
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.QueryAuthResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.QueryAuthResult.AuthorizationInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.AuthorizationInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizationInfo.AuthorizerAppid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizationInfo.AuthorizerAccessToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizationInfo.AuthorizerRefreshToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizationInfo.ExpiresIn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizationInfo.FuncInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.FuncInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.FuncInfo.FuncscopeCategory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.FuncscopeCategory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.FuncscopeCategory.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.CreatePreauthcodeResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.CreatePreauthcodeResult.ExpiresIn">
+            <summary>
+            有效期。单位：秒
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.CreatePreauthcodeResult.PreAuthCode">
+            <summary>
+            预授权码
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.AuthorizerTokenResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizerTokenResult.ExpiresIn">
+            <summary>
+            有效期。单位：秒
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizerTokenResult.AuthorizerAccessToken">
+            <summary>
+            授权方令牌
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizerTokenResult.AuthorizerRefreshToken">
+            <summary>
+            刷新令牌
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.TokenResult.AccessToken">
+            <summary>
+            获取到的凭证
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.TokenResult.ExpiresIn">
+            <summary>
+            凭证有效时间，单位：秒
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.TokenHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.TokenHelper.GetAccessToken">
+            <summary>
+            获取access_token。会缓存，过期后自动重新获取新的token。
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.TokenHelper.GetOpenAccessToken(Dos.WeChat.WeChatParam)">
+            <summary>
+            获取第三方平台AccessToken
+            传入component_verify_ticket
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.TokenHelper.GetAuthorizerAccessToken(Dos.WeChat.WeChatParam)">
+            <summary>
+            获取授权公众号的接口调用凭据（令牌）。传入：authorizer_appid(授权方appid)、authorizer_refresh_token（授权方的刷新令牌）、component_verify_ticket(微信后台推送的ticket，此ticket会定时推送)
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.TokenHelper.GetJsapiTicket">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.JoinToken">
+            <summary>
+            接入验证
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.JoinToken.IsGetRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.JoinToken.IsSignatureRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.JoinToken.ParseJoinToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.JoinToken.Join(Dos.WeChat.IMsgCall)">
+            <summary>
+            接入微信
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.JoinToken.Check(Dos.WeChat.WeChatParam)">
+            <summary>
+            验证签名。默认公众号不需要参数。传入authorizer_appid(授权方appid)、authorizer_refresh_token(授权方的刷新令牌)则验证该公众号(用于微信开放平台)、component_verify_ticket(微信后台推送的ticket，此ticket会定时推送)
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.JoinToken.Response">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.JoinToken.signature">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.JoinToken.timestamp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.JoinToken.nonce">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.JoinToken.echostr">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.EnumHelper.WeChatType">
+            <summary>
+            微信接入方式
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.WeChatType.Public">
+            <summary>
+            公众号
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.WeChatType.Open">
+            <summary>
+            开放平台
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.EnumHelper.MsgType">
+            <summary>
+            接收或响应的消息类型
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.MsgType.Text">
+            <summary>
+            文本消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.MsgType.Image">
+            <summary>
+            图片消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.MsgType.Location">
+            <summary>
+            地理位置消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.MsgType.Link">
+            <summary>
+            链接消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.MsgType.Event">
+            <summary>
+            事件推送消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.MsgType.Music">
+            <summary>
+            音乐消息（用于响应）
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.MsgType.News">
+            <summary>
+            图文消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.MsgType.Voice">
+            <summary>
+            语音消息（用户的语音，可以使用TTS引擎分析成文本）
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.MsgType.Video">
+            <summary>
+            视频消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.MsgType.Transfer">
+            <summary>
+            多客服消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.WeChatPublic.Xcz">
+            <summary>
+            驯车族微信公众号
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.WeChatPublic.XczJl">
+            <summary>
+            驯车族教练微信公众号
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.EnumHelper.TradeType">
+            <summary>
+            支付方式
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.TradeType.JSAPI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.TradeType.NATIVE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.TradeType.APP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.EnumHelper.QrCodeType">
+            <summary>
+            二维码类型
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.QrCodeType.QR_SCENE">
+            <summary>
+            临时二维码
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.QrCodeType.QR_LIMIT_SCENE">
+            <summary>
+            永久二维码
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.QrCodeType.QR_LIMIT_STR_SCENE">
+            <summary>
+            永久二维码
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.EnumHelper.TradeState">
+            <summary>
+            trade_state交易状态
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.TradeState.SUCCESS">
+            <summary>
+            支付成功
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.TradeState.REFUND">
+            <summary>
+            转入退款
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.TradeState.NOTPAY">
+            <summary>
+            未支付
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.TradeState.CLOSED">
+            <summary>
+            已关闭
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.TradeState.REVOKED">
+            <summary>
+            已撤销
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.TradeState.USERPAYING">
+            <summary>
+            用户支付中
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.EnumHelper.TradeState.PAYERROR">
+            <summary>
+            支付失败(其他原因，如银行返回失败)
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.JsapiTicketResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.JsapiTicketResult.ExpiresIn">
+            <summary>
+            凭证有效时间，单位：秒
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.JsapiTicketResult.Ticket">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.WeChatConfig">
+            <summary>
+            通用配置，可以修改为其它方式存储这些配置。
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.IsEncrypt">
+            <summary>
+            是否加解密
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetAppId">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetMchId">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetKey">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetCertPath">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetCertPwd">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetSecret">
+            <summary>
+            获取web.config的WeChatSecret
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetNotify">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetToken">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetOpenAppId">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetOpenAppSecret">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetOpenToken">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WeChatConfig.GetOpenDesKey">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Dos.WeChat.GetAuthorizerInfoResult">
+            <summary>
+            获取授权方的公众号帐号基本信息。该API用于获取授权方的公众号基本信息，包括头像、昵称、帐号类型、认证类型、微信号、原始ID和二维码图片URL。
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.GetAuthorizerInfoResult.AuthorizerInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.GetAuthorizerInfoResult.AuthorizationInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.AuthorizerInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizerInfo.NickName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizerInfo.HeadImg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizerInfo.ServiceTypeInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizerInfo.VerifyTypeInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizerInfo.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizerInfo.BusinessInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizerInfo.Alias">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.AuthorizerInfo.QrcodeUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.ServiceTypeInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.ServiceTypeInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.VerifyTypeInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.VerifyTypeInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.BusinessInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.BusinessInfo.OpenStore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.BusinessInfo.OpenScan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.BusinessInfo.OpenPay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.BusinessInfo.OpenCard">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.BusinessInfo.OpenShake">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.MenuHelper">
+            <summary>
+            自定义菜单 
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.MenuHelper.Save(Dos.WeChat.WeChatParam)">
+            <summary>
+            创建菜单。传入Menu。若是开放平台，则需要传入AuthorizerAppid(授权方appid)、AuthorizerRefreshToken（授权方的刷新令牌）、ComponentVerifyTicket(微信后台推送的ticket，此ticket会定时推送)
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.MenuHelper.Get(Dos.WeChat.WeChatParam)">
+            <summary>
+            查询菜单。
+            取公众号菜单，不需要传入参数。若是开放平台，则需要传入AuthorizerAppid(授权方appid)、AuthorizerRefreshToken（授权方的刷新令牌）、ComponentVerifyTicket(微信后台推送的ticket，此ticket会定时推送)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.MenuHelper.Delete">
+            <summary>
+            取消当前使用的自定义菜单
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.MenuHelper.menuObj">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.Cryptography.AES_decrypt(System.String,System.String,System.String@)">
+            <summary>
+            解密方法
+            </summary>
+            <param name="Input">密文</param>
+            <param name="EncodingAESKey"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:Dos.WeChat.Cryptography.chr(System.Int32)">
+            将数字转化成ASCII码对应的字符，用于对明文进行补码
+            
+            @param a 需要转化的数字
+            @return 转化得到的字符
+        </member>
+        <member name="T:Dos.WeChat.Open">
+            <summary>
+            开放平台api
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.Open.GetComponentToken(Dos.WeChat.WeChatParam)">
+            <summary>
+            获取第三方平台access_token。该API用于获取第三方平台令牌（component_access_token）
+            <para>传入：ComponentVerifyTicket(微信后台推送的ticket，此ticket会定时推送)</para>
+            </summary>
+            <param name="param"></param>
+            <returns>返回ComponentAccessToken(第三方平台access_token)</returns>
+        </member>
+        <member name="M:Dos.WeChat.Open.GetCreatePreAuthCode(Dos.WeChat.WeChatParam)">
+            <summary>
+            获取预授权码.该API用于获取预授权码。预授权码用于公众号授权时的第三方平台方安全验证。
+            <para>传入：ComponentVerifyTicket(微信后台推送的ticket，此ticket会定时推送)</para>
+            </summary>
+            <param name="param"></param>
+            <returns>返回：pre_auth_code(预授权码)、expires_in（有效期，为20分钟）</returns>
+        </member>
+        <member name="M:Dos.WeChat.Open.QueryAuth(Dos.WeChat.WeChatParam)">
+            <summary>
+            使用授权码换取公众号的接口调用凭据和授权信息
+            <para>传入：AuthorizationCode(授权code)、ComponentVerifyTicket(微信后台推送的ticket，此ticket会定时推送)</para>
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:Dos.WeChat.Open.GetAuthorizerInfo(Dos.WeChat.WeChatParam)">
+            <summary>
+            获取授权方的公众号帐号基本信息。该API用于获取授权方的公众号基本信息，包括头像、昵称、帐号类型、认证类型、微信号、原始ID和二维码图片URL。
+            <para>传入：AuthorizerAppid(授权方appid)、ComponentVerifyTicket(微信后台推送的ticket，此ticket会定时推送)</para>
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:Dos.WeChat.WXBizMsgCrypt.DecryptMsg(System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            检验消息的真实性，并且获取解密后的明文
+            @param sMsgSignature: 签名串，对应URL参数的msg_signature
+            @param sTimeStamp: 时间戳，对应URL参数的timestamp
+            @param sNonce: 随机串，对应URL参数的nonce
+            @param sPostData: 密文，对应POST请求的数据
+            @param sMsg: 解密后的原文，当return返回0时有效
+            @return: 成功0，失败返回对应的错误码
+            </summary>
+            <param name="sMsgSignature"></param>
+            <param name="sTimeStamp"></param>
+            <param name="sNonce"></param>
+            <param name="sPostData"></param>
+            <param name="sMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.WXBizMsgCrypt.EncryptMsg(System.String,System.String,System.String,System.String@)">
+            <summary>
+            //将企业号回复用户的消息加密打包
+            @param sReplyMsg: 企业号待回复用户的消息，xml格式的字符串
+            @param sTimeStamp: 时间戳，可以自己生成，也可以用URL参数的timestamp
+            @param sNonce: 随机串，可以自己生成，也可以用URL参数的nonce
+            @param sEncryptMsg: 加密后的可以直接回复用户的密文，包括msg_signature, timestamp, nonce, encrypt的xml格式的字符串,
+            					当return返回0时有效
+            return：成功0，失败返回对应的错误码
+            </summary>
+            <param name="sReplyMsg"></param>
+            <param name="sTimeStamp"></param>
+            <param name="sNonce"></param>
+            <param name="sEncryptMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dos.WeChat.UserHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.UserHelper.GetSnsUserInfo(Dos.WeChat.WeChatParam)">
+            <summary>
+            传入OpenId，AccessToken
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.UserHelper.GetUserInfo(Dos.WeChat.WeChatParam)">
+            <summary>
+            传入OpenId，AccessToken
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.UserHelper.GetOauth2AccessToken(Dos.WeChat.WeChatParam)">
+            <summary>
+            传入Code
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.WeChatParam.TextMsg">
+            <summary>
+            文本消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.WeChatParam.ImageMsg">
+            <summary>
+            图片消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.WeChatParam.VoiceMsg">
+            <summary>
+            语音消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.WeChatParam.VideoMsg">
+            <summary>
+            视频消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.WeChatParam.MusicMsg">
+            <summary>
+            音乐消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.WeChatParam.NewsMsg">
+            <summary>
+            图文消息
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.WeChatType">
+            <summary>
+            微信接入方式
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.OpenId">
+            <summary>
+            微信OpenId
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.AccessToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.WeChatPublic">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.Debug">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.Url">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.Content">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.ComponentVerifyTicket">
+            <summary>
+            微信后台推送的ticket，此ticket会定时推送
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.AuthorizerRefreshToken">
+            <summary>
+            授权方的刷新令牌
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.AuthorizerAppid">
+            <summary>
+            授权方appid
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.ComponentAppid">
+            <summary>
+            第三方平台appid
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.ComponentAppsecret">
+            <summary>
+            第三方平台appsecret
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.AuthorizationCode">
+            <summary>
+            授权code,会在授权成功时返回给第三方平台
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.ComponentAccessToken">
+            <summary>
+            第三方平台access_token。
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.MsgId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.SendCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.ToUser">
+            <summary>
+            接收消息的用户的openid
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.TemplateId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.Text">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.Menu">
+            <summary>
+            菜单json数据
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.MediaId">
+            <summary>
+                媒体文件上传后，获取时的唯一标识
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.WeChatParam.FilePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.JsSdkHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.JsSdkHelper.CreateWxConfig(Dos.WeChat.WeChatParam)">
+            <summary>
+            必须传入Debug，Url,可选传入：WeChatPublic
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dos.WeChat.IMsgCall">
+            <summary>
+            微信消息接口
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.IMsgCall.TextMsgCall(Dos.WeChat.RecTextMsg)">
+            <summary>
+            收到文本消息时回调
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.IMsgCall.VoiceMsgCall(Dos.WeChat.RecVoiceMsg)">
+            <summary>
+            收到语音消息时回调
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.IMsgCall.ImageMsgCall(Dos.WeChat.RecImgMsg)">
+            <summary>
+            收到图片消息时回调
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.IMsgCall.LinkMsgCall(Dos.WeChat.RecLinkMsg)">
+            <summary>
+            收到链接消息时回调
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.IMsgCall.LocationMsgCall(Dos.WeChat.RecLocationMsg)">
+            <summary>
+            收到地理位置消息时回调
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.IMsgCall.EventMsgCall(Dos.WeChat.RecEventMsg)">
+            <summary>
+            事件回调
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.IMsgCall.AfterMsgCall(Dos.WeChat.ReceiveMsg,Dos.WeChat.ResponseMsg)">
+            <summary>
+            消息回调执行后
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.MsgHelper._rootName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.MsgHelper.ToXml">
+            <summary>
+            转换为xml
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.MsgHelper.InnerToXml">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.MsgHelper.ParseFrom(System.String)">
+            <summary>
+            从xml文本中获取值
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.MsgHelper.ToXml(System.Object)">
+            <summary>
+            将指定对象的带[Output]标识的属性序列化为xml文本
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.MsgHelper.ToXml(System.Object,System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo})">
+            <summary>
+            将指定对象的指定属性列表序列化为xml文本。
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.MsgHelper.GetOutputPropertys(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.MsgHelper.ToUserName">
+            <summary>
+            开发者微信公众号
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.MsgHelper.FromUserName">
+            <summary>
+            发送方OpenID
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.MsgHelper.CreateTime">
+            <summary>
+            消息创建时间
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.MsgHelper.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.MsgHelper.RootName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.MsgHelper.OutProperties">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.ReceiveMsg">
+            <summary>
+            接收的消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ReceiveMsg._IMsgCall">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.ReceiveMsg.Reg(Dos.WeChat.IMsgCall)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.ReceiveMsg.ParseReceiveMsg">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.ReceiveMsg.Parse(System.String)">
+            <summary>
+            从xml文件解析消息。
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.ReceiveMsg.ObtainByType(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.ReceiveMsg.RegIMsgCall(Dos.WeChat.IMsgCall)">
+            <summary>
+            注册消息处理接口
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.ReceiveMsg.FillRepMsg(Dos.WeChat.ResponseMsg)">
+            <summary>
+            从接收到的消息中获取信息以填充到响应消息中。
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Dos.WeChat.ReceiveMsg.GetTextResponse(System.String)">
+            <summary>
+            获取文本响应消息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.ReceiveMsg.GetMusicResponse">
+            <summary>
+            获取音乐响应消息
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.ReceiveMsg.GetNewsResponse(System.Collections.Generic.IEnumerable{Dos.WeChat.NewsItem})">
+            <summary>
+            获取图文响应消息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.ReceiveMsg.RegMsgCall">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.ReceiveMsg.MsgId">
+            <summary>
+            消息id
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.ResponseMsg">
+            <summary>
+            响应消息
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.ResponseMsg.Response(System.Boolean)">
+            <summary>
+            将响应写入响应流。
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.RepMsgData">
+            <summary>
+            响应消息数据
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.Message">
+            <summary>
+            微信消息
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.Message.Send(Dos.WeChat.WeChatParam)">
+            <summary>
+            发送客服消息。必传：ToUser、MsgType、Content。WeChatType。
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.Message.SendTemplate(Dos.WeChat.WeChatParam)">
+            <summary>
+            传入：ToUser，TemplateId，Url，Data（Dictionary&lt;string,string>）
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.RecTextMsg">
+            <summary>
+            接收的文本消息
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.RecImgMsg">
+            <summary>
+            图片消息
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.RecLocationMsg">
+            <summary>
+            地理位置消息
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecLocationMsg.LocationX">
+            <summary>
+            X 坐标
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecLocationMsg.LocationY">
+            <summary>
+            Y 坐标
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecLocationMsg.Scale">
+            <summary>
+            缩放级别
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecLocationMsg.Label">
+            <summary>
+            地理位置信息
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.RecLinkMsg">
+            <summary>
+            链接消息
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecLinkMsg.Title">
+            <summary>
+            消息标题
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecLinkMsg.Description">
+            <summary>
+            消息描述
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecLinkMsg.Url">
+            <summary>
+            消息链接
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.RecEventMsg">
+            <summary>
+            事件推送消息
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.RecEventMsg.Subscribe">
+            <summary>
+            订阅事件
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.RecEventMsg.UnSubscribe">
+            <summary>
+            退订事件
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.RecEventMsg.Click">
+            <summary>
+            菜单点击事件
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.RecEventMsg.Scan">
+            <summary>
+            扫描二维码事件
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.RecEventMsg.Location">
+            <summary>
+            上报地理位置事件
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.RecEventMsg.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecEventMsg.Event">
+            <summary>
+            事件类型。从常量中获取
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecEventMsg.EventKey">
+            <summary>
+            事件Key。用户通过扫描带参二维码订阅时：qrscene_为前缀，后面为二维码的参数值。扫描带参二维码事件：一个32位无符号整数
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecEventMsg.Ticket">
+            <summary>
+            二维码的ticket，可用来换取二维码图片。仅在扫描带参二维码时有值。
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecEventMsg.Latitude">
+            <summary>
+            地理位置纬度
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecEventMsg.Longitude">
+            <summary>
+            地理位置经度
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecEventMsg.Precision">
+            <summary>
+            地理位置精度
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.RecVoiceMsg">
+            <summary>
+            语音消息
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecVoiceMsg.MediaID">
+            <summary>
+            语音消息媒体id，可以调用多媒体文件下载接口拉取该媒体
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecVoiceMsg.Format">
+            <summary>
+            语音格式：amr
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecVoiceMsg.Recognition">
+            <summary>
+            语音识别结果，UTF8编码
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.RecVideoMsg">
+            <summary>
+            视频消息
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecVideoMsg.MediaId">
+            <summary>
+            视频消息媒体id，可以调用多媒体文件下载接口拉取数据。
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.RecVideoMsg.ThumbMediaId">
+            <summary>
+            视频消息缩略图的媒体id，可以调用多媒体文件下载接口拉取数据。
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.TextMsgData">
+            <summary>
+            响应文本消息
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.MusicMsgData">
+            <summary>
+            响应音乐消息
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.NewsMsgData">
+            <summary>
+            响应图文消息
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.NewsMsgData.Items">
+            <summary>
+            新闻条目列表
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.RepTextMessage">
+            <summary>
+            响应文件消息
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.RepMusicMessage">
+            <summary>
+            响应音乐消息
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.RepNewsMessage">
+            <summary>
+            响应图文消息
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.Bill">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.交易时间">
+            <summary>
+            交易时间
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.公众账号ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.商户号">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.子商户号">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.设备号">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.微信订单号">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.商户订单号">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.用户标识">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.交易类型">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.交易状态">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.付款银行">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.货币种类">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.总金额">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.企业红包金额">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.微信退款单号">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.商户退款单号">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.退款金额">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.企业红包退款金额">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.退款类型">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.退款状态">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.商品名称">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.商户数据包">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.手续费">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.Bill.费率">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.CreateQrCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.CreateQrCode.ToJsonString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.CreateQrCode.ExpireSeconds">
+            <summary>
+            该二维码有效时间，以秒为单位。 最大不超过1800。
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.CreateQrCode.ActionName">
+            <summary>
+            二维码类型，QR_SCENE为临时,QR_LIMIT_SCENE为永久
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.CreateQrCode.ActionInfo">
+            <summary>
+            二维码详细信息
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.QrCodeResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.QrCodeResult.Ticket">
+            <summary>
+            获取的二维码ticket，凭借此ticket可以在有效时间内换取二维码。
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.QrCodeResult.ExpireSeconds">
+            <summary>
+            二维码的有效时间，以秒为单位。最大不超过1800。
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.QrCodeResult.Url">
+            <summary>
+            二维码图片解析后的地址，开发者可根据该地址自行生成需要的二维码图片
+            </summary>
+        </member>
+        <member name="T:Dos.WeChat.UserInfoResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.Subscribe">
+            <summary>
+            用户是否订阅该公众号标识，值为0时，代表此用户没有关注该公众号，拉取不到其余信息。
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.OpenId">
+            <summary>
+            用户的标识，对当前公众号唯一
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.NickName">
+            <summary>
+            用户的昵称
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.Sex">
+            <summary>
+            用户的性别，值为1时是男性，值为2时是女性，值为0时是未知
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.City">
+            <summary>
+            用户所在城市
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.Country">
+            <summary>
+            用户所在国家
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.Province">
+            <summary>
+            用户所在省份
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.Language">
+            <summary>
+            用户的语言，简体中文为zh_CN
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.HeadImgUrl">
+            <summary>
+            用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像），用户没有头像时该项为空。若用户更换头像，原有头像URL将失效。
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.SubscribeTime">
+             <summary>
+            用户关注时间，为时间戳。如果用户曾多次关注，则取最后关注时间
+             </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.UnionId">
+             <summary>
+            只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段。
+             </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.Errcode">
+             <summary>
+            错误时微信会返回错误码等信息
+             </summary>
+        </member>
+        <member name="P:Dos.WeChat.UserInfoResult.ErrMsg">
+             <summary>
+            错误时微信会返回错误码等信息
+             </summary>
+        </member>
+        <member name="P:Dos.WeChat.PayParam.OrderNumber">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.PayParam.TotalFee">
+            <summary>
+            金额（分）
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.PayParam.TimeExpire">
+            <summary>
+            过期时间，格式（20141010121314）
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.PayParam.ProductName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Dos.WeChat.PayParam.NotifyUrl">
+            <summary>
+            支付成功回调地址
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.RequestHandler._key">
+            <summary>
+            密钥
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.RequestHandler.Parameters">
+            <summary>
+            请求的参数
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.RequestHandler._debugInfo">
+            <summary>
+            debug信息
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.RequestHandler.Init">
+            <summary>
+            初始化函数
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.RequestHandler.GetDebugInfo">
+            <summary>
+            获取debug信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.RequestHandler.GetKey">
+            <summary>
+            获取密钥
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.RequestHandler.SetKey(System.String)">
+            <summary>
+            设置密钥
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Dos.WeChat.RequestHandler.SetParameter(System.String,System.String)">
+            <summary>
+            设置参数值
+            </summary>
+            <param name="parameter"></param>
+            <param name="parameterValue"></param>
+        </member>
+        <member name="M:Dos.WeChat.RequestHandler.GetRequestURL">
+            <summary>
+            获取package带参数的签名包
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.RequestHandler.CreateMd5Sign">
+            <summary>
+            创建package签名，按参数名称a-z排序,遇到空值的参数不参加签名。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.RequestHandler.CreateSHA1Sign">
+            <summary>
+            创建sha1签名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.RequestHandler.ParseXml">
+            <summary>
+            输出XML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.RequestHandler.ParseXmlNoCdata">
+            <summary>
+            输出XML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.RequestHandler.ParseJson">
+            <summary>
+            输出JSON
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Dos.WeChat.ResponseHandler.Charset">
+            <summary>
+            微信服务器编码方式
+            </summary>
+        </member>
+        <member name="F:Dos.WeChat.ResponseHandler._key">
+            <summary>
+            密钥
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.ResponseHandler.init">
+            <summary>
+            初始化加载
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.ResponseHandler.GetKey">
+            <summary>
+            获取密钥
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.ResponseHandler.SetKey(System.String)">
+            <summary>
+            设置密钥
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Dos.WeChat.ResponseHandler.GetParameter(System.String)">
+            <summary>
+            获取参数值
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.ResponseHandler.SetParameter(System.String,System.String)">
+            <summary>
+            设置参数值
+            </summary>
+            <param name="parameter"></param>
+            <param name="parameterValue"></param>
+        </member>
+        <member name="M:Dos.WeChat.ResponseHandler.IsWXsign(System.String@)">
+            <summary>
+            判断微信签名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.ResponseHandler.GetCharset">
+            <summary>
+            获取编码方式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.PayUtil.DownloadBill(System.String)">
+            <summary>
+            billDate格式 20141212
+            </summary>
+            <param name="billDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.PayUtil.Refund(Dos.WeChat.PayParam)">
+            <summary>
+            传入订单号OrderNumber，RefundNumber,总金额total_fee（分）,RefundFee退款金额(分)，
+            </summary>
+            <param name="context"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.PayUtil.GetUnifiedOrder(Dos.WeChat.PayParam)">
+            <summary>
+            传入ProductName，OrderNumber，TotalFee，TimeExpire，OpenId（可选），TradeType，NotifyUrl（可选）
+            </summary>
+            <param name="param"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.PayUtil.CreateJSAPIPayJson(Dos.WeChat.PayParam)">
+            <summary>
+            传入 OpenId,订单Id，金额（分），过期时间（20141010121314），商品名称。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.PayUtil.UrlEncode(System.String,System.String)">
+            <summary>
+            对字符串进行URL编码
+            </summary>
+            <param name="instr"></param>
+            <param name="charset">默认值：utf-8</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.PayUtil.UrlDecode(System.String,System.String)">
+            <summary>
+            对字符串进行URL解码
+            </summary>
+            <param name="instr"></param>
+            <param name="charset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.PayUtil.UnixStamp">
+            <summary>
+            取时间戳生成随即数,替换交易单号中的后10位流水号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.PayUtil.BuildRandomStr(System.Int32)">
+            <summary>
+            取随机数
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dos.WeChat.QrCodeHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dos.WeChat.QrCodeHelper.CreateTempQrCode(Dos.WeChat.CreateQrCode)">
+            <summary>
+            创建二维码。
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.QrCodeHelper.GetTempQrCode(Dos.WeChat.CreateQrCode)">
+            <summary>
+            传入ExpireSeconds，ActionName，ActionInfo（sceneId）。获取临时二维码，返回二维码图片文件的服务器地址。
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dos.WeChat.QrCodeHelper.GetEverQrCode(Dos.WeChat.CreateQrCode)">
+            <summary>
+            传入ActionName，ActionInfo（scene_id对应QR_LIMIT_SCENE，scene_str对应QR_LIMIT_STR_SCENE）
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,4511 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AgileFrame.Common</name>
+    </assembly>
+    <members>
+        <!-- 对于成员“T:AgileFrame.Core.BaseCtrlType”忽略有格式错误的 XML 注释 -->
+        <member name="F:AgileFrame.Core.BaseCtrlType.SelectSingle">
+            <summary>
+            弃用
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.BaseCtrlType.RadioBoxList">
+            <summary>
+            弃用
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.AgileFrame.Orm.PersistenceLayer.DataBaseDefaultFactory">
+            <summary>
+            缺省工厂，用来创建一些标准的表
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlTrace.HandlerSqlInfo">
+            <summary>
+            在调试期被载入的 持久层执行数据库操作触发的事情，显示了持久层对应的完整Sql语句
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlTrace.HandlerSqlErrors">
+            <summary>
+            在调试期被载入的 持久层处理Sql语句产生的异常触发的事件
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlErrorInfo.TranslateException(System.Data.SqlClient.SqlException,System.String)">
+            <summary>
+            Translate a SqlException to the correct DALException
+            </summary>
+            <param name="ex">SqlException to be translated</param>
+            <returns>An DALException</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.AttributeItemHelper.GetNetTypeStr(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp">
+            <summary>
+            Timestamp 数据源时间戳类型的操作封装
+            ALTER TABLE au_role ADD column_c timestamp not null default current_timestamp
+            
+            select Convert(datetime,column_c) as column_c from au_role 
+            select Convert(bigint,column_c) as column_c from au_role 
+            SET ANSI_NULLS off select * from  [AU_ROLE] where [AU_ROLE].[ROLE_regdate] = null
+            CREATE INDEX au_role_column_c_index ON au_role (column_c)
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.#ctor(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="ts"></param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.ToBytes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.ToInt64">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.FromInt64(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="long1"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.ToDateTime">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.FromDateTime(System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.ToTimeSpan">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.BytesToDateTime(System.Byte[])">
+            <summary> 
+            将BYTE数组转换为DATETIME类型 
+            </summary> 
+            <param name="bytes"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.DateTimeToBytes(System.DateTime)">
+            <summary> 
+            将DATETIME类型的对象转为可用的BYTE数组 
+            </summary> 
+            <param name="dt"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.ToUNIXDateTime(System.DateTime)">
+            如何把Unix下的时间戳(timestamp)转化为DateTime类型
+            首先因为timestamp的起始时间是1970年的01月01号（好想是的，你确认一下）   
+            所有需要进行一个换算   
+            在众多的PHP+MySQL的应用之中，存储在MySQL中的时间都是一串数字，后经查这个格式的日期叫做：Unix Timestamp;Unix的timestamp是一组数字，
+            表示从1970年1月1日以来的秒数。今天在进行C#应用开发时需要对MySQL中的数据进行操作，写出以下方法供大家参考。
+                    
+             <summary>
+             MySQL 1、将系统时间转换成UNIX时间戳
+             </summary>
+             <param name="unixStartTime"></param>
+             <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.TimeStamp.FromUNIXDateTime(System.String)">
+            <summary>
+            2、将UNIX时间戳转换成系统时
+            </summary>
+            <param name="unixTimeStamp"></param>
+            <returns></returns>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlHelpers.XTERPType.Char">
+            
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.SqlTypeHelper">
+            <summary>
+            AgileFrame.Orm.TemplateEngine.SqlType
+            AgileFrame.Orm.PersistenceLayer.SqlType
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.Model.DataParameter">
+            <summary>
+            数据参数封装
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.#ctor(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="ParameterName">例如 @id，等参数名</param>
+            <param name="value">@参数值</param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.#ctor(System.String,System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="attr"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.#ctor(System.String,System.String,System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="headStr"></param>
+            <param name="attr"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToSqlParameter(System.Collections.Generic.List{AgileFrame.Orm.PersistenceLayer.Model.DataParameter})">
+            <summary>
+            
+            </summary>
+            <param name="DataParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToSqlParameter(AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="DataParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.FromSqlParameter(System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="SqlParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToOleDbParameter(System.Collections.Generic.List{AgileFrame.Orm.PersistenceLayer.Model.DataParameter})">
+            <summary>
+            
+            </summary>
+            <param name="DataParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToOleDbParameter(AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="DataParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToDbParameter(AgileFrame.Orm.PersistenceLayer.Model.DataParameter[],AgileFrame.Orm.PersistenceLayer.DataBaseType)">
+            <summary>
+            
+            </summary>
+            <param name="DataParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToOracleParameter(AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="DataParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToMySqlParameter(AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="DataParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToSqlParameter">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToDbParameter(AgileFrame.Orm.PersistenceLayer.DataBaseType)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToOleDbParameter">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToOracleParameter">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToMySqlParameter">
+            <summary>
+            http://www.cnblogs.com/tintown/archive/2 0 0 5/11/08/271646.html
+            在.NET中要访问MySql，我采用的是MySql官方提供的.NET connector，此驱动只需要下载即可使用：http://dev.mysql.com/downloads/connector/net/1.0.html
+            1)使用Parameter参数形式提交Command时必须要把"@"号换成"?"号
+            2)在MySQL中也有保留字，为了提供兼容，我必须要找到定界符，好不容易在MySql的论坛里找到了，使用的定界符是`，这个符号不是单引号，而是键盘上数字1前面的那个“点”
+            3）MySQL中的TOP功能倒是非常简单，只需要语句后面使用“limit n”就行了，这比 ORACLE 的那 Rownum 方便多了。
+            如果采用String类型的Parameter传递给MySql的DateTime字段会报
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.ToString">
+            <summary>
+            用于sql语句缓存
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.HeadStr">
+            <summary>
+            前缀
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.Model.DataParameter.DbTypeStr">
+            <summary>
+            "string"，"DateTime"
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction">
+            <summary>
+            事务操作使用方法： 
+            using (Transaction t = new Transaction(conn))
+            {
+                try{
+                    //数据库操作、框架方法
+                    BLLTable.Factory(t).....
+                    //sql...
+                    t.Commit();
+                }catch (Exception ex){ t.RollBack(); }
+            }
+            默认 事务类型为实时提交，TransactionType.Real_Time
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction.#ctor">
+            <summary>
+            默认将使用 "conn" 的连接字符串
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction.#ctor(System.String)">
+            <summary>
+            请必须输入连接字符串或配置字 比如 "conn"
+            </summary>
+            <param name="connStr">请必须输入连接字符串或配置字 比如 "conn"</param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction.#ctor(System.String,AgileFrame.Orm.PersistenceLayer.DBUtility.TransactionType)">
+            <summary>
+            
+            </summary>
+            <param name="connKey"></param>
+            <param name="TransactionType"></param>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.TransactionType">
+            <summary>
+            事务操作，声明一个事务对象
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.TransactionType.SelfLazy">
+            <summary>
+            单个数据库操作方法内部是事务提交的
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.TransactionType.Lazy">
+            <summary>
+            多个数据库操作方法延迟到最后一次性提交
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.TransactionType.Real_Time">
+            <summary>
+            单个数据库操作方法都以实时事务提交，如果其中一个失败，则全部回滚。属于嵌套事务类型。
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.TransactionType.One_Time">
+            <summary>
+            本次操作是事务型操作，通常为多个sql语句拼接的情况
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.TransactionType.None">
+            <summary>
+            非事务
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper">
+            <summary>
+            数据库的通用访问代码
+            此类为抽象类，不允许实例化，在应用时直接调用即可
+            判断是否是内存中获取：if (db1.isCached) db1.Load(true);
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.ISqlHelper">
+            <summary>
+            抽象类，公共代码
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ValidateSQL(System.String,System.String)">
+            <summary>
+            验证sql语句，但是不执行，就是编译进行验证 zlg add
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.Factory(System.String,AgileFrame.Orm.PersistenceLayer.DataBaseType)">
+            <summary>
+            输入数据源连接关键字 connectStr 可以是 web.config/app.config 的节点，可以直接是连接字符串；两者的区别以 是否包含 "="符号 来判断
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.IsThrowSqlError">
+            <summary>
+            是否抛出异常，默认为抛出异常
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.IsHideSqlError">
+            <summary>
+            隐藏所有错误，除了不抛出错误，还包括不显示在控制台中
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.HandleError(System.Boolean,AgileFrame.Core.CoreException)">
+            <summary>
+            规范方法：本类处理异常的方法，可以在此处配置日志记录方式。因为各类异常有层次区别，SQL层、DAL层、BLL层，可能采用的日志记录方式也是不同的。
+            </summary>
+            <param name="ce"></param>      
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.HandleError(AgileFrame.Core.CoreException)">
+            <summary>
+            规范方法：本类处理异常的方法，可以在此处配置日志记录方式。因为各类异常有层次区别，SQL层、DAL层、BLL层，可能采用的日志记录方式也是不同的。
+            </summary>
+            <param name="ce"></param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.HandleError(System.String,AgileFrame.Core.CoreException)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.HandleError(System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[],AgileFrame.Core.CoreException)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.HandleError(System.Boolean,System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[],AgileFrame.Core.CoreException)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.HandleError(System.Boolean,System.String,System.Data.OracleClient.OracleParameter[],AgileFrame.Core.CoreException)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.GetTransLatePath(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.GetConnection">
+            <summary>
+            获取数据库连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ExecuteSqlBulkCopy2(System.Data.DataSet,System.String[],System.Collections.ArrayList[],System.Collections.ArrayList[])">
+            <summary>
+            用DataSet更新服务端数据库
+            </summary>
+            <param name="dsSource">用于更新数据库的源DataSet</param>
+            <param name="desTable">目标数据库中的表集合，表的存放顺序应该与DataSet中表顺序对应</param>
+            <param name="srcCol">源DataSet中各个表列名集合，其一维维数应与源DataSet中Tables的维数相同，二维维数与源DataSet中对应DataTable中列数相同</param>
+            <param name="desCol">目标数据库中各个表的列名集合，其一维维数与源DataSet中Tables的维数相同，二维维数与源DataSet中对应DataTable中列数相同</param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ExecuteNonQuery(System.Data.CommandType,System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            执行一个不需要返回值的SqlCommand命令，通过指定专用的连接字符串。
+            使用参数数组形式提供参数列表 
+            </summary>
+            <remarks>
+            使用示例：
+             int result = ExecuteNonQuery( CommandType.StoredProcedure, "PublishOrders", new DataParameter("@prodid", 24));
+            </remarks>
+            <param name="cmdType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供SqlCommand命令中用到的参数列表</param>
+            <returns>返回一个数值表示此SqlCommand命令执行后影响的行数</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ExecuteCreateQuery(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.Data.CommandType,System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            创建表
+            </summary>       
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ExecuteNonQuery(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.Data.CommandType,System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            执行一条不返回结果的SqlCommand，通过一个已经存在的数据库事物处理 返回 -8 8表示异常
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例： 
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "PublishOrders", new DataParameter("@prodid", 24));
+            </remarks>
+            <param name="Transaction">一个存在的 sql 事物处理</param>
+            <param name="cmdType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供SqlCommand命令中用到的参数列表</param>
+            <returns>返回一个数值表示此SqlCommand命令执行后影响的行数</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ExecuteReader(System.Data.CommandType,System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            执行一条返回结果集的SqlCommand命令，通过专用的连接字符串。
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例：  
+             SqlDataReader r = ExecuteReader( CommandType.StoredProcedure, "PublishOrders", new DataParameter("@prodid", 24));
+            </remarks>
+            <param name="cmdType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供SqlCommand命令中用到的参数列表</param>
+            <returns>返回一个包含结果的SqlDataReader</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.TryExecuteReader(System.Data.CommandType,System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="cmdType"></param>
+            <param name="cmdText"></param>
+            <param name="commandParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ExecuteReader(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.Data.CommandType,System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="Transaction"></param>
+            <param name="cmdType"></param>
+            <param name="cmdText"></param>
+            <param name="commandParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ExecuteTable(System.Data.CommandType,System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            执行一条返回结果集的SqlCommand命令，通过专用的连接字符串。
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例：  
+             SqlDataReader r = ExecuteReader( CommandType.StoredProcedure, "PublishOrders", new DataParameter("@prodid", 24));
+            </remarks>
+            <param name="cmdType"></param>
+            <param name="cmdText">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="commandParameters">以数组形式提供SqlCommand命令中用到的参数列表</param>
+            <returns>返回一个包含结果的SqlDataReader</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ExecuteTable(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.Data.CommandType,System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ExecuteScalar(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.Data.CommandType,System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            执行一条返回第一条记录第一列的SqlCommand命令，通过专用的连接字符串。 
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例：  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new DataParameter("@prodid", 24));
+            </remarks>
+            <param name="cmdType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供SqlCommand命令中用到的参数列表</param>
+            <returns>返回一个object类型的数据，可以通过 Convert.To{Type}方法转换类型</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.CacheParameters(System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            缓存参数数组
+            </summary>
+            <param name="cacheKey">参数缓存的键值</param>
+            <param name="commandParameters">被缓存的参数列表</param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.GetCachedParameters(System.String)">
+            <summary>
+            获取被缓存的参数
+            </summary>
+            <param name="cacheKey">用于查找参数的KEY值</param>
+            <returns>返回缓存的参数数组</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.PrepareCommand(System.Data.SqlClient.SqlCommand,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            为执行命令准备参数，此处设置为前两次连接采用异步线程连接，以快速返回连接方式失败的情况。
+            </summary>
+            <param name="cmd">SqlCommand 命令</param>
+            <param name="conn">已经存在的数据库连接</param>
+            <param name="trans1">数据库事物处理</param>
+            <param name="cmdType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">Command text，T-SQL语句 例如 Select * from Products</param>
+            <param name="cmdParams2">返回带参数的命令</param>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.count">
+            <summary>
+            数据库连接次数
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.OpenConnection">
+            <summary>
+            单次打开连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.CheckConnect(System.Data.IDbConnection)">
+            <summary>
+            检查连接，前两次连接为限制检查时间，后面的为直接连接
+            </summary>
+            <param name="conn"></param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.qDataTable(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.String,System.Data.CommandType)">
+            
+             <summary>
+             查询数据返回一个表格
+             </summary>
+             <param name="sql"></param>
+             <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.qDataRow(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.String,System.Data.CommandType)">
+            <summary>
+            查询数据返回一个行
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.qDataSet(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.String,System.Data.CommandType)">
+            <summary>
+            查询数据返回多个表格
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.GetOneValue(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.String,System.Data.CommandType)">
+            <summary>
+            查询单个数值
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ExecSQLCreate(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.String,System.Data.CommandType)">
+            <summary>
+            运行sql命令,返回改变的行数,
+            </summary>
+            <param name="sql">要运行的sql命令</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ToRealSqlStr(System.String,MySql.Data.MySqlClient.MySqlParameter[])">
+            <summary>
+            自动填充参数，成为sql plus可以执行的sql完全脚本
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ToRealSqlStr(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            自动填充参数，成为sql plus可以执行的sql完全脚本
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ToRealSqlStr(System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            自动填充参数，成为sql plus可以执行的sql完全脚本
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ToRealSqlStr(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            自动填充参数，成为sql plus可以执行的sql完全脚本
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ConnectionStringLocalTransaction">
+            <summary>
+            获取数据库连接字符串，其属于静态变量且只读，项目中所有文档可以直接使用，不建议修改  ConnectionStringLocalTransaction
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ConnectionStringFileType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.DBUtility.DoSqlHelper.ConnectStr">
+            <summary>
+            写值的时候，兼容 key和全句的sql
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper">
+            <summary>
+            数据库的通用访问代码
+            此类为抽象类，不允许实例化，在应用时直接调用即可
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.qDataTable(System.String)">
+            
+             <summary>
+             查询数据返回一个表格
+             </summary>
+             <param name="sql"></param>
+             <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.qDataTableWithKey(System.String)">
+            
+             <summary>
+             查询数据返回一个表格
+             </summary>
+             <param name="sql"></param>
+             <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.qDataRow(System.String)">
+            <summary>
+            查询数据返回一个表格
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.qDataSet(System.String)">
+            <summary>
+            查询数据返回一个表格
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.GetOneValue(System.String)">
+            <summary>
+            查询单个数值
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.ExecSQL(System.String)">
+            <summary>
+            运行sql命令,返回改变的行数,
+            </summary>
+            <param name="sql">要运行的sql命令</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.GetConnection">
+            <summary>
+            获取数据库连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.ExecuteNonQuery(System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+             <summary>
+            执行一个不需要返回值的OleDbCommand命令，通过指定专用的连接字符串。
+             使用参数数组形式提供参数列表 
+             </summary>
+             <remarks>
+             使用示例：
+              int result = ExecuteNonQuery( CommandType.StoredProcedure, "PublishOrders", new OleDbParameter("@prodid", 24));
+             </remarks>
+             <param name="cmdType">OleDbCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+             <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+             <param name="commandParameters">以数组形式提供OleDbCommand命令中用到的参数列表</param>
+             <returns>返回一个数值表示此OleDbCommand命令执行后影响的行数</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.ExecuteReader(System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行一条返回结果集的OleDbCommand命令，通过专用的连接字符串。
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例：  
+             OleDbDataReader r = ExecuteReader( CommandType.StoredProcedure, "PublishOrders", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="cmdType">OleDbCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供OleDbCommand命令中用到的参数列表</param>
+            <returns>返回一个包含结果的OleDbDataReader</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.ExecuteScalar(System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            执行一条返回第一条记录第一列的OleDbCommand命令，通过专用的连接字符串。 
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例：  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new OleDbParameter("@prodid", 24));
+            </remarks>
+            <param name="cmdType">OleDbCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供OleDbCommand命令中用到的参数列表</param>
+            <returns>返回一个object类型的数据，可以通过 Convert.To{Type}方法转换类型</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.CacheParameters(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            缓存参数数组
+            </summary>
+            <param name="cacheKey">参数缓存的键值</param>
+            <param name="commandParameters">被缓存的参数列表</param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.GetCachedParameters(System.String)">
+            <summary>
+            获取被缓存的参数
+            </summary>
+            <param name="cacheKey">用于查找参数的KEY值</param>
+            <returns>返回缓存的参数数组</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OleDbHelper.PrepareCommand(System.Data.OleDb.OleDbCommand,System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction,System.Data.CommandType,System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            为执行命令准备参数
+            </summary>
+            <param name="cmd">OleDbCommand 命令</param>
+            <param name="conn">已经存在的数据库连接</param>
+            <param name="trans">数据库事物处理</param>
+            <param name="cmdType">OleDbCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">Command text，T-SQL语句 例如 Select * from Products</param>
+            <param name="cmdParms">返回带参数的命令</param>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper">
+            <summary>
+            数据库的通用访问代码
+            此类为抽象类，不允许实例化，在应用时直接调用即可
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.qDataTable(System.String)">
+            
+             <summary>
+             查询数据返回一个表格
+             </summary>
+             <param name="sql"></param>
+             <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.qDataTableWithKey(System.String)">
+            
+             <summary>
+             查询数据返回一个表格
+             </summary>
+             <param name="sql"></param>
+             <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.qDataRow(System.String)">
+            <summary>
+            查询数据返回一个表格
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.qDataSet(System.String)">
+            <summary>
+            查询数据返回一个表格
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.GetOneValue(System.String)">
+            <summary>
+            查询单个数值
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.ExecSQL(System.String)">
+            <summary>
+            运行sql命令,返回改变的行数,
+            </summary>
+            <param name="sql">要运行的sql命令</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.GetConnection">
+            <summary>
+            获取数据库连接
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.ExecuteCreateQuery(System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])”忽略有格式错误的 XML 注释 -->
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.ExecuteNonQuery(System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+             <summary>
+            执行一个不需要返回值的OracleCommand命令，通过指定专用的连接字符串。
+             使用参数数组形式提供参数列表 
+             </summary>
+             <remarks>
+             使用示例：
+              int result = ExecuteNonQuery( CommandType.StoredProcedure, "PublishOrders", new OracleParameter("@prodid", 24));
+             </remarks>
+             <param name="cmdType">OracleCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+             <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+             <param name="commandParameters">以数组形式提供OracleCommand命令中用到的参数列表</param>
+             <returns>返回一个数值表示此OracleCommand命令执行后影响的行数</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.ExecuteReader(System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行一条返回结果集的OracleCommand命令，通过专用的连接字符串。
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例：  
+             OracleDataReader r = ExecuteReader( CommandType.StoredProcedure, "PublishOrders", new OracleParameter("@prodid", 24));
+            </remarks>
+            <param name="cmdType">OracleCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供OracleCommand命令中用到的参数列表</param>
+            <returns>返回一个包含结果的OracleDataReader</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.ExecuteScalar(System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            执行一条返回第一条记录第一列的OracleCommand命令，通过专用的连接字符串。 
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例：  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new OracleParameter("@prodid", 24));
+            </remarks>
+            <param name="cmdType">OracleCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供OracleCommand命令中用到的参数列表</param>
+            <returns>返回一个object类型的数据，可以通过 Convert.To{Type}方法转换类型</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.CacheParameters(System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            缓存参数数组
+            </summary>
+            <param name="cacheKey">参数缓存的键值</param>
+            <param name="commandParameters">被缓存的参数列表</param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.GetCachedParameters(System.String)">
+            <summary>
+            获取被缓存的参数
+            </summary>
+            <param name="cacheKey">用于查找参数的KEY值</param>
+            <returns>返回缓存的参数数组</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.OracleHelper.PrepareCommand(System.Data.OracleClient.OracleCommand,System.Data.OracleClient.OracleConnection,System.Data.OracleClient.OracleTransaction,System.Data.CommandType,System.String,System.Data.OracleClient.OracleParameter[])">
+            <summary>
+            为执行命令准备参数
+            </summary>
+            <param name="cmd">OracleCommand 命令</param>
+            <param name="conn">已经存在的数据库连接</param>
+            <param name="trans">数据库事物处理</param>
+            <param name="cmdType">OracleCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">Command text，T-SQL语句 例如 Select * from Products</param>
+            <param name="cmdParms">返回带参数的命令</param>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlHelperPool">
+            <summary>
+            数据库操作池，可批量提交100个sql脚本。SqlHelperPool
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlHelperPool.ToRealSqlStr(System.String,AgileFrame.Orm.PersistenceLayer.Model.DataParameter[])">
+            <summary>
+            自动填充参数，成为sql plus可以执行的sql完全脚本
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.ConnectionStringFileType">
+            <summary>
+            优先级从上至下
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.LockSqlObject">
+            <summary>
+            支持同时多数据库访问的小型锁定对象
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.DBUtility.LockSqlObject.ConnectionString">
+            <summary>
+            规则为 add key="conn" value="Data Source=chx;User ID=sa;Password=chintchint;Persist Security Info=True;Initial Catalog=AIO_TH|oracle"
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.ViewField">
+            <summary>
+            视图字段对象
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.DBUtility.ViewField.ViewName">
+            <summary>
+            视图名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.DBUtility.ViewField.VFieldName">
+            <summary>
+            视图字段别名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.DBUtility.ViewField.TableName">
+            <summary>
+            关联表名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Orm.PersistenceLayer.DBUtility.ViewField.TFieldName">
+            <summary>
+            关联表字段名
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser">
+            SQL语句解析器类 
+            @author: sitinspring(junglesong@gmail.com) 
+            @date: 2008-3-12 
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.Comma">
+            逗号 
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.FourSpace">
+            四个空格 
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.isSingleLine">
+            是否单行显示字段，表，条件的标识量 
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.sql">
+            待解析的SQL语句 
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.cols">
+            SQL中选择的列 
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.tables">
+            SQL中查找的表 
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.conditions">
+            查找条件 
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.groupCols">
+            Group By的字段 
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.orderCols">
+            Order by的字段 
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.#ctor(System.String)">
+            构造函数 
+            功能：传入构造函数，解析成字段，表，条件等 
+            @param sql：传入的SQL语句 
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.parseCols">
+            解析选择的列 
+            
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.parseTables">
+            解析选择的表 
+            
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.parseConditions">
+            解析查找条件 
+            
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.parseGroupCols">
+            解析GroupBy的字段 
+            
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.parseOrderCols">
+            解析OrderBy的字段 
+            
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.getMatchedString(System.String,System.String)">
+            从文本text中找到regex首次匹配的字符串，不区分大小写 
+            @param regex： 正则表达式 
+            @param text：欲查找的字符串 
+            @return regex首次匹配的字符串，如未匹配返回空 
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.isContains(System.String,System.String)">
+            看word是否在lineText中存在，支持正则表达式 
+            @param lineText 
+            @param word 
+            @return 
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.getAddEnterStr(System.String,System.String)">
+            在分隔符后加上回车 
+            @param str 
+            @param splitStr 
+            @return 
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.getParsedSqlList">
+            取得解析的SQL字符串列表 
+            @return 
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.setSingleLine(System.Boolean)">
+            设置是否单行显示表，字段，条件等 
+            @param isSingleLine 
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.SqlParser.Test">
+            测试 
+            @param args 
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.Temp.ExecuteSqlTransaction">
+            <summary>
+            在提交或回滚 SqlTransaction 时，应始终使用 Try/Catch 进行异常处理。如果连接终止或事务已在服务器上回滚，则 Commit 和 Rollback 都会生成 InvalidOperationException。
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.Temp.ExecuteSqlTran(System.Collections.Generic.List{System.String})">
+            
+            执行多条SQL语句，实现数据库事务。 
+            
+            多条SQL语句 
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper">
+            <summary>
+            数据库的通用访问代码
+            此类为抽象类，不允许实例化，在应用时直接调用即可
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.qDataTable(System.String)">
+            
+             <summary>
+             查询数据返回一个表格
+             </summary>
+             <param name="sql"></param>
+             <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.qDataTableWithKey(System.String)">
+            <summary>
+            查询数据返回一个表格
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.qDataRow(System.String)">
+            <summary>
+            查询数据返回一个表格
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.qDataSet(System.String)">
+            <summary>
+            查询数据返回一个表格
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.GetOneValue(System.String)">
+            <summary>
+            查询单个数值
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.ExecSQL(System.String)">
+            <summary>
+            运行sql命令,返回改变的行数,
+            </summary>
+            <param name="sql">要运行的sql命令</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.GetConnection">
+            <summary>
+            获取数据库连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.ExecuteNonQuery(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
+             <summary>
+            执行一个不需要返回值的DbCommand命令，通过指定专用的连接字符串。
+             使用参数数组形式提供参数列表 
+             </summary>
+             <remarks>
+             使用示例：
+              int result = ExecuteNonQuery( CommandType.StoredProcedure, "PublishOrders", new DbParameter("@prodid", 24));
+             </remarks>
+             <param name="cmdType">DbCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+             <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+             <param name="commandParameters">以数组形式提供DbCommand命令中用到的参数列表</param>
+             <returns>返回一个数值表示此DbCommand命令执行后影响的行数</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.ExecuteReader(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            执行一条返回结果集的DbCommand命令，通过专用的连接字符串。
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例：  
+             DbDataReader r = ExecuteReader( CommandType.StoredProcedure, "PublishOrders", new DbParameter("@prodid", 24));
+            </remarks>
+            <param name="cmdType">DbCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供DbCommand命令中用到的参数列表</param>
+            <returns>返回一个包含结果的DbDataReader</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.ExecuteScalar(AgileFrame.Orm.PersistenceLayer.DBUtility.Transaction,System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            执行一条返回第一条记录第一列的DbCommand命令，通过专用的连接字符串。 
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例：  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new DbParameter("@prodid", 24));
+            </remarks>
+            <param name="cmdType">DbCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供DbCommand命令中用到的参数列表</param>
+            <returns>返回一个object类型的数据，可以通过 Convert.To{Type}方法转换类型</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.CacheParameters(System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            缓存参数数组
+            </summary>
+            <param name="cacheKey">参数缓存的键值</param>
+            <param name="commandParameters">被缓存的参数列表</param>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.GetCachedParameters(System.String)">
+            <summary>
+            获取被缓存的参数
+            </summary>
+            <param name="cacheKey">用于查找参数的KEY值</param>
+            <returns>返回缓存的参数数组</returns>
+        </member>
+        <member name="M:AgileFrame.Orm.PersistenceLayer.DBUtility.DbHelper.PrepareCommand(System.Data.Common.DbCommand,System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.Data.CommandType,System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            为执行命令准备参数
+            </summary>
+            <param name="cmd">DbCommand 命令</param>
+            <param name="conn">已经存在的数据库连接</param>
+            <param name="trans2">数据库事物处理</param>
+            <param name="cmdType">DbCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">Command text，T-SQL语句 例如 Select * from Products</param>
+            <param name="cmdParms">返回带参数的命令</param>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseConnectStringHelper">
+            <summary>
+            数据库连接字符串帮助类
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseConnectStringHelper.GetConnectStr(System.String,System.String@,System.String@)">
+            <summary>
+            取conn，再取xml配置文件
+            </summary>
+            <param name="connectKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseConnectStringHelper.GetDataBaseType(System.String,System.String)">
+            <summary>
+            获取数据库类型 //zlg 没写完?
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <returns>数据库类型</returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseConnectStringHelper.#ctor(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String)">
+            <summary>
+            初始化数据库连接字符串帮助类,此重载适合创建oracle系列数据库
+            </summary>
+            <param name="dataBaseType">数据库类型</param>
+            <param name="dataBaseServerName">数据库别名</param>
+            <param name="userName">用户名</param>
+            <param name="passWord">密码</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseConnectStringHelper.#ctor(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String)">
+            <summary>
+            初始化数据库连接字符串帮助类,此重载适合创建mssql系列数据库
+            </summary>
+            <param name="dataBaseType">数据库类型</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="dataBaseServerName">服务器名,名,地址,端口等</param>
+            <param name="userName">用户名</param>
+            <param name="passWord">密码</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseConnectStringHelper.#ctor(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            初始化数据库连接字符串帮助类,此重载适合创建mysql系列数据库
+            </summary>
+            <param name="dataBaseType">数据库类型</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="dataBaseServerName">服务器地址</param>
+            <param name="userName">用户名</param>
+            <param name="passWord">密码</param>
+            <param name="passWord">端口号</param>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseConnectStringHelper.m_dbBaseDic">
+            <summary>
+            从数据库载入的
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseConnectStringHelper.Factory(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String)">
+            <summary>
+            创建一个新的数据库实例，或返回一个已初始化的数据库实例
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseConnectStringHelper.#ctor(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String)">
+            <summary>
+            初始化数据库连接字符串帮助类
+            </summary>
+            <param name="dataBaseType">数据库类型</param>
+            <param name="connStr">连接字符串</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseConnectStringHelper.SysDataBaseName(AgileFrame.Orm.PersistenceLayer.DataBaseType)">
+            <summary>
+            获取系统数据库名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseConnectStringHelper.ConnStr">
+            <summary>
+            获取连接字符串
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseConnectStringHelper.DataBaseType">
+            <summary>
+            获取或设置数据库类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseConnectStringHelper.DataBaseName">
+            <summary>
+            获取或设置数据库名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseConnectStringHelper.DataBaseServer">
+            <summary>
+            获取或设置数据库服务器名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseConnectStringHelper.UserName">
+            <summary>
+            获取或设置用于连接数据库的用户名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseConnectStringHelper.PassWord">
+            <summary>
+            获取或设置用于连接数据库的密码
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseConnectStringHelper.Port">
+            <summary>
+            获取或设置用于连接数据库的端口
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DBFieldCheckResult">
+            <summary>
+            数据库字段比较结果
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseField">
+            <summary>
+            数据库字段对象
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseField.m_FieldOrder">
+            <summary>
+            列排序——1为升序，0为降序，-1为未排序。
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.IsShowInOneRow">
+            <summary>
+            判断指定控件类型是否显示在表单的一行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.CompareTo(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.CompareTo(AgileFrame.Common.DataBaseField)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.Equals(AgileFrame.Common.DataBaseField)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetHashCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.op_Equality(AgileFrame.Common.DataBaseField,AgileFrame.Common.DataBaseField)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.op_Inequality(AgileFrame.Common.DataBaseField,AgileFrame.Common.DataBaseField)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.#ctor(System.String,AgileFrame.Common.DataBaseDataType,System.Int32,System.Int32,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,AgileFrame.Common.DataBaseTable)">
+            <summary>
+            初始化数据库字段对象
+            </summary>
+            <param name="fieldName">字段名</param>
+            <param name="dataType">字段类型,可以调用DataBaseField类的静态方法GetDataTypeByName将字符串类型的类型名转换为类型</param>
+            <param name="dataLen">字段长度</param>
+            <param name="scale">小数位数</param>
+            <param name="defaultValue">默认值</param>
+            <param name="dataDec">字段描述</param>
+            <param name="isKey">是否关键字</param>
+            <param name="isAutoIncrease">是否自增长</param>
+            <param name="isAllowNull">是否允许为空</param>
+            <param name="dataBaseTable">字段所属表</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.#ctor(System.String,AgileFrame.Common.DataBaseDataType,System.Int32,System.Boolean,AgileFrame.Common.DataBaseTable)">
+            <summary>
+            初始化数据库字段对象
+            </summary>
+            <param name="fieldName">字段名</param>
+            <param name="dataType">字段类型</param>
+            <param name="dataLen">字段长度</param>
+            <param name="isKey">是否关键字</param>
+            <param name="dataBaseTable">字段所属表</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.#ctor(AgileFrame.Common.DataBaseField,AgileFrame.Common.DataBaseTable)">
+            <summary>
+            根据现有字段初始化一个新的字段,可用于字段复制
+            </summary>
+            <param name="field">现有字段</param>
+            <param name="dataBaseTable">所属表</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetDataTypeByName(System.String)">
+            <summary>
+            根据类型名获取数据类型
+            </summary>
+            <param name="typeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.ChangeName(System.String,System.String@)">
+            <summary>
+            修改名称呼
+            </summary>
+            <param name="newName">新名</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.Refresh(AgileFrame.Common.DataBaseField)">
+            <summary>
+            根据一个字段对象,刷新本字段各属性
+            </summary>
+            <param name="field">包含新数据的字段对象</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.CheckChange(AgileFrame.Common.DataBaseField)">
+            <summary>
+            检查该字段与传入字段的差别,返回是否全部一致
+            </summary>
+            <param name="field">传入字段</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.CheckChangeButNotUpdate(AgileFrame.Common.DataBaseField)">
+            <summary>
+            检查该字段与传入字段的差别
+            </summary>
+            <param name="field">包含需要对比数据的字段对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetAddDefaultValueSql">
+            <summary>
+            获取设置默认值的sql语句
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetSetZhNameSql">
+            <summary>
+            获取设置字段中文描述的sql
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetSetZhNameSql(System.String)">
+            <summary>
+            获取修改或设置字段中文描述的sql
+            </summary>
+            <param name="zhName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.ChangeZhName(System.String)">
+            <summary>
+            修改字段的注释
+            </summary>
+            <param name="zhName">要设置的表注释</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetParamSql">
+            <summary>
+            获取用于添加修改字段的参数字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetAddFieldSql">
+            <summary>
+            获取用于新增字段的sql
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetEditFieldSql">
+            <summary>
+            获取用于修改字段的sql
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetChangeFieldNameSql(System.String)">
+            <summary>
+            获取用于修改字段名称的sql
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.Update(AgileFrame.Common.DataBaseField,System.Boolean,System.String@)">
+            <summary>
+            用此字段更新传入的字段；须先调用 DataBaseField newf1 = f1.Clone(); newf1.Update(xxxxx);
+            </summary>
+            <param name="field">需要更新的字段</param>
+            <param name="isUpdateAll">是否全部更新,包括不可恢复的删除操作</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetEnumName(System.String)">
+            <summary>
+            根据枚举量值获取枚举量描述名，如果没有枚举量或指定枚举量值不存，返回null
+            </summary>
+            <param name="value">枚举量值</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetEnumValue(System.String)">
+            <summary>
+            根据枚举量值描述名获取枚举量值，如果没有枚举量或指定枚举量描述名不存，返回null
+            </summary>
+            <param name="name">枚举量值描述名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.GetClassNameOfTable(System.String)">
+            <summary>
+            保留的关键字，不能作为表名的关键字
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseField._purview">
+            <summary>
+            获取或设置字段权限等级
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.ToColumnSql">
+            <summary>
+            获取用于创建或修改字段的参数行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseField.getDataType">
+            <summary>
+            获取数据类型Sql字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.Desc">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.DescStr">
+            <summary>
+            表描述,中文名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.ID">
+            <summary>
+            顺序编号、次序
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.IsFK">
+            <summary>
+            是否外键
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.FieldName">
+            <summary>
+            字段名称 
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.FieldNameLowerCase">
+            <summary>
+            小写字段名称 //?
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.DataType">
+            <summary>
+            字段数据类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.ClassName">
+            <summary>
+            类名，类名不一定是表名，因为表名可以以数字开头等。
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.DataBaseTable">
+            <summary>
+            字段所属表
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.IsKeyName">
+            <summary>
+            是否是主键
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.IsKeyID">
+            <summary>
+            是否是主键
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.IsAutoIncrease">
+            <summary>
+            是否自增
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.IsAllowNull">
+            <summary>
+            是否允许为空
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.Purview">
+            <summary>
+            获取或设置字段权限等级
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseField.DBFieldCheckResult">
+            <summary>
+            数据库字段比较结果
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DBIndexCheckResult">
+            <summary>
+            数据库索引比较结果
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseIndex">
+            <summary>
+            数据库索引对象
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,AgileFrame.Common.DataBaseTable)">
+            <summary>
+            初始化数据库索引对象(索引名,是否主键创建的索引,是否聚集索引,是否唯一索引,是否唯一约束,填充因子,索引所属表)
+            </summary>
+            <param name="indexName">索引名</param>
+            <param name="isKeyIndex">是否主键创建的索引</param>
+            <param name="isClusteredIndex">是否聚集索引</param>
+            <param name="isUniqueIndex">是否唯一索引</param>
+            <param name="isUniqueConstraint">是否唯一约束</param>
+            <param name="fillFactor">填充因子</param>
+            <param name="dataBaseTable">索引所属表</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.#ctor(AgileFrame.Common.DataBaseIndex,AgileFrame.Common.DataBaseTable)">
+            <summary>
+            根据现有索引初始化一个新的索引,可用于索引复制
+            </summary>
+            <param name="index">索引</param>
+            <param name="dataBaseTable">索引所属表</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Collections.Generic.List{AgileFrame.Common.DataBaseIndexField},AgileFrame.Common.DataBaseTable)">
+            <summary>
+            初始化数据库索引对象
+            </summary>
+            <param name="indexName">索引名</param>
+            <param name="isKeyIndex">是否主键创建的索引</param>
+            <param name="isClusteredIndex">是否聚集索引</param>
+            <param name="isUniqueIndex">是否唯一索引</param>
+            <param name="isUniqueConstraint">是否唯一约束</param>
+            <param name="fillFactor">填充因子</param>
+            <param name="fields">索引字段</param>
+            <param name="dataBaseTable">索引所属表</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.ChangeName(System.String,System.String@)">
+            <summary>
+            修改名称呼
+            </summary>
+            <param name="newName">新名</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.CheckChange(AgileFrame.Common.DataBaseIndex)">
+            <summary>
+            检查该索引与传入索引的差别,返回是否全部一致
+            </summary>
+            <param name="index">传入索引</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.CheckChangeButNotUpdate(AgileFrame.Common.DataBaseIndex)">
+            <summary>
+            检查该索引与传入索引的差别
+            </summary>
+            <param name="index">包含需要对比数据的索引对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.AddField(AgileFrame.Common.DataBaseField,System.Int32,System.String)">
+            <summary>
+            添加字段
+            </summary>
+            <param name="field">字段</param>
+            <param name="indexOrder">索引顺序</param>
+            <param name="indexOrderBy">索引排序</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.RemoveField(System.String)">
+            <summary>
+            移除字段上的外键
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.GetAddIndexSql">
+            <summary>
+            获取用于新增此索引的sql语句
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.GetAddIndexSql(System.String)">
+            <summary>
+            获取用于新增此索引的sql语句
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.Refresh(AgileFrame.Common.DataBaseIndex)">
+            <summary>
+            根据一个索引对象,刷新本索引各属性
+            </summary>
+            <param name="index">包含新数据的索引对象</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndex.Update(AgileFrame.Common.DataBaseIndex,System.Boolean,System.String@)">
+            <summary>
+            用此索引更新传入的索引
+            </summary>
+            <param name="index">需要更新的索引</param>
+            <param name="isUpdateAll">是否全部更新,包括不可恢复的删除操作</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndex.IndexName">
+            <summary>
+            索引名称
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndex.IndexNameLowerCase">
+            <summary>
+            小写索引名称
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndex.FieldNamesLowerCase">
+            <summary>
+            索引相关的字段字符串
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndex.IsKeyIndex">
+            <summary>
+            是否主键创建的索引
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndex.IsClusteredIndex">
+            <summary>
+            是否聚集索引
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndex.IsUniqueIndex">
+            <summary>
+            是否唯一索引
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndex.IsUniqueConstraint">
+            <summary>
+            是否唯一约束
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndex.FillFactor">
+            <summary>
+            填充因子
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndex.DataBaseTable">
+            <summary>
+            索引所属表
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndex.DBIndexCheckResult">
+            <summary>
+            数据库索引比较结果
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndex.IndexFields">
+            <summary>
+            列名、索引字段，索引的字段集合
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseIndexField">
+            <summary>
+            数据库索引对象
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndexField.#ctor(AgileFrame.Common.DataBaseField,System.Int32,System.String,AgileFrame.Common.DataBaseIndex)">
+            <summary>
+            初始化数据库字段对象
+            </summary>
+            <param name="field">字段</param>
+            <param name="indexOrder">索引顺序</param>
+            <param name="indexOrderBy">索引排序</param>
+            <param name="dataBaseCheckIndex">所属索引</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndexField.#ctor(AgileFrame.Common.DataBaseIndexField,AgileFrame.Common.DataBaseIndex)">
+            <summary>
+            根据现有索引字段初始化一个新的索引字段,可用于索引字段复制
+            </summary>
+            <param name="field">现有索引字段</param>
+            <param name="dataBaseCheckIndex">所属索引</param>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndexField.Field">
+            <summary>
+            字段
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndexField.IndexOrder">
+            <summary>
+            索引排序
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndexField.IndexOrderBy">
+            <summary>
+            索引排序方式
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseIndexField.DataBaseIndex">
+            <summary>
+            所属索引
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DBTableCheckResult">
+            <summary>
+            表对比结果
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseTable">
+            <summary>
+            数据库表对象
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.#ctor(System.String)">
+            <summary>
+            非数据库同步的对象方法
+            </summary>
+            <param name="tableName"></param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.#ctor(System.String,System.String,AgileFrame.Common.DataBase)">
+            <summary>
+            初始化数据库表对象
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="tableDec">表描述,中文名</param>
+            <param name="dataBase">所属数据库</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.#ctor(System.String,AgileFrame.Common.DataBaseTable)">
+            <summary>
+            初始化数据库表对象,根据一个旧表
+            </summary>
+            <param name="tableName">新表名</param>
+            <param name="oldTable">旧表</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.Create(AgileFrame.Common.DataBaseField)">
+            <summary>
+            返回数字,1：成功,2：
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.Create(System.Collections.Generic.List{AgileFrame.Common.DataBaseField})">
+            <summary>
+            返回数字,1：成功,2：
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.UpdateName(System.String)">
+            <summary>
+            修改表名
+            </summary>
+            <param name="newTBName"></param>
+            <param name="oldTBName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.Refresh(AgileFrame.Common.DataBaseTable,System.Boolean)">
+            <summary>
+            根据一个表对象,刷新本表各属性 _dataFields _dataTableIndexs _dataTableFKeys
+            </summary>
+            <param name="table">包含新数据的表对象</param>
+            <param name="isRefreshForeignKey">是否外键,false,只刷新字段和索引,true,刷新包括外键的所有内容,考虑到添加表时可能外键所在表还未添加到系统中</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.ChangeName(System.String)">
+            <summary>
+            修改称呼
+            </summary>
+            <param name="newName">新名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.AddField(System.String,AgileFrame.Common.DataBaseDataType,System.Int32,System.Int32,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.String@)">
+            <summary>
+            向表中添加字段
+            </summary>
+            <param name="fieldName">字段名</param>
+            <param name="dataType">字段类型</param>
+            <param name="dataLen">字段长度</param>
+            <param name="scale">小数位长度</param>
+            <param name="defaultValue">默认值</param>
+            <param name="dataDec">字段描述</param>
+            <param name="isKey">是否关键字</param>
+            <param name="isAutoIncrease">是否自增长</param>
+            <param name="isAllowNull">是否允许为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.AddField(AgileFrame.Common.DataBaseField,System.String@)">
+            <summary>
+            向表中添加字段
+            </summary>
+            <param name="field">要添加的字段,要想添加成功,字段名必须不包含与此表</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.DeleteField(System.String,System.Boolean,System.String@)">
+            <summary>
+            删除字段
+            </summary>
+            <param name="fieldName">要删除的字段名称</param>
+            <param name="trueDel">是否确实要删除的字段,true删除,false修改字段名为~delete_字段名</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.AddField(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,AgileFrame.Common.DataBaseField,System.String@)">
+            <summary>
+            添加字段到对应的表中
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="field">要添加的字段</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.ChangeFieldName(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            修改表中字段的字段名
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="oldFieldName">旧字段名</param>
+            <param name="newFieldName">新字段名</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.EditField(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,AgileFrame.Common.DataBaseField,System.String@)">
+            <summary>
+            更新对应表中的字段
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="field">要更新的字段</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.DeleteField(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.Boolean,System.String@)">
+            <summary>
+            删除对应表中的字段
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="fieldName">要删除的字段</param>
+            <param name="trueDel">是否确实要删除的字段,true删除,false修改字段名为~delete_字段名</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.ExistsField(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String)">
+            <summary>
+            判断字段是否存在相应的表中
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="fieldName">字段名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.AddIndex(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,AgileFrame.Common.DataBaseIndex,System.String@)">
+            <summary>
+            添加索引到对应的表中
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="index">要添加的索引</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.ChangeIndexName(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            修改表中索引的索引名
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="oldIndexName">旧索引名</param>
+            <param name="newIndexName">新索引名</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.EditIndex(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,AgileFrame.Common.DataBaseIndex,System.String@)">
+            <summary>
+            更新对应表中的索引
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="index">要更新的索引</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.DeleteIndex(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            删除对应表中的索引
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="indexName">要删除的索引</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.ExistsIndex(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String)">
+            <summary>
+            判断索引是否存在相应的表中
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="indexName">索引名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.AddIndex(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Collections.Generic.List{AgileFrame.Common.DataBaseIndexField},System.String@)">
+            <summary>
+            向表中添加索引
+            </summary>
+            <param name="indexName">索引名</param>
+            <param name="isKeyIndex">是否由主键创建的索引</param>
+            <param name="isClusteredIndex">是否聚集索引</param>
+            <param name="isUniqueIndex">是否唯一索引</param>
+            <param name="isUniqueConstraint">是否唯一约束</param>
+            <param name="fillFactor">填充因子</param>
+            <param name="fields">索引字段</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.AddIndex(AgileFrame.Common.DataBaseIndex,System.String@)">
+            <summary>
+            向表中添加索引
+            </summary>
+            <param name="index">要添加的索引,要想添加成功,索引名以及索引下所有字段必须不包含与此表,字段数必须大于0</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.DeleteIndex(System.String,System.String@)">
+            <summary>
+            删除索引
+            </summary>
+            <param name="indexName">要删除的索引名称</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.AddForeignKey(System.String,System.Boolean,System.Boolean,AgileFrame.Common.OnForeignKeyRule,AgileFrame.Common.OnForeignKeyRule,System.Collections.Generic.Dictionary{AgileFrame.Common.DataBaseField,AgileFrame.Common.DataBaseField},System.String@)">
+            <summary>
+            向表中添加外键
+            </summary>
+            <param name="fkeyName">外键名</param>
+            <param name="isCheck">是否强制外键约束</param>
+            <param name="isForRrplication">是否强制用于复制</param>
+            <param name="onUpdate">主键更新时外键变化规则</param>
+            <param name="onDelete">主键删除时外键变化规则</param>
+            <param name="fkFields">外键与主键对应字段</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.AddForeignKey(AgileFrame.Common.DataBaseForeignKey,System.String@)">
+            <summary>
+            向表中添加外键
+            </summary>
+            <param name="fKey">要添加的外键,要想添加成功,外键名以及外键下所有外键字段必须不包含与此表,主键必须包含于此数据库表中,字段数必须大于0</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.DeletePrimaryKey(System.String,System.String@)">
+            <summary>
+            删除主键或外键==约束
+            </summary>
+            <param name="pkeyName">要删除的外键名称</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.DeleteForeignKey(System.String,System.String@)">
+            <summary>
+            删除主键或外键==约束
+            </summary>
+            <param name="fkeyName">要删除的外键名称</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.AddForeignKey(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,AgileFrame.Common.DataBaseForeignKey,System.String@)">
+            <summary>
+            添加外键到对应的表中
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="fkey">要添加的外键</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.ChangeForeignKeyName(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            修改表中外键的外键名
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="oldForeignKeyName">旧外键名</param>
+            <param name="newForeignKeyName">新外键名</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.EditForeignKey(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,AgileFrame.Common.DataBaseForeignKey,System.String@)">
+            <summary>
+            更新对应表中的外键
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="fkey">要更新的外键</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.DeleteForeignKey(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            删除对应表中的外键
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="fkeyName">要删除的外键</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.ExistsForeignKey(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String)">
+            <summary>
+            判断外键是否存在相应的表中
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <param name="fkeyName">外键名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.CheckChange(AgileFrame.Common.DataBaseTable)">
+            <summary>
+            检查该表与传入表的差别,返回是否全部一致
+            </summary>
+            <param name="table">传入表</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.CheckChange(AgileFrame.Common.DataBaseTable,System.Boolean)">
+            <summary>
+            检查该表与传入表的差别
+            </summary>
+            <param name="table">包含需要对比数据的表对象</param>
+            <param name="isSave">是否保存对比结果,默认保存</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.GetSetZhNameSql">
+            <summary>
+            获取设置表中文描述的sql
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.GetSetZhNameSql(System.String)">
+            <summary>
+            获取修改或设置表中文描述的sql
+            </summary>
+            <param name="zhName">要设置的表注释</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.ChangeZhName(System.String)">
+            <summary>
+            修改表的注释
+            </summary>
+            <param name="zhName">要设置的表注释</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.GetCreateSql(AgileFrame.Orm.PersistenceLayer.DataBaseType)">
+            <summary>
+            生成创建表及所有关联的sql
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.Update(AgileFrame.Common.DataBaseTable,System.Boolean,System.String@)">
+            <summary>
+            用本表更新传入的表
+            </summary>
+            <param name="table">需要更新的表</param>
+            <param name="isUpdateAll">是否全部更新,包括不可恢复的删除操作</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.GetAllData">
+            <summary>
+            获取表内所有记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.GetAllDataAsInsterSql">
+            <summary>
+            获取所有数据用于Insert的sql脚本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.GetAllDataAsUpDateSql">
+            <summary>
+            获取所有数据用于UpDate的sql脚本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.GetAllDataAsSaveOrUpDateSql">
+            <summary>
+            获取所有数据用于SaveOrUpDate的sql脚本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.SaveAllDataAsInsterSql(System.String)">
+            <summary>
+            保存所有数据用于Insert的sql脚本到指定文件
+            </summary>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.SaveAllDataAsUpDateSql(System.String)">
+            <summary>
+            保存所有数据用于UpDate的sql脚本到指定文件
+            </summary>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTable.SaveAllDataAsSaveOrUpDateSql(System.String)">
+            <summary>
+            保存所有数据用于SaveOrUpDate的sql脚本到指定文件
+            </summary>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseTable._purview">
+            <summary>
+            获取或设置表权限等级
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.IsSysDefault">
+            <summary>
+            是否系统表，系统表不可删除。默认为true。以"zdy_"  "wf_u_" "wftb_"开头的为自定义表，
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.TableNameLowerCase">
+            <summary>
+            小写表名称
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.SubTable_ChaZhao">
+            <summary>
+            包含所有子表，包括 1对多表，和明细表
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.SubTable_MyTree">
+            <summary>
+            自身树结构
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.DescStr">
+            <summary>
+            表描述,中文名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.TableName">
+            <summary>
+            视图或存储结构名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.Purview">
+            <summary>
+            获取或设置表权限等级
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.DataBase">
+            <summary>
+            所属数据库
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.PKeys">
+            <summary>
+            获取主键字段列表
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.IsFenBiao_Init">
+            <summary>
+            已监测是否分表
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.IsFenBiao">
+            <summary>
+            是否分表
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.IsVisable">
+            <summary>
+            是否可见
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.DBTableCheckResult">
+            <summary>
+            数据库表比较结果
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.DataFields">
+            <summary>
+            获取字段列表
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.DataTableIndexs">
+            <summary>
+            获取索引列表
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.PKeyIndex">
+            <summary>
+            获取主键创建的索引
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseTable.DataTableFKeys">
+            <summary>
+            获取外键列表
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DBViewCheckResult">
+            <summary>
+            视图或存储过程对比结果
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseView">
+            <summary>
+            数据库视图或存储过程对象
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseView.errMsg">
+            <summary>
+            检查期异常
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseView.SetViewInnerDescBySql">
+            <summary>
+            按照tables 列表进行遍历
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseView.isTrue">
+            <summary>
+            检查是否正常，当表结构改变后，视图可能失效
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseView.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseView.ChangeZhName(System.String)">
+            <summary>
+            修改表的注释
+            </summary>
+            <param name="zhName">要设置的表注释</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseView.GetSetZhNameSql(System.String)">
+            <summary>
+            获取修改或设置表中文描述的sql
+            </summary>
+            <param name="zhName">要设置的表注释</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseView.#ctor(System.String,System.String,System.String,AgileFrame.Common.DataBase)">
+            <summary>
+            初始化数据库视图或存储过程对象
+            </summary>
+            <param name="viewName">视图或存储结构名</param>
+            <param name="sql">视图或存储结脚本</param>
+            <param name="type">类型</param>
+            <param name="_dataBase">所属数据库</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseView.#ctor(System.String,AgileFrame.Common.DataBaseView)">
+            <summary>
+            初始化数据库视图或存储过程对象
+            </summary>
+            <param name="viewName">视图或存储结构名</param>
+            <param name="oldView">旧视图或存储结构</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseView.ChangeViewName(System.String)">
+            <summary>
+            修改视图或存储过程名
+            </summary>
+            <param name="newName">新视图或存储过程名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseView.CheckChange(AgileFrame.Common.DataBaseView)">
+            <summary>
+            检查该视图或存储过程与传入视图或存储过程的差别,返回是否全部一致
+            </summary>
+            <param name="view">传入视图或存储过程</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseView.CheckChangeButNotUpdate(AgileFrame.Common.DataBaseView)">
+            <summary>
+            检查该视图或存储过程与传入视图或存储过程的差别
+            </summary>
+            <param name="view">包含需要对比数据的视图或存储过程对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseView.Update(AgileFrame.Common.DataBaseView,System.String@)">
+            <summary>
+            用此视图或存储过程更新传入的视图或存储过程
+            </summary>
+            <param name="view">要修改的视图或存储过程</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseView.DataTables">
+            <summary>
+            视图内的表，主表或基表
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseView.isView">
+            <summary>
+            是否视图 或是 存储过程
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseView.Sql">
+            <summary>
+            脚本
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseView.ViewNameLowerCase">
+            <summary>
+            小写视图或存储结构名称
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseView.BaseDataTable">
+            <summary>
+            主表
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseView.Type">
+            <summary>
+            类型  "P" 和 "V" 存储过程 与 视图
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseView.DBViewCheckResult">
+            <summary>
+            数据库视图或存储过程比较结果
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseView.DataFields">
+            <summary>
+            视图字段列表
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseHelper">
+            <summary>
+            数据库结构帮助类，提供快速获取数据库结构的静态方法
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseHelper.dbMain">
+            <summary>
+            本地数据库
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DBLoadMode">
+            <summary>
+            数据库加载模式
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DBUpdateMode">
+            <summary>
+            数据库更新方式
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DBCheckResult">
+            <summary>
+            数据库对比结果
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBase">
+            <summary>
+            数据库数据库类 ++ 获取用户自定义表、与用户自定义字段??
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBase.DeleteTag">
+            <summary>
+            升级时被删除的表结构前缀，已删除的对象
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.GetInsertSql(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.#ctor">
+            <summary>
+            从默认的conn中获取数据
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.Master(System.String)">
+            <summary>
+            参考 10.5.10.100\R2，master 系统数据库
+            功能：多帐套，增删改，
+            Web模块：通用数据库管理模块功能：数据库自动备份还原，登录用户记录，运行sql记录，web请求记录，在线用户统计，用户当前连接（session，连接字符串）
+            </summary>
+            <param name="connStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.GetOptionText_FK_SQL(System.String,System.String)">
+            <summary>
+            在考虑给特殊设计的字符串数值字段按照数值排序，同时非重复。
+            </summary>
+            <param name="tbname"></param>
+            <param name="colname"></param>
+            <returns></returns>
+        </member>
+        <member name="F:AgileFrame.Common.DataBase.m_Key2DbDic">
+            <summary>
+            从数据库载入的
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.Factory(System.String)">
+            <summary>
+            创建一个新的数据库实例，或返回一个已初始化的数据库实例
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.SysDataBaseToXml">
+            <summary>
+            1、发布时，保存xml
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.LoadSysDataBase">
+            <summary>
+            2、在客户侧，读取xml文件，对比升级某些表
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.GetConnectStrXmlConfigPath(System.String,System.String)">
+            <summary>
+            默认配置文件
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.SaveToXmlFile">
+            <summary>
+            默认保存到 FullConfigPath 中
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.#ctor(System.String,System.String,System.String)">
+            <summary>
+            从数据库服务器初始化检查数据库类,适合初始化oralce系列数据库
+            </summary>
+            <param name="dataBaseServerName">数据库别名</param>
+            <param name="userName">用户名</param>
+            <param name="passWord">密码</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.#ctor(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String)">
+            <summary>
+            从数据库服务器初始化检查数据库类,适合初始化mssql系列数据库
+            </summary>
+            <param name="dataBaseType">数据库类型</param>
+            <param name="dataBaseName">数据库名称</param>
+            <param name="dataBaseServerName">数据库服务器名</param>
+            <param name="userName">用户名</param>
+            <param name="passWord">密码</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.#ctor(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            从数据库服务器初始化检查数据库类,适合初始化mysql系列数据库
+            </summary>
+            <param name="dataBaseName">数据库名称</param>
+            <param name="dataBaseServerName">数据库服务器地址</param>
+            <param name="userName">用户名</param>
+            <param name="passWord">密码</param>
+            <param name="port">端口号</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.#ctor(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String)">
+            <summary>
+            使用连接字符串初始化一个数据库,连接字符串格式类似,半角字符,大小写忽略
+            Data Source=服务器名;User ID=用户名;Password=密码;Persist Security Info=True;Initial Catalog=数据库名;
+            </summary>
+            <param name="dataBaseType">数据库类型</param>
+            <param name="connStr">连接字符串</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.#ctor(System.String)">
+            <summary>
+            从配置文件初始化检查数据库类，如果为空，则从默认连接字符串的xml中获取
+            </summary>
+            <param name="xmlfileName">xml文件名</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.GetDataBaseXmlFileName(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.Load(System.Boolean)">
+            <summary>
+            载入数据库
+            </summary>
+            <param name="reLoad">是否重新载入</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.GetOracleTnsNames">
+            <summary>
+            获取Oralce数据库名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.GetLANMsSqlServerNames">
+            <summary>
+            检索LAN内所有可见实例的信息.
+            </summary>
+            <returns>服务器名称列表.</returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.SynGetLANMsSqlServerNames(System.ComponentModel.HandledEventHandler)">
+            <summary>
+            异步检索LAN内所有可见实例的信息.
+            </summary>
+            <param name="handler">检索完成后调用的委托,使用sender参数返回实力信息列表</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.GetLANMsSqlServerNames(System.Object)">
+            <summary>
+            异步检索LAN内所有可见实例的信息线程调用方法
+            </summary>
+            <param name="obj">获取结束后的委托</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.GetMsSqlDataBaseName(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String)">
+            <summary>
+            获取实例下所有数据库名
+            </summary>
+            <param name="connStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.CreateDataBase(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String@)">
+            <summary>
+            创建一个数据库,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="filePath">数据库文件存放路径</param>
+            <param name="dataBaseName">数据库名称</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.ExistsDataBase(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String)">
+            <summary>
+            判断数据库是否存在,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.ChangeDataBaseName(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String@)">
+            <summary>
+            修改数据库名称,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="oldDataBaseName">旧数据库名称</param>
+            <param name="newDataBaseName">新数据库名称</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.DeleteDataBase(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String@)">
+            <summary>
+            测底删除数据库,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.DataBaseOffLine(System.String@)">
+            <summary>
+            脱机数据库,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.DataBaseOffLine(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String@)">
+            <summary>
+            脱机数据库,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.DataBaseOnLine(System.String@)">
+            <summary>
+            联机数据库,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.DataBaseOnLine(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String@)">
+            <summary>
+            联机数据库,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.BackUp(System.String,System.Boolean,System.Boolean,System.String@)">
+            <summary>
+            备份数据库,返回是否备份成功,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="fileName">备份文件的文件名,.bak结尾或不带后缀</param>
+            <param name="isFormatOrNo">是否格式化,true,格式化,false,不格式化</param>
+            <param name="isInitOrNo">是否完全备份,true,完全备份,false,追加备份</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.BackUp(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String@)">
+            <summary>
+            备份数据库,返回是否备份成功,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">连接字符串</param>
+            <param name="fileName">备份文件的文件名,.bak结尾或不带后缀</param>
+            <param name="isFormatOrNo">是否格式化,true,格式化,false,不格式化</param>
+            <param name="isInitOrNo">是否完全备份,true,完全备份,false,追加备份</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.BakeUpOracleDB(System.String,System.String,System.String@)">
+            <summary>
+            备份oracle数据库，用导出工具，李家国20130106
+            </summary>
+            <param name="dataBaseName"></param>
+            <param name="fileNameToolName"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.SynBackUp(System.String,System.Boolean,System.Boolean,System.ComponentModel.AsyncCompletedEventHandler)">
+            <summary>
+            异步备份数据库
+            </summary>
+            <param name="fileName">备份文件的文件名,.bak结尾或不带后缀</param>
+            <param name="isFormatOrNo">是否格式化,true,格式化,false,不格式化</param>
+            <param name="isInitOrNo">是否完全备份,true,完全备份,false,追加备份</param>
+            <param name="callBack">备份完成后的回调方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.SynBackUp(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.Boolean,System.Boolean,System.ComponentModel.AsyncCompletedEventHandler)">
+            <summary>
+            异步备份数据库
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">连接字符串</param>
+            <param name="fileName">备份文件的文件名,.bak结尾或不带后缀</param>
+            <param name="isFormatOrNo">是否格式化,true,格式化,false,不格式化</param>
+            <param name="isInitOrNo">是否完全备份,true,完全备份,false,追加备份</param>
+            <param name="callBack">备份完成后的回调方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.Restore(System.String,System.String,System.Boolean,System.String@)">
+            <summary>
+            恢复数据库,返回是否恢复成功,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="fileName">数据库备份文件名</param>
+            <param name="dataBaseFilePath">新数据库文件存放路径,可为空,则为默认路径</param>
+            <param name="isForcibly">是否强制还原</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.Restore(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.Boolean,System.String@)">
+            <summary>
+            恢复数据库,返回是否恢复成功,连接字符串错误或网络错误会抛出异常
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="fileName">数据库备份文件名</param>
+            <param name="dataBaseName">新数据库名</param>
+            <param name="dataBaseFilePath">新数据库文件存放路径,可为空,则为默认路径</param>
+            <param name="isForcibly">是否强制还原</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.SynRestore(System.String,System.String,System.Boolean,System.ComponentModel.AsyncCompletedEventHandler)">
+            <summary>
+            异步恢复数据库
+            </summary>
+            <param name="fileName">数据库备份文件名</param>
+            <param name="dataBaseFilePath">新数据库文件存放路径,可为空,则为默认路径</param>
+            <param name="isForcibly">是否强制还原</param>
+            <param name="callBack">还原完成后的回调方法</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.SynRestore(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.Boolean,System.ComponentModel.AsyncCompletedEventHandler)">
+            <summary>
+            异步恢复数据库
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="fileName">数据库备份文件名</param>
+            <param name="dataBaseName">新数据库名</param>
+            <param name="dataBaseFilePath">新数据库文件存放路径,可为空,则为默认路径</param>
+            <param name="isForcibly">是否强制还原</param>
+            <param name="callBack">还原完成后的回调方法</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.ToXml">
+            <summary>
+            转换为xml
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.ToXml(System.Xml.XmlDocument,System.Xml.XmlNode)">
+            <summary>
+            生成可用于保存和传输的Xml文件,此Xml文件包含与所有数据库对象一一对应的数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.SaveToXmlFile(System.String)">
+            <summary>
+            保存为xml文件
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.CheckChange(AgileFrame.Common.DataBase)">
+            <summary>
+            检查该数据库与传入数据库的差别,返回是否全部一致
+            </summary>
+            <param name="db">传入数据库对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.CheckChange(AgileFrame.Common.DataBase,System.Boolean)">
+            <summary>
+            检查该数据库与传入数据库的差别
+            </summary>
+            <param name="db">包含需要对比数据的数据库对象</param>
+            <param name="isSave">是否保存对比结果,默认保存</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.RestoreDelTable(System.String@)">
+            <summary>
+            恢复所有被删除的表
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.Update(AgileFrame.Common.DataBase,AgileFrame.Common.DBUpdateMode,System.String@)">
+            <summary>
+            用此数据库更新传入的数据库
+            </summary>
+            <param name="dataBase_old">一个能被更新的数据库,即初始化时已经被通过连接字符串成功载入的数据库,不是用配置文件初始化的数据库</param>
+            <param name="dbUpdateMode">更新模式,如果包含不更新,则永远返回false</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.Load">
+            <summary>
+            载入数据库,已经载入的不会被重新载入
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.BackUp(System.Object)">
+            <summary>
+            异步备份线程方法
+            </summary>
+            <param name="obj">长度为3的object数组,分别是备份文件名,是否完全备份,和AsyncCompletedEventHandler对象</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.Restore(System.Object)">
+            <summary>
+            异步还原线程方法
+            </summary>
+            <param name="obj">一个长度为6的object数组,分别是连接字符串,备份文件名,数据库名,数据库文件存放路径,是否强制,AsyncCompletedEventHandler对象</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.Load(System.String)">
+            <summary>
+            根据配置文件地址,载入检查数据库类
+            </summary>
+            <param name="xmlfileName">配置文件全名</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.LoadTable">
+            <summary>
+            载入所有表和字段
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.LoadTableText">
+            <summary>
+            获取表注释
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.LoadViewText">
+            <summary>
+            获取表注释
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.LoadFK">
+            <summary>
+            获取外键 体现 1 主明细关系(主键-外键) 和 2 查找关系(外键-主键)
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.LoadIndex">
+            <summary>
+            获取索引
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.UpdateView(AgileFrame.Common.DataBaseView,System.String@)">
+            <summary>
+            更新并检查视图
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.RefreshView(System.String@)">
+            <summary>
+            更新并检查所有视图，主要是视图列
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.LoadView">
+            <summary>
+            获取视图和存储过程
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.LoadViewFieldsDesc">
+            <summary>
+            获取视图字段
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.LoadViewFields">
+            <summary>
+            获取视图字段
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBase.ConnectKey">
+            <summary>
+            连接配置字，可以和连接字符串一样，或不一样
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBase._purview">
+            <summary>
+            获取或设置数据库权限等级
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.ExistIndex(System.String,System.String)">
+            <summary>
+            //zlg wcp 确定一个字段是否存在索引
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.TryGetValue(System.String,System.String,AgileFrame.Common.DataBaseTable@,AgileFrame.Common.DataBaseIndex@)">
+            <summary>
+            //zlg wcp 找出这个字段上是否存在索引
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.TryGetValueAll(System.String,System.String,AgileFrame.Common.DataBaseTable@,AgileFrame.Common.DataBaseField@)">
+            <summary>
+            遍历所有表、视图、模块、用户自定义模块
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.TryGetValueAll(System.String,AgileFrame.Common.DataBaseTable@)">
+            <summary>
+            获取所有类型的对象
+            </summary>
+            <param name="tableName"></param>
+            <param name="dt1"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.RefreshFatherTableByRobot">
+            <summary>
+            通过机器人匹配 按照模块，自动生成OutSource，并刷新查找关系
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.RefreshFatherTable">
+            <summary>
+            根据OutSource刷新查找关系
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.TryAddMasterTable(System.String,System.String@)">
+            <summary>
+            在本数据库中新建 masterTbName 表结构
+            </summary>
+            <param name="masterTbName"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.TryAddMasterField(System.String,System.String,System.String,System.String@)">
+            <summary>
+            从 masterTbName 中取得字段 masterFieldName，加入到tbName中
+            </summary>
+            <param name="masterTbName"></param>
+            <param name="masterFieldName"></param>
+            <param name="tbName"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.TryAddMasterField(System.String,System.String,System.String@)">
+            <summary>
+            从masterTbName中取得所有字段，加入到tbName中
+            </summary>
+            <param name="masterTbName"></param>
+            <param name="tbName"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.ExistsTable(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String@)">
+            <summary>
+            查询此表是否存在
+            </summary>
+            <param name="dataBaseType"></param>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.AddHistoryTable(AgileFrame.Common.DataBaseTable,System.String@)">
+            <summary>
+            建立数据表对应的历史数据表
+            </summary>
+            <param name="table"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.AddTable(AgileFrame.Common.DataBaseTable@,System.String@)">
+            <summary>
+            向数据库中添加表,返回是否添加成功
+            </summary>
+            <param name="table">要添加的表</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.AddTable(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,AgileFrame.Common.DataBaseTable,System.String@)">
+            <summary>
+            向数据库中添加表,返回是否添加成功
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="table">要添加的表对象</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.ChangeTableName(System.String,System.String,System.String@)">
+            <summary>
+            修改表名
+            </summary>
+            <param name="dataBaseType">数据库类型</param>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">要修改的表名</param>
+            <param name="newName">新表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.ChangeTableName(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            修改表名
+            </summary>
+            <param name="dataBaseType">数据库类型</param>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">要修改的表名</param>
+            <param name="newName">新表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.SetTableDec(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            修改或设置表说明,描述,中文描述
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">要修改的表名</param>
+            <param name="dec">表说明,描述,中文描述</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.DeleteTable(System.String,System.Boolean,System.String@)">
+            <summary>
+            向数据库中删除表,返回是否删除成功,不会删除到服务器
+            </summary>
+            <param name="tableName">要删除的表名</param>
+            <param name="trueDel">是否完全删除,是,在数据库中删除表,不可恢复数据,否,在数据库中修改表名,可恢复数据</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.DeleteTable(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.Boolean,System.String@)">
+            <summary>
+            向数据库中删除表,返回是否删除成功
+            </summary>
+            <param name="dataBaseType">数据库类型</param>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="tableName">要删除的表名</param>
+            <param name="trueDel">是否完全删除,是,在数据库中删除表,不可恢复数据,否,在数据库中修改表名,可恢复数据</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.AddView(AgileFrame.Common.DataBaseView,System.String@)">
+            <summary>
+            向数据库中添加视图或存储过程,返回是否添加成功
+            </summary>
+            <param name="view">要添加的视图或存储过程</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.AddView(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,AgileFrame.Common.DataBaseView,System.String@)">
+            <summary>
+            向数据库中添加视图或存储过程,返回是否添加成功
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="view">要添加的视图或存储过程对象</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.ChangeViewName(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            修改视图或存储过程名
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="viewName">要修改的视图或存储过程名</param>
+            <param name="newName">新视图或存储过程名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.DeleteView(System.String,System.Boolean,System.String@)">
+            <summary>
+            向数据库中删除视图或存储过程,返回是否删除成功,不会删除到服务器
+            </summary>
+            <param name="viewName">要删除的视图或存储过程名</param>
+            <param name="trueDel">是否完全删除,是,在数据库中删除视图或存储过程,不可恢复数据,否,在数据库中修改视图或存储过程名,可恢复数据</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.DeleteView(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.Boolean,System.String@)">
+            <summary>
+            向数据库中删除视图或存储过程,返回是否删除成功
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="viewName">要删除的视图或存储过程名</param>
+            <param name="trueDel">是否完全删除,是,在数据库中删除视图或存储过程,不可恢复数据,否,在数据库中修改视图或存储过程名,可恢复数据</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBase.ExistsView(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.String,System.String,System.String@)">
+            <summary>
+            查询此视图或存储过程是否存在
+            </summary>
+            <param name="connStr">连接字符串</param>
+            <param name="dataBaseName">数据库名</param>
+            <param name="viewName">视图或存储过程名</param>
+            <returns></returns>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.IsCanUpdate">
+            <summary>
+            数据库是否能被更新
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.IsLoading">
+            <summary>
+            是否正在载入数据库
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.IsLoadFromXml">
+            <summary>
+            是否是从Xml中载入的结构
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.IsBackUpNow">
+            <summary>
+            是否正在备份数据库
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.LoadVersion">
+            <summary>
+            获取版本号
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.Version">
+            <summary>
+            获取版本号
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.ConnStr">
+            <summary>
+            获取连接字符串
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataBaseType">
+            <summary>
+            获取数据库类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.Purview">
+            <summary>
+            获取或设置数据库权限等级
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataBaseConnectStringHelper">
+            <summary>
+            获取数据库连接字符串相关信息
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataBaseName">
+            <summary>
+            获取数据库名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataBaseServer">
+            <summary>
+            获取数据库服务器名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.UserName">
+            <summary>
+            获取用于连接数据库的用户名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.PassWord">
+            <summary>
+            获取用于连接数据库的密码
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.Port">
+            <summary>
+            获取用于连接数据库的端口号
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DBCheckResult">
+            <summary>
+            数据库索引比较结果
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataModules">
+            <summary>
+            获取数据库包含表的集合
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataTables_SYS">
+            <summary>
+            获取数据库包含表的集合
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataTables_USER">
+            <summary>
+            获取数据库包含表的集合
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataViews_SYS">
+            <summary>
+            获取数据库包含表的集合
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataViews_USER">
+            <summary>
+            获取数据库包含表的集合
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataTables">
+            <summary>
+            获取数据库包含表的集合
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataViews_EcTab">
+            <summary>
+            开发商开发的系统模块
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataViews_EcTab_User">
+            <summary>
+            用户开发的用户自定义模块
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataViews">
+            <summary>
+            获取数据库包含视图和存储过程的集合
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataViews_Del">
+            <summary>
+            获取数据库包含视图和存储过程的集合
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBase.DataTables_Del">
+            <summary>
+            获取数据库包含表的集合
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseFieldCollection">
+            <summary>
+            字段集合
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseFieldCollection.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseFieldCollection.ToArray">
+            <summary>
+            返回数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseIndexCollection">
+            <summary>
+            索引集合
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndexCollection.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseIndexCollection.ToArray">
+            <summary>
+            返回数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseTableCollection">
+            <summary>
+            表集合
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTableCollection.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTableCollection.ToArray">
+            <summary>
+            返回数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseViewCollection">
+            <summary>
+            存储过程或视图集合
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseViewCollection.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseViewCollection.ToArray">
+            <summary>
+            返回数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseViewField">
+            <summary>
+            视图字段类
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseViewField.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseViewField.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseViewField.ChangeZhName(System.String)">
+            <summary>
+            修改字段的注释
+            </summary>
+            <param name="zhName">要设置的表注释</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseViewField.GetSetZhNameSql(System.String)">
+            <summary>
+            获取修改或设置字段中文描述的sql
+            </summary>
+            <param name="zhName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseViewField.#ctor(System.String,System.String,AgileFrame.Common.DataBaseView)">
+            <summary>
+            初始化视图字段
+            </summary>
+            <param name="_viewName">视图名</param>
+            <param name="fieldName">视图字段名</param>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseViewField.ViewFieldName">
+            <summary>
+            视图字段名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseViewField.ViewName">
+            <summary>
+            视图名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseViewField.BaseDataBaseField">
+            <summary>
+            源字段
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseViewField.BaseTableName">
+            <summary>
+            源表名
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseViewField.BaseFieldName">
+            <summary>
+            源字段名
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseDataType">
+            <summary>
+            数据库中的字段数据类型 zlg??
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseDataType.unknown">
+            <summary>
+            未知类型,所有数据库都不支持
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseDataType.date">
+            <summary>
+            SQL2000/2005不支持
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseDataType.datetime2">
+            <summary>
+            SQL2000/2005不支持
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseDataType.datetimeoffset">
+            <summary>
+            SQL2000/2005不支持
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseDataType.geography">
+            <summary>
+            SQL2000/2005不支持
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseDataType.geometry">
+            <summary>
+            SQL2000/2005不支持
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseDataType.hierarchyid">
+            <summary>
+            SQL2000/2005不支持
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseDataType.time">
+            <summary>
+            SQL2000/2005不支持
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseDataType.xml">
+            <summary>
+            SQL2000不支持
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseDataType.bfile">
+            <summary>
+            以下是oracle数据类型
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.DataBaseDataType.longtext">
+            <summary>
+            MySql
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DotNetTypeHelper">
+            <summary>
+            数据库类型与dotnet类型转换
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DotNetTypeHelper.SqlTypeWord">
+            <summary>
+            数据库读取的原始类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DotNetTypeHelper.NetType">
+            <summary>
+            .net类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DotNetTypeHelper.AttributeType">
+            <summary>
+            .net类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DotNetTypeHelper.SqlType">
+            <summary>
+            sql类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DotNetTypeHelper.OleDbType">
+            <summary>
+            sql类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DotNetTypeHelper.ConvertString">
+            <summary>
+            转换字符串
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.FieldDataType">
+            <summary>
+            字段数据类型
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.FieldDataType.Get(AgileFrame.Core.BaseCtrlType)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.FieldDataType.GetParamSql">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.FieldDataType.ToString(AgileFrame.Common.FieldDataType)">
+            <summary>
+            decimal(10,0), nvarchar(50)
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.FieldDataType.FromString(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String,System.Boolean)">
+            <summary>
+            decimal(10,0), nvarchar(50)
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.FieldDataType.#ctor(AgileFrame.Orm.PersistenceLayer.DataBaseType,AgileFrame.Common.DataBaseDataType,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            初始化字段数据类型
+            </summary>
+            <param name="dataBaseType">数据库类型,可以调用DataBaseField类的静态方法GetDataTypeByName将字符串类型的类型名转换为类型</param>
+            <param name="typeName">数据库名称</param>
+            <param name="dataLen">长度</param>
+            <param name="scale">小数位长度,某些数据必须</param>
+            <param name="isLoadByServer">是否从服务器载入</param>
+        </member>
+        <member name="M:AgileFrame.Common.FieldDataType.#ctor(AgileFrame.Orm.PersistenceLayer.DataBaseType,AgileFrame.Common.DataBaseDataType,System.Int32,System.Int32,System.Boolean,AgileFrame.Common.DataBaseField)">
+            <summary>
+            初始化字段数据类型
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.FieldDataType.ToString">
+            <summary>
+            返回用于创建和修改表的sql参数段，不要改变这个
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.Ctrllength">
+            <summary>
+            标签长度
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.JsTypeInt">
+            <summary>
+            js类型枚举
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.JsType">
+            <summary>
+            js类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.NetType">
+            <summary>
+            "Byte[]";"Byte";"Int16"; "UInt32";"decimal"; "string"; "int";"Guid";"double";"DateTime";"DateTime";"Single";"Boolean";"Byte[]";long
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.ConvertString">
+            <summary>
+            类型转化字符
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.NullType">
+            <summary>
+            类型空值
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.AllDataType">
+            <summary>
+            所有支持的数据类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.DataBaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.TypeName">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.TypeNameString">
+            <summary>
+            类型名 "nvarchar_"
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.DataLen">
+            <summary>
+            数据长度
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.Scale">
+            <summary>
+            小数位长度
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.FieldDataType.IsLoadByServer">
+            <summary>
+            是否从服务器载入
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DBForeignKeyCheckResult">
+            <summary>
+            数据库外键比较结果
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.OnForeignKeyRule">
+            <summary>
+            外键的主键变化时外键变化规则
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseForeignKey">
+            <summary>
+            数据库外键对象
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKey.#ctor(System.String,System.Boolean,System.Boolean,AgileFrame.Common.OnForeignKeyRule,AgileFrame.Common.OnForeignKeyRule,AgileFrame.Common.DataBaseTable)">
+            <summary>
+            初始化数据库外键对象
+            </summary>
+            <param name="fkeyName">外键名</param>
+            <param name="isCheck">是否强制外键约束</param>
+            <param name="isForRrplication">是否强制用于复制</param>
+            <param name="onUpdate">主键更新时外键变化规则</param>
+            <param name="onDelete">主键删除时外键变化规则</param>
+            <param name="dataBaseTable">外键所属表</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKey.#ctor(AgileFrame.Common.DataBaseForeignKey,AgileFrame.Common.DataBaseTable)">
+            <summary>
+            根据现有外键初始化一个新的外键,可用于外键复制
+            </summary>
+            <param name="fkey">现有外键</param>
+            <param name="dataBaseTable">所属表</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKey.#ctor(System.String,System.Boolean,System.Boolean,AgileFrame.Common.OnForeignKeyRule,AgileFrame.Common.OnForeignKeyRule,System.Collections.Generic.Dictionary{AgileFrame.Common.DataBaseField,AgileFrame.Common.DataBaseField},AgileFrame.Common.DataBaseTable)">
+            <summary>
+            初始化数据库外键对象
+            </summary>
+            <param name="fkeyName">外键名</param>
+            <param name="isCheck">是否强制外键约束</param>
+            <param name="isForRrplication">是否强制用于复制</param>
+            <param name="onUpdate">主键更新时外键变化规则</param>
+            <param name="onDelete">主键删除时外键变化规则</param>
+            <param name="fkFields">外键与主键对应字段</param>
+            <param name="dataBaseTable">外键所属表</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKey.ChangeName(System.String,System.String@)">
+            <summary>
+            修改名称呼
+            </summary>
+            <param name="newName">新名</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKey.CheckChange(AgileFrame.Common.DataBaseForeignKey)">
+            <summary>
+            检查该外键与传入外键的差别,返回是否全部一致
+            </summary>
+            <param name="fkey">传入外键</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKey.CheckChangeButNotUpdate(AgileFrame.Common.DataBaseForeignKey)">
+            <summary>
+            检查该外键与传入外键的差别
+            </summary>
+            <param name="fkey">包含需要对比数据的外键对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKey.SetFKeyPkey(AgileFrame.Common.DataBaseField,AgileFrame.Common.DataBaseField)">
+            <summary>
+            设置外键,如果外键已存在,替换,不存在,则添加
+            </summary>
+            <param name="fKey">外键字段</param>
+            <param name="pKey">主键字段</param>
+            <param name="fkeyOrderBy">外键排序</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKey.RemoveFKey(System.String)">
+            <summary>
+            移除外键列表里的字段
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKey.GetAddFKeySql">
+            <summary>
+            获取用于新增此外键的sql语句
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKey.Refresh(AgileFrame.Common.DataBaseForeignKey)">
+            <summary>
+            根据一个外键对象,刷新本外键各属性
+            </summary>
+            <param name="fkey">包含新数据的外键对象</param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKey.Update(AgileFrame.Common.DataBaseForeignKey,System.Boolean,System.String@)">
+            <summary>
+            用此外键更新传入的外键
+            </summary>
+            <param name="fkey">需要更新的外键</param>
+            <param name="isUpdateAll">是否全部更新,包括不可恢复的删除操作</param>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseForeignKey.FKeyName">
+            <summary>
+            外键名称
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseForeignKey.FKeyNameLowerCase">
+            <summary>
+            小写外键名称
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseForeignKey.IsCheck">
+            <summary>
+            是否强制约束
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseForeignKey.IsForRrplication">
+            <summary>
+            是否强制用于复制
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseForeignKey.OnUpdate">
+            <summary>
+            主键更新时外键变化规则
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseForeignKey.OnDelete">
+            <summary>
+            主键删除时外键变化规则
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseForeignKey.DataBaseTable">
+            <summary>
+            外键所属表
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseForeignKey.DBForeignKeyCheckResult">
+            <summary>
+            数据库外键比较结果
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseForeignKey.FKeyPKeyFieldDic">
+            <summary>
+            外键的字段集合--查找关系
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseForeignKey.FKeyDic">
+            <summary>
+            获取外键集合
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Common.DataBaseForeignKey.PKeyDic">
+            <summary>
+            获取主键集合
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseForeignKeyCollection">
+            <summary>
+            外键集合
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKeyCollection.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseForeignKeyCollection.ToArray">
+            <summary>
+            返回数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Common.EnumHelper`1">
+            <summary>
+            枚举量帮助类
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseViewFieldCollection">
+            <summary>
+            字段集合
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseViewFieldCollection.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseViewFieldCollection.ToArray">
+            <summary>
+            返回数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseRelation">
+            <summary>
+            关系对象
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.CompareTo(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.CompareTo(AgileFrame.Common.DataBaseRelation)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.Equals(AgileFrame.Common.DataBaseRelation)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.GetHashCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.op_Equality(AgileFrame.Common.DataBaseRelation,AgileFrame.Common.DataBaseRelation)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.op_Inequality(AgileFrame.Common.DataBaseRelation,AgileFrame.Common.DataBaseRelation)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.ToString">
+            <summary>
+            导出序列化字符串
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.ParseAttributeName(System.String,System.String@,System.String@,System.String@)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.#ctor(System.String)">
+            <summary>
+            导入序列化字符串为对象
+            </summary>
+            <param name="fullRelationStr"></param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.#ctor(System.String,System.String,System.String,System.String,AgileFrame.Orm.PersistenceLayer.Model.RelationType)">
+            <summary>
+            默认应该使用 InnerJoin 而不是 LeftJoin
+            </summary>
+            <param name="TableName_PK"></param>
+            <param name="ColumnName_PK"></param>
+            <param name="TableName_FK"></param>
+            <param name="ColumnName_FK"></param>
+            <param name="RelationType"></param>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.IsEqual(AgileFrame.Common.DataBaseRelation)">
+            <summary>
+            
+            </summary>
+            <param name="relation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.GetFullUpperTableName">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelation.ToTableNameStr">
+            <summary>
+            [T_Region],[T_Project]
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Orm.PersistenceLayer.Model.RelationType">
+            <summary>
+            关联关系类型
+            <para>右关联、左关联、相等关联</para>
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.Model.RelationType.SynJoin">
+            <summary>
+            同步关联
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.Model.RelationType.SynWrite">
+            <summary>
+            同步写入
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Orm.PersistenceLayer.Model.RelationType.SynRead">
+            <summary>
+            同步读取
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseTableRelationCollection">
+            <summary>
+            表集合
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTableRelationCollection.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseTableRelationCollection.ToArray">
+            <summary>
+            返回数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseRelationCollection">
+            <summary>
+            字段集合
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelationCollection.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseRelationCollection.ToArray">
+            <summary>
+            返回数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Common.DataBaseValueCollection">
+            <summary>
+            字段值的集合
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseValueCollection.ToString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DataBaseValueCollection.ToArray">
+            <summary>
+            返回数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Common.SqlForXml">
+            <summary>
+            sql的逆向工程
+            比如：服务器是繁体的系统时，每次创建表的时候，都需要把 COLLATE   Chinese_PRC_CI_AS   去掉
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.SqlForXml.MsSql_MaxIdSql_Frame">
+            <summary>
+            @output--输出值
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.SqlForXml.MsSql_CreateTable">
+            <summary>
+            0 表名 1 所有列 2 主键 3 外键 4 索引 
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.SqlForXml.MsSql_CreateField">
+            <summary>
+            //0 列名 1类型名 2 长度 3 排序规则 4 是否为空 [tableName] [varchar] (50) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.SqlForXml.MsSql_CreatePrimaryKey">
+            <summary>
+            0 表名 1 列名 可能有多个主键 [主键1] [主键2]
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.SqlForXml.Access_CreateTable">
+            <summary>
+            {0} 为表名 [ROLE_ID]
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.SqlForXml.CreateTable(System.Collections.Generic.List{AgileFrame.Common.DataBaseField})">
+            <summary>
+            预留，创建例子程序使用的sql
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Core.AccessSchema">
+            <summary>
+            sql2005 的相关库字段及表字段获取
+            
+            HIBERNATE为什么不提倡用联合主键
+            相比联合主键,uuid.hex的方式生成ID,有什么优势?
+            编码简单, 可以用一个DAO就搞定所有的操作. 
+            读取的性能比较差，O/R Mapping都是以主键的方式来识别纪录的，单一主键已经能够满足应用，而且速度快，所以会值得推荐
+            
+            用联合主键可以避免冗余数据产生,我也没想明白
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.AccessSchema.GetAllBase">
+            <summary>
+            获取库内所有东西
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.AccessSchema.SetPK">
+            <summary>
+            还有一个比较另类的方法，就是往表里插入一条数据，如果类型正确还插入不进去，就说明可能没有主键
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.AccessSchema.GetAllTableOrView(System.String,AgileFrame.Common.DataBase)">
+            <summary>
+            获取所有表或视图   table  view
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:AgileFrame.Core.AccessSchema.ToDataTable5``1(System.Collections.Generic.List{``0})”忽略有格式错误的 XML 注释 -->
+        <member name="M:AgileFrame.Core.DescClass.Join(System.String,System.String)">
+            <summary>
+            合并两个不同的注释配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:AgileFrame.Core.DescClass.OutSource_ExtField">
+            <summary>
+            ExtField 查找字段，外表名，外表id，外表name
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.DescClass.OutSource_MingXi">
+            <summary>
+            MingXi 查找字段，外表名，外表id，外表name
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.DescClass.OutSource_Tree">
+            <summary>
+            Tree 查找字段，外表名，外表id，外表name
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.DescClass.OutSource_Many2Many">
+            <summary>
+            Many2Many 查找字段，外表名，外表id，外表name
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.DescClass.OutSource_ChaZhao">
+            <summary>
+            ChaZhao 查找字段，外表名，外表id，外表name
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.DescClass.IsTab">
+            <summary>
+            是否模块
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.DescClass.Update2Db">
+            <summary>
+            没用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.DescClass.setDesc(System.String,System.String,System.String)">
+            <summary>
+            setDesc("OutSource", "ec_tab", "tabid,tabname")
+            </summary>
+            <param name="key"></param>
+            <param name="key1"></param>
+            <param name="value1"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.DescClass.getDesc">
+            <summary>
+            表描述,中文名
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Core.DescClass.refreshCtrlType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Core.DescClass.Switch_CtrlType">
+            <summary>
+            判断是否 Select_RelationUser
+            </summary>
+        </member>
+        <member name="P:AgileFrame.Core.DescClass.DataType">
+            <summary>
+            字段数据类型
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Core.DbTypeHelper.typeStr1">
+            <summary>
+            http://hi.baidu.com/jpwei/item/42ce3af25028965fc9f3379b
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DateBaseDescription.GetAllBase(System.String)">
+            <summary>
+            获取所有数据库
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Core.AccessTypeDeal.Convert(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="value">通过接口读取的数据源对应的dataType</param>
+            <returns>OleDbType</returns>
+        </member>
+        <member name="F:AgileFrame.Core.OleDbTypeDeal.OleDbTypes">
+            <summary>
+            SqlDbType
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DoSqlPagesHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.DoSqlPagesHelper.PrepareCommand(System.Data.SqlClient.SqlCommand,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Prepare a command for execution
+            </summary>
+            <param name="cmd">SqlCommand object</param>
+            <param name="conn">SqlConnection object</param>
+            <param name="trans">SqlTransaction object</param>
+            <param name="cmdType">Cmd type e.g. stored procedure or text</param>
+            <param name="cmdText">Command text, e.g. Select * from Products</param>
+            <param name="cmdParms">SqlParameters to use in the command</param>
+        </member>
+        <member name="M:AgileFrame.Common.DoSqlPagesHelper.GetDataSet(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            根据数据库链接，查询语句和参数列表获取数据集
+            </summary>
+            <param name="connstring"></param>
+            <param name="cmdText"></param>
+            <param name="commandParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.DoSqlPagesHelper.GetPagesDataTable(System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32@,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            根据连接字符串,查询语句，页大小，当前页获取分页数据并输出总记录数
+            </summary>
+            <param name="connstring">连接字符串</param>
+            <param name="cmdText">SQL查询语句</param>
+            <param name="keyid">主键ID</param>
+            <param name="sortBy">排序</param>
+            <param name="psize">页大小</param>
+            <param name="curpage">当前页码</param>
+            <param name="recount">输出总记录数</param>
+            <param name="commandParameters">输入参数</param>
+            <returns>返回分页查询结果数据集</returns>
+        </member>
+        <member name="M:AgileFrame.Common.DoSqlPagesHelper.GetPagesDataReader(System.Data.SqlClient.SqlConnection,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32@,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            根据连接字符串,查询语句，页大小，当前页获取分页数据并输出总记录数
+            </summary>
+            <param name="connstring">连接字符串</param>
+            <param name="cmdText">SQL查询语句</param>
+            <param name="keyid">主键ID</param>
+            <param name="sortBy">排序</param>
+            <param name="psize">页大小</param>
+            <param name="curpage">当前页码</param>
+            <param name="recount">输出总记录数</param>
+            <param name="commandParameters">输入参数</param>
+            <returns>返回分页查询结果数据集</returns>
+        </member>
+        <member name="M:AgileFrame.Common.DoSqlPagesHelper.GetPagesDataReader(System.String,System.String,System.Int32,System.Int32,System.Int32@,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="connStr"></param>
+            <param name="cmdText">包含排序语句</param>
+            <param name="psize"></param>
+            <param name="curpage"></param>
+            <param name="recount"></param>
+            <param name="commandParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AgileFrame.Common.MySQLCommonService">
+            <summary>
+            数据结构所使用的脚本——
+            {表注释}  {表名} {首字母大写表名}
+            {列名} {列注释} {小写列名} {首字母大写列名} {字段长度} {列名sql类型} {列名oleDbSql类型} {js类型} {是否必须} {是否自增长} {类型空值} {默认值}
+            chx:{列数据库类型} {列数据库空值} {旧列名}
+            wcp:
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.ISQLBase">
+            <summary>
+            数据结构所使用的脚本——
+            {表注释}  {表名} {首字母大写表名}
+            {列名} {列注释} {小写列名} {首字母大写列名} {字段长度} {列名sql类型} {列名oleDbSql类型} {js类型} {是否必须} {是否自增长} {类型空值} {默认值}
+            chx:{列数据库类型} {列数据库空值} {旧列名}
+            wcp:
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.ISQLBase.GetSQLBase(AgileFrame.Orm.PersistenceLayer.DataBaseType)">
+            <summary>
+            根据数据库类型获取sql语句帮助类
+            </summary>
+            <param name="_dataBaseType"></param>
+            <returns></returns>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.GetProductVersion">
+            <summary>
+            获取数据库版本号
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.GetViewSQL">
+            <summary>
+            获取视图和存储过程sql语句
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.RefreshViewSQL">
+            <summary>
+            add- 表结构改变的时候刷新一下视图，并检查  CheckViewSQL
+            oracle 需使用 用工具toad,上面显示last ddl
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.GetViewReferencedTableSQL">
+            <summary>
+            add- 找出视图所依赖的表
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.GetFrame_View">
+            <summary>
+            获取视图配置表的sql语句  zlg
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.GetViewFieldSql">
+            <summary>
+            获取所有视图字段sql语句
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.GetTableSQL">
+            <summary>
+            sql2005和2008获取所有表和字段sql语句
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.AddOrUpdateTableViewSQL">
+            <summary>
+            添加或修改表注释,使用string.Replace方法替换{数据库名},{表注释},{表名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.AddOrUpdateTableTxtSQL">
+            <summary>
+            添加或修改表注释,使用string.Replace方法替换{数据库名},{表注释},{表名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.GetTableTxtSQL">
+            <summary>
+            sql2005和2008获取表注释
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.AddOrUpdateFieldTxtTxtSQL">
+            <summary>
+            设置字段注释,使用string.Replace方法替换{数据库名},{列注释},{表名}, {字段名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.AddOrUpdateViewFieldTxtTxtSQL">
+            <summary>
+            设置字段注释,使用string.Replace方法替换{数据库名},{列注释},{表名}, {字段名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.GetFKSQL">
+            <summary>
+            获取所有表的外键
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.GetIndexSQL">
+            <summary>
+            获取所有表的索引
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.CreateDataBaseSql">
+            <summary>
+            创建数据库,使用string.Replace方法替换{数据库名},{文件存放路径}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.ChangeNameDataBaseSql">
+            <summary>
+            修改数据库名称,,使用string.Replace方法替换{旧数据库名}、{新数据库名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.DeleteDataBaseSql">
+            <summary>
+            删除数据库,使用string.Replace方法替换{数据库名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.GetAllDataBaseNameSql">
+            <summary>
+            获取实例中的所有数据库名
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.TableAreThereSql">
+            <summary>
+            查询表是否存在,使用string.Replace方法替换{数据库名},{表名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.CreateTableSql">
+            <summary>
+            创建表,使用string.Replace方法替换{数据库名},{表名},{字段列表}（字段名 类型 长度 是否为空,....）参数,注意表名不要包含中括号等字段,字段列表包含各字段的定义,主外键定义等
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.ChangeTableNameSql">
+            <summary>
+            修改表名,使用string.Replace方法替换{数据库名},{旧表名},{新表名}参数,注意表名不要包含中括号等字段
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.DeleteTableSql">
+            <summary>
+            删除表,使用string.Replace方法替换{数据库名},{表名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.按字段拆表sql">
+            <summary>
+            创建分表. {拆表字段}.假设根据user_id分表，分成64张
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.AddDefaultValueConstraintSql">
+            <summary>
+            创建默认值约束,使用string.Replace方法替换{数据库名},{表名},{约束名},{默认值},{字段名},{临时变量}（一般由表名加字段,去空格）参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.AddForeignKeyConstraintSql">
+            <summary>
+            创建外键约束,使用string.Replace方法替换{数据库名},{表名},{是否强制外键约束}(check|nocheck), {约束名},{主键字段列表},{主键表名},{外键字段列表},
+            {更新规则}(""|ON UPDATE CASCADE|ON UPDATE SET NULL|ON UPDATE SET DEFAULT), {删除规则}(""|ON DELETE CASCADE|ON DELETE SET NULL|ON UPDATE SET DEFAULT), {是否强制用于复制}(""|NOT FOR REPLICATION)参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.AddPrimaryKeyConstraintSql">
+            <summary>
+            创建主键约束,使用string.Replace方法替换{数据库名},{表名},{约束名},{索引类别}(CLUSTERED | NONCLUSTERED),{字段参数列表}(字段名 顺序(asc|desc), 字段名 顺序,......最多16个字段)参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.ConstraintAreThereSql">
+            <summary>
+            查询约束是否存在,使用string.Replace方法替换{数据库名},{表名},{约束名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.DeleteConstraintSql">
+            <summary>
+            删除约束,使用string.Replace方法替换{数据库名},{表名},{约束名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.ChangeConstraintNameSql">
+            <summary>
+            修改约束名,使用string.Replace方法替换{数据库名},{表名},{旧约束名},{新约束名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.TableFieldAreThereSql">
+            <summary>
+            查询字段是否存在,使用string.Replace方法替换{数据库名},{表名},{字段名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.AddTableFieldSql">
+            <summary>
+            新增字段,使用string.Replace方法替换{数据库名},{表名},{字段参数列表}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.ChangeTableFieldNameSql">
+            <summary>
+            修改字段名,使用string.Replace方法替换{数据库名},{表名},{旧字段名},{新字段名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.ChangeTableFieldSql">
+            <summary>
+            修改字段,使用string.Replace方法替换{数据库名},{表名},{字段参数列表}（字段名 类型 长度 是否为空）参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.DeleteTableFieldSql">
+            <summary>
+            删除字段,使用string.Replace方法替换{数据库名},{表名},{字段名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.IndexAreThereSql">
+            <summary>
+            查询索引是否存在,使用string.Replace方法替换{数据库名}, {索引名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.AddIndexSql">
+            <summary>
+            新增索引,使用string.Replace方法替换{数据库名},{唯一索引}(不填或填UNIQUE,标识唯一),{聚集索引}(不填或填 CLUSTERED或NONCLUSTERED,标识聚集或非聚集),{索引名},{表名},{字段参数列表}（字段名 desc|asc, 字段名 desc|asc...）,{填充因子}(WITH FILLFACTOR=介于1到100之间的整数)参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.ChangeIndexNameSql">
+            <summary>
+            修改索引名,使用string.Replace方法替换{数据库名},{表名},{旧索引名},{新索引名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.DeleteIndexSql">
+            <summary>
+            删除索引,使用string.Replace方法替换{数据库名},{表名},{索引名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.VeiwAreThereSql">
+            <summary>
+            查询视图或存储过程是否存在,使用string.Replace方法替换{数据库名},{视图或存储过程名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.DeleteVeiwSql">
+            <summary>
+            删除视图或存储过程是否存在,使用string.Replace方法替换{数据库名},{视图或存储过程名}参数
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.ChangeViewNameSql">
+            <summary>
+            修改视图或存储过程名,使用string.Replace方法替换{数据库名},{旧视图或存储过程名},{新视图或存储过程名}参数,注意表名不要包含中括号等字段
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.MakeDataBaseOffLine">
+            <summary>
+            数据库脱机,使用string.Replace方法替换{数据库名}参数,数据库名
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.MakeDataBaseOnLine">
+            <summary>
+            数据库联机,使用string.Replace方法替换{数据库名}参数,数据库名
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.DataBaseAreThere">
+            <summary>
+            判断数据库是否存在,使用string.Replace方法替换{数据库名}参数,数据库名
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.BackUpDataBaseSql">
+            <summary>
+            备份数据库,使用string.Replace方法替换{数据库名}、{备份文件名}、{是否格式化}、{是否全备份}参数,其中是否格式化选填format or noformat, 是否全备份选填init or noinit
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.RestoreFilelistonlySql">
+            <summary>
+            查询数据库备份文件中的文件列表,使用string.Replace方法替换{备份文件名}参数,备份文件名全路径
+            </summary>
+        </member>
+        <member name="F:AgileFrame.Common.ISQLBase.RestoreDataBaseSql">
+            <summary>
+            还原数据库,使用string.Replace方法替换{数据库名}、{备份文件名}参数,备份文件名全路径
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.SQL2000CommonService">
+            <summary>
+            数据结构所使用的脚本——
+            {表注释}  {表名} {首字母大写表名}
+            {列名} {列注释} {小写列名} {首字母大写列名} {字段长度} {列名sql类型} {列名oleDbSql类型} {js类型} {是否必须} {是否自增长} {类型空值} {默认值}
+            chx:{列数据库类型} {列数据库空值} {旧列名}
+            wcp:
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.SQL2005CommonService">
+            <summary>
+            数据结构所使用的脚本——
+            {表注释}  {表名} {首字母大写表名}
+            {列名} {列注释} {小写列名} {首字母大写列名} {字段长度} {列名sql类型} {列名oleDbSql类型} {js类型} {是否必须} {是否自增长} {类型空值} {默认值}
+            chx:{列数据库类型} {列数据库空值} {旧列名}
+            wcp:
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.SQL2008CommonService">
+            <summary>
+            数据结构所使用的脚本——
+            {表注释}  {表名} {首字母大写表名}
+            {列名} {列注释} {小写列名} {首字母大写列名} {字段长度} {列名sql类型} {列名oleDbSql类型} {js类型} {是否必须} {是否自增长} {类型空值} {默认值}
+            chx:{列数据库类型} {列数据库空值} {旧列名}
+            wcp:
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.OracleSQLCommonService">
+            <summary>
+            数据结构所使用的脚本——
+            {表注释}  {表名} {首字母大写表名}
+            {列名} {列注释} {小写列名} {首字母大写列名} {字段长度} {列名sql类型} {列名oleDbSql类型} {js类型} {是否必须} {是否自增长} {类型空值} {默认值}
+            chx:{列数据库类型} {列数据库空值} {旧列名}
+            yanggh:
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.DB2CommonService">
+            <summary>
+            数据结构所使用的脚本——
+            {表注释}  {表名} {首字母大写表名}
+            {列名} {列注释} {小写列名} {首字母大写列名} {字段长度} {列名sql类型} {列名oleDbSql类型} {js类型} {是否必须} {是否自增长} {类型空值} {默认值}
+            chx:{列数据库类型} {列数据库空值} {旧列名}
+            wcp:
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.Test">
+            <summary>
+            使用方法 和 测试的例子,wcp
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.Test.GetDataBase">
+            <summary>
+            获取表结构
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AgileFrame.Common.Test.UpdateDataBase">
+            <summary>
+            更新数据库
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.Test.ExistsTable">
+            <summary>
+            判断表是否存在，
+            判断字段是否存在与之类似，在数据库表一层判断,如DataBaseTable.ExistsField(...)方法
+            增删改表名都有相应的成员和静态方法，增删改字段、索引、约束等操作方法均类似
+            各种详细操作可参见DataBase的Update方法
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.Test.TestCase1(AgileFrame.Orm.PersistenceLayer.DataBaseType,System.String)">
+            <summary>
+            一个数据库操作例子。总的来说与MS Sql Server Management Studio 操作方法类似
+            </summary>
+        </member>
+        <member name="M:AgileFrame.Common.Test.Main(System.String[])">
+            <summary>
+            一个数据库操作例子。wancp
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.SybaseCommonService">
+            <summary>
+            数据结构所使用的脚本——
+            {表注释}  {表名} {首字母大写表名}
+            {列名} {列注释} {小写列名} {首字母大写列名} {字段长度} {列名sql类型} {列名oleDbSql类型} {js类型} {是否必须} {是否自增长} {类型空值} {默认值}
+            chx:{列数据库类型} {列数据库空值} {旧列名}
+            wcp:
+            </summary>
+        </member>
+        <member name="T:AgileFrame.Common.AccessCommonService">
+            <summary>
+            数据结构所使用的脚本——
+            {表注释}  {表名} {首字母大写表名}
+            {列名} {列注释} {小写列名} {首字母大写列名} {字段长度} {列名sql类型} {列名oleDbSql类型} {js类型} {是否必须} {是否自增长} {类型空值} {默认值}
+            chx:{列数据库类型} {列数据库空值} {旧列名}
+            wcp:
+            </summary>
+        </member>
+    </members>
+</doc>

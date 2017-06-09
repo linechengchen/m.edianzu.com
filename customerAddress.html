@@ -1,0 +1,186 @@
+﻿<!--开始1
+"头文件":"Upgrade-Insecure-Requests=1 & Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8 & Referer=https://m.edianzu.com/personal & Accept-Language=zh-CN,zh;q=0.8 & Cookie=gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495202028; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1 & ",
+"新cookie":"{{gr_user_id=53705607-bbef-4fba-9aa1-785922c87e96; JSESSIONID=5B54CF9AE9851FBEBD72F57D813B0192; token=82b7ac836b9e0dd65362af14fa531d64; Hm_lvt_28b59fb244144f8f5bf51e5e53367b81=1495126277,1495201466; Hm_lpvt_28b59fb244144f8f5bf51e5e53367b81=1495202028; gr_session_id_89ad25a0174a3fb5=ca23f47f-f41d-462b-a090-bd889cf322e1}}",结束1--><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>快递地址</title>
+	<link rel="stylesheet" type="text/css" href="css/public.css?version=2017_05_18_18_39_44" />
+	<link rel="stylesheet" type="text/css" href="css/style.css?version=2017_05_18_18_39_44" />
+	
+
+<script type="text/javascript" src="/plugin/jquery/jquery.js"></script>
+<script type="text/javascript" src="/js/util/utils.js?version=2017_05_18_18_39_44"></script>
+<script type="text/javascript" src="/js/util/common.js?version=2017_05_18_18_39_44"></script>
+
+</head>
+<body>
+	<header class="header_top">
+		<a href="personal" class="fh fl"></a>
+		<h6>我的快递地址</h6>
+	</header>
+	<div class="main main_cont main_cont2">
+		<div class="receipt_main clearfix">
+		
+			<div class="receipt_content">
+				<dl class="receipt_name clearfix">
+					<dt class="fl">
+						123
+					</dt>
+					<dd class="fr">
+						18324254558
+					</dd>
+				</dl>
+				<p class="receipt_dz">北京北京市延庆县12321313231</p>
+				<dl class="receipt_sz clearfix">
+					<dt class="fl" style="width:40%;">
+						
+							<label class="receipt_label receipt_show"  onclick="setDefault('26057')">
+							<span>
+								<img class="receipt_img1" src="images/receipt_ico1.jpg" />
+								<img class="receipt_img2" src="images/receipt_ico1_click.jpg" />
+							</span>
+							默认地址
+							</label>
+						
+						
+							
+						
+					</dt>
+					<dd class="fr btn_sc">
+						<a href="javascript:void(0)" onclick="deleteAddress('26057')">
+							<img src="images/receipt_ico12.jpg" />
+							删除
+						</a>
+					</dd>
+					<dd class="fr">
+						<a href="to_modify_address?id=26057">
+							<img src="images/receipt_ico12.jpg" />
+							修改
+						</a>
+					</dd>
+					
+				</dl>
+			</div>
+		
+		</div>
+	</div>
+	<div class="div_footer div_footer2">
+		<form action="add_address" method="post">
+			<input type="button" value="新增快递地址" id="add"/>
+		</form>
+	</div>
+	<div class="delete_tk" style="display:none">
+		<div class="delete_cont">
+			<p class="cont_p1">确认要删除快递地址吗？</p>
+			<p class="btn_p1">
+				<input type="button" value="确定" id="confirm_oper"/>
+				<input type="button" value="取消" id="cancel_oper"/>
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/zepto.min.js?version=2017_05_18_18_39_44"></script>
+	<script type="text/javascript" src="js/style.js?version=2017_05_18_18_39_44"></script>
+	<script type="text/javascript">
+		//默认隐藏div
+		var id_address;
+		//删除
+		function deleteAddress(id){
+			$(".delete_tk").show();
+			id_address=id;
+		}
+		//确定删除
+		$("#confirm_oper").on("click",function(){
+			window.location.href="deleteCustomerAddress?id="+id_address;
+		})
+		//取消删除
+		$("#cancel_oper").on("click",function(){
+			$(".delete_tk").hide();
+		})
+		function setDefault(id){
+			//修改默认地址
+			location.href="modifyCustomerAddress?id="+id+"&isDefault=1&timestamp="+new Date().getTime();
+		}
+		$("#add").on("click",function(){
+			var num = '1';
+			if(num>=50){
+				alert("最多可以添加50个地址");
+			}else{
+				location.href="add_address?timestamp="+new Date().getTime();
+			}
+		})
+	</script>
+	
+
+
+
+<script type="text/javascript" charset="utf-8" async src="https://lxbjs.baidu.com/lxb.js?sid=7329252"></script>
+<script type="text/javascript" src="/plugin/jquery/jquery.cookie.js"></script>
+
+<div style="display:none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?28b59fb244144f8f5bf51e5e53367b81";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+var consultation = {
+		setSource:function(from_ad_source) {
+		if(null!=from_ad_source&&""!=from_ad_source){
+			if(from_ad_source!=$.cookie("from_ad_source")){
+				$.cookie("from_ad_source", from_ad_source, {
+					expires: 365,
+					path: "/"
+				}); 
+			}
+		}
+	}
+}
+
+$(document).ready(function() {
+	
+	(function ($) {
+	    $.getUrlParam = function (name) {
+	        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	        var r = window.location.search.substr(1).match(reg);
+	        if (r != null) return unescape(r[2]); return null;
+	    }
+	})(jQuery);
+
+	/* var source = $.getUrlParam('from_ad_source');
+	consultation.setSource(source); */
+	
+});
+</script>
+<script type="text/javascript"> 
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); 
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F28b59fb244144f8f5bf51e5e53367b81' type='text/javascript'%3E%3C/script%3E")) 
+</script>
+
+<script type='text/javascript'>
+	var _vds = _vds || [];
+	window._vds = _vds;
+	(function(){
+		_vds.push(['setAccountId', '89ad25a0174a3fb5']);
+		(function() {
+			var vds = document.createElement('script');
+			vds.type='text/javascript';
+			vds.async = true;
+			vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(vds, s);
+		})();
+	})();
+</script>
+ 
+</body>
+</html>
