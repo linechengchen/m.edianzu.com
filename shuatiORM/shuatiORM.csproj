@@ -167,6 +167,7 @@
     <Compile Include="Model\del1_VTimuDaXue.cs" />
     <Compile Include="Model\del_VTimuDaXue.cs" />
     <Compile Include="Model\del_VTimuDaXueErrorInfo.cs" />
+    <Compile Include="Model\Image.cs" />
     <Compile Include="Model\Jsj_entry.cs" />
     <Compile Include="Model\Jsj_form.cs" />
     <Compile Include="Model\Jsj_x_field_weixin_province_city.cs" />

@@ -38,3 +38,11 @@ C:\Users\cch\Desktop\Ediantong\edianzu.com\m.edianzu.com\Bin\Native.shuatiORM.ma
 C:\Users\cch\Desktop\Ediantong\edianzu.com\m.edianzu.com\Bin\shuatiORM.dll
 C:\Users\cch\Desktop\Ediantong\edianzu.com\m.edianzu.com\Bin\shuatiORM.pdb
 C:\Users\cch\Desktop\Ediantong\edianzu.com\m.edianzu.com\shuatiORM\obj\Debug\shuatiORM.csprojResolveAssemblyReference.cache
+C:\Users\cch\Source\Repos\m.edianzu.com\Bin\shuatiORM.dll.config
+C:\Users\cch\Source\Repos\m.edianzu.com\Bin\Native.shuatiORM.manifest
+C:\Users\cch\Source\Repos\m.edianzu.com\Bin\shuatiORM.dll
+C:\Users\cch\Source\Repos\m.edianzu.com\Bin\shuatiORM.pdb
+C:\Users\cch\Source\Repos\m.edianzu.com\shuatiORM\obj\Debug\shuatiORM.csprojResolveAssemblyReference.cache
+C:\Users\cch\Source\Repos\m.edianzu.com\shuatiORM\obj\Debug\Native.shuatiORM.manifest
+C:\Users\cch\Source\Repos\m.edianzu.com\shuatiORM\obj\Debug\shuatiORM.dll
+C:\Users\cch\Source\Repos\m.edianzu.com\shuatiORM\obj\Debug\shuatiORM.pdb

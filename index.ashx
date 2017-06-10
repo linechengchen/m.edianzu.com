@@ -1,4 +1,4 @@
-﻿0<%@ WebHandler Language="C#" Class="index" %>
+﻿<%@ WebHandler Language="C#" Class="index" %>
 
 using System;
 using System.Collections.Generic;
