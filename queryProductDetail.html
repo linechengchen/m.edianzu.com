@@ -20,6 +20,7 @@
 		<script type="text/javascript" src="/plugin/jquery/jquery.js"></script>
 		<script type="text/javascript" src="/js/util/utils.js?version=2017_05_18_18_39_44"></script>
 		<script type="text/javascript" src="/js/util/common.js?version=2017_05_18_18_39_44"></script>
+        <script type="text/javascript" src="/js/vue.js"></script>
 
 	</head>
 
@@ -42,9 +43,11 @@
 								<ul></ul>
 							</div>
 							<div class="bd">
+                               
 								<ul>
-									
-											<li><img src="https://edzimg.edianzu.com/product/2016/12/b0d75fd7655982ad1afa8e478080a4b7.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" /></li>
+                                   
+
+                                    <li v-for="item in data"><h3>{{item.goods_img}}</h3></li>
 
 									
 											<li><img src="https://edzimg.edianzu.com/product/2016/12/1f8031268f95aea5f1b5b28e64496c74.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" /></li>
@@ -56,7 +59,7 @@
 											<li><img src="https://edzimg.edianzu.com/product/2016/12/044e249f25d148c7d750c5682a38a807.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" /></li>
 
 									
-											<li><img src="https://edzimg.edianzu.com/product/2016/12/9b867d026823920a2c7fed9f33b648ed.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" /></li>
+											<li><img src="https://edzimg.edianzu.com/product/2016/12/9b867d026823920a2c7fed9f33b648ed.jpg?x-oss-process=image/resize,m_fill,h_380,w_380" /></li>-->
 
 									
 									
@@ -252,7 +255,15 @@
 						
 					}, function(response, XMLHttpRequest, textStatus, errorThrown) {
 						//alert("head获取数据出错。");
-					});
+                          });
+                    var app = new Vue({
+                        el: '.bd',
+                        data: {
+                            data: data.data.img
+                        }
+                    })
+
+
 					console.log(data);
 
 				});
